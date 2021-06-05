@@ -22,6 +22,7 @@ Público al que va dirigido: Población en general de Coatepec, Veracruz, Méxic
 
 *
 * Hassir Elias Lastre Sierra
+Hola, mi nombre soy Hassir y soy originario de Colombia. Actualmente me encuentro cursando un Doctorado en Planeteanción Estratégica y Dirección de Tecnología, pero me gustaría aprender Programación para elevar mi perfil a otro nivel y aprender nuevas conocimientos. 
 * Lara Moreno Yeudiel:
 * Luis Ángel Núñez Jiménez:
 Hola, soy Luis. Actualmente me encuentro estudiando la carrera de Ing. en Sistemas computacionales, me interesa los temas de programación y bases de datos. De pasatiempo me gusta escuchar música y salir con mis amigos.
