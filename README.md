@@ -18,12 +18,13 @@ Los productos que se ofrecen son:
 
 Público al que va dirigido: Población en general de Coatepec, Veracruz, México y sus alrededores. 
 
-##Integrantes del equipo: 
+## Breve descripción de los integrantes: ##
 
 *
 *
-*Lara Moreno Yeudiel 
-
+* Lara Moreno Yeudiel:
+* Luis Ángel Núñez Jiménez:
+Hola, soy Luis. Actualmente me encuentro estudiando la carrera de Ing. en Sistemas computacionales, me interesa los temas de programación y bases de datos. De pasatiempo me gusta escuchar música y salir con mis amigos.
 
 
 
