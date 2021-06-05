@@ -20,7 +20,7 @@ Público al que va dirigido: Población en general de Coatepec, Veracruz, Méxic
 
 ## Breve descripción de los integrantes: ##
 
-** Hassir Elias Lastre Sierra:
+* Hassir Elias Lastre Sierra:
 Soy originario de Colombia pero vivo en México desde hace un par de años. Actualmente me encuentro cursando un Doctorado en Planeteanción Estratégica y Dirección de Tecnología, pero me gustaría aprender Programación para elevar mi perfil a otro nivel y aprender nuevas conocimientos. 
 
 * Lara Moreno Yeudiel:
