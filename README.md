@@ -21,7 +21,7 @@ Público al que va dirigido: Población en general de Coatepec, Veracruz, Méxic
 ## Breve descripción de los integrantes: ##
 
 *
-*
+* Hassir Elias Lastre Sierra
 * Lara Moreno Yeudiel:
 * Luis Ángel Núñez Jiménez:
 Hola, soy Luis. Actualmente me encuentro estudiando la carrera de Ing. en Sistemas computacionales, me interesa los temas de programación y bases de datos. De pasatiempo me gusta escuchar música y salir con mis amigos.
