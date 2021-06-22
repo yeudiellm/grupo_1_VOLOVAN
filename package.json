@@ -1,0 +1,22 @@
+{
+  "name": "grupo_1_volovan",
+  "version": "1.0.0",
+  "description": "El objetivo del proyecto será diseñar una sitio web para una panadería local, ubicada en Coatepec, Veracruz, México. \r La panadería en cuestion se espacializa en la venta de volovanes y otros productos hechos con masa de hojaldre.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Detroxsys/grupo_1_VOLOVAN.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Detroxsys/grupo_1_VOLOVAN/issues"
+  },
+  "homepage": "https://github.com/Detroxsys/grupo_1_VOLOVAN#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
