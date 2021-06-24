@@ -9,7 +9,6 @@ app.use(express.static(publicPath));
 
 app.listen(3001, ()=>console.log("Servidor corriendo")); 
 
-
 app.get('/', (req, res)=> { 
-    res.sendFile(path.resolve(__dirname,'./views/home.html'));
+    res.sendFile(path.resolve(__dirname,'./views/header.html'));
 }  ); 
