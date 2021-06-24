@@ -10,9 +10,9 @@ body {
     background-color: #ffffff;
 }
 
-header{
+/*header{
     text-align: center;
-    width: max-content;
+    width: 100vw;
     background-color: rgb(153, 35, 24);
     padding: 20px;
     margin: auto;
@@ -20,11 +20,31 @@ header{
     top: 0;
     z-index: 100;
     align-items: center;
-}
+}*/
 
-.logo{
-    width: 40%;
+/*.logo{
+    width: 80px;
     position: relative;
     top: 20px; 
+}*/
+
+
+header nav {
+    margin-top: 10px; 
+    /* display: none; */
+}
+
+header nav ul{
+    list-style: none;
+    margin: 0; 
+    padding: 0;
+}
+
+header nav a{
+    text-decoration: none;
+    color: #222222;
+    display: inline-block;
+    padding: 5px 0;
+    font-size: 17px;
 }
 
