@@ -10,6 +10,7 @@ body {
     background-color: #ffffff;
 }
 
+
 header{
     text-align: center;
     align-items: center;
@@ -20,7 +21,7 @@ header{
     position: fixed;
     top: 0;
     z-index: 100;
-    max-height: 100px;
+    max-height: 150px;
 }
 
 .logo{
@@ -44,8 +45,6 @@ header{
     top: 40px;
 }
 
-.hamburguer-button-container{
-}
 
 header nav{
     display: none;
@@ -65,9 +64,65 @@ header nav ul{
 
 header nav a{
     text-decoration: none;
-    color: #222222;
+    color: white; 
     display: inline-block;
     padding: 5px 0;
-    font-size: 17px;
+    font-size: 20px;
 }
+
+
+@media (min-width: 760px){
+    header{
+        display: flex;
+        align-items:stretch;
+        align-content: space-between;
+        justify-content: space-between;
+    }
+
+    .logo{
+        top: 10px;
+        order: 1;  
+    }
+    .hamburguer-button{
+        display: none;
+        
+    }
+    .header-nav-menu{
+        order:-1; 
+    }
+    .header-nav-user{
+        order:2; 
+    }
+
+    header nav{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        position: relative;
+        top: 60px; 
+    }
+
+    header nav ul{
+        display: flex;
+    }
+    header nav li{
+        margin:  0 5px;
+    }
+
+
+}
+
+@media (min-width: 1200px){
+    header{
+        align-items: space-evenly;
+    }
+
+    .logo{
+        width: 12rem;
+        height: 12rem;
+    }
+}
+
+
+
 
