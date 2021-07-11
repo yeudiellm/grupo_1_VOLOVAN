@@ -59,6 +59,7 @@ Tomamos como referencias algunos otros sitios web que también se dedican a la v
 * Luis Ángel Núñez Jiménez: Hola, soy Luis. Actualmente me encuentro estudiando la carrera de Ing. en Sistemas computacionales, me interesa los temas de programación y bases de   datos. De pasatiempo me gusta escuchar música y salir con mis amigos.
 * Yeudiel Lara Moreno: Tengo 21 años y soy de Veracruz, México, me encuentro estudiando el 6to semestre de licenciatura en matemáticas aplicadas y planeo ingresar a ciencia de     datos como segunda carrera en un futuro próximo. Espero aprender diseño web como complementación a mi perfil profesional. 
 
-
+## TABLERO TRELLO:
+https://trello.com/b/kzC71exO/grupo1
 
 
