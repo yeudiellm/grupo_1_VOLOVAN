@@ -1,3 +1,5 @@
+
+ /*ESTILOS GENERALES*/
 *{
     margin: 0px; 
     padding: 0px;
@@ -10,7 +12,7 @@ body {
     background-color: #ffffff;
 }
 
-
+ /*ESTILOS DE HEADER */
 header{
     text-align: center;
     align-items: center;
@@ -23,6 +25,7 @@ header{
     z-index: 100;
     max-height: 150px;
 }
+
 
 .logo{
     width: 8.5rem;
@@ -70,8 +73,29 @@ header nav a{
     font-size: 20px;
 }
 
+ /*ESTILOS DE FOOTER */
+
+ footer{
+    text-align: center;
+    align-items: center;
+    width: 100vw;
+    background-color: rgb(153, 35, 24);
+    padding: 20px;
+    margin: auto;
+    top: 0;
+    z-index: 100;
+    max-height: 150px;
+    color: white;
+}
+
+footer p{
+    margin-bottom: 10px;
+}
+
+
 
 @media (min-width: 760px){
+     /*ESTILOS DE HEADER */
     header{
         display: flex;
         align-items:stretch;
@@ -80,6 +104,8 @@ header nav a{
     }
 
     .logo{
+        width: 10rem ;
+        height: 10rem;
         top: 10px;
         order: 1;  
     }
@@ -109,10 +135,33 @@ header nav a{
         margin:  0 5px;
     }
 
+     /*ESTILOS DE FOOTER */
+     footer{
+         display: flex;
+         flex-wrap: wrap;
+         align-items: center;
+         justify-content: center;
+         text-align: center;
+     }
+     footer div{
+         width: 60%;
+         display: flex;
+         justify-content: space-around;
+
+     }
+     footer p{
+         font-size: 15px;
+     }
+     .marca-registrada{
+         font-size: 20px;
+         width: 100%;
+     }
+
 
 }
 
 @media (min-width: 1200px){
+     /*ESTILOS DE HEADER */
     header{
         align-items: space-evenly;
     }
