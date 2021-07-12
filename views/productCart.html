@@ -4,9 +4,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Carrito de compras</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/productCart.css">
 </head>
 <body>
+    
+    <h1>CARRITO DE COMPRAS</h1>
+
+<!-- Detalle del carrito de compras -->
+    <div class="productSummary">
+        <article class="example">
+        <div class="productImage"></div>
+        <div class="productContainer">
+            <h3>Nombre del producto</h3>
+            <p class="productDescription">Descripción del producto</p>
+            <button class="quitButton" type="button" name="btQuit">QUITAR</button>
+         </div>
+     </article>
+    </div>
+    
+        <hr>
+    
+    <div class="detailsContainer">
+        <div class="othersDetails">
+            <p class="details">PRECIO</p>
+            <input class="detailsBoxes" value="$000.000">
+         </div>
+        <div class="othersDetails">
+            <p class="details">CANTIDAD</p>
+            <input class="detailsBoxes" type="number" min="0" step="1" value="0">
+        </div>
+        <div class="othersDetails">
+            <p class="details">TOTAL</p>
+            <input class="detailsBoxes" value="$000.00">
+        </div>
+    </div>
+
+    <div class="mainSummary">
+    <div class="summary">
+        <p>SUBTOTAL</p>
+    </div>
+    <div class="summary">
+        <input class="detailsBoxes" value="$000.00">
+    </div>
+    </div>
+
+    <div class="sendCost">
+        <p class="sendCost_text">Los costos de envíos se añaden durante el pago</p>
+    </div>
+
+    <div class="buttons">
+        <button class="updateCartBt" type="button" name="btUpdateCArt">ACTUALIZAR CARRITO</button>
+        <br>
+        <button class="finishtOrderBt" type="button" name="btFinishOrder">FINALIZAR PEDIDO</button>
+        </div>
+        <br>
+
+        <hr>
     
 </body>
 </html>

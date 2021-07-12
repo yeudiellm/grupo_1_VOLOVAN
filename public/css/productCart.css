@@ -1,0 +1,147 @@
+*{
+    margin: 0px; 
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto';
+    font-size: 14px;
+    background-color: #ffffff;
+}
+
+h1 {
+    display: flex;
+    padding: 5px;
+    text-align: center;
+    font-size: 35px;
+    color: #333232;
+}
+
+h3 {
+    font-size: 20px;
+    padding: 1px;
+    color:#333232
+}
+
+.productSummary {
+     margin: 5px;
+     padding: 1px;
+     color: #333232;
+}
+
+.productImage {
+    display: inline-block;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    border: 1px solid #000000;
+    
+    
+}
+
+.productContainer {
+    display: inline-block;
+    padding: 5px;
+}
+
+.productDescription {
+    font-size: 15px;
+    color: #333232;
+}
+
+.quitButton {
+    background-color: #EEEEEE;
+    color: #333232;
+    padding: 5px;
+    width: 80px;
+    text-align: center;
+    font-size: 11px;
+    font-weight: bold;
+    }
+
+.detailsBoxes {
+    width: 80px;
+    padding: 5px;
+    text-align: center;
+    font-size: 15px;
+    color: #333232;
+    }
+
+hr {
+    width: 90%;
+        }
+
+.cdetailsContainer {
+    text-align: center;
+}
+
+.othersDetails {
+    display: inline-block;
+    padding: 20px;
+
+}
+
+.details {
+    color: #333232;
+    text-align: center;
+    padding: 5px;
+    font-size: 15px;
+}
+
+.subDetails {
+    color: #333232;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+  
+}
+.mainSummary {
+    text-align: center;
+}
+.summary {
+    display: inline-block;
+    text-align: center;
+    padding: 20px;
+    color: #333232;
+}
+
+.sendCost {
+    text-align: center;
+    padding: 20px;
+}
+
+.sendCost_text {
+    font-size: 15px;
+    color: #333232;
+}
+
+.buttons {
+    border-color: red;
+       text-align: center;
+    }
+
+.updateCartBt {
+    display: block;
+    border: 1px solid #333232;
+    background-color: #EEEEEE;
+    color: #333232;
+    padding: 10px;
+    height: 35px;
+    width: 190px;
+    text-align: center;
+    font-size: 15px;
+    }
+
+    .finishtOrderBt {
+        display: block;
+        color: #333232;
+        background-color: #F2E205;
+        padding: 10px;
+        height: 35px;
+        width: 190px;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        }
