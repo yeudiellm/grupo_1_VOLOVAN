@@ -6,11 +6,17 @@
     box-sizing: border-box;
 }
 
-body {
+body, html {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    /*overflow:hidden;*/
     font-family: 'Roboto';
     font-size: 14px;
     background-color: #ffffff;
 }
+
+
 
  /*ESTILOS DE HEADER */
 header{
@@ -20,7 +26,7 @@ header{
     background-color: rgb(153, 35, 24);
     padding: 20px;
     margin: auto;
-    position: fixed;
+    /*position: fixed */;
     top: 0;
     z-index: 100;
     max-height: 150px;
@@ -31,6 +37,7 @@ header{
     width: 8.5rem;
     height: 8.5rem;
     position: relative;
+    z-index: 100;
     top: 15px; 
 }
 
@@ -86,12 +93,163 @@ header nav a{
     z-index: 100;
     max-height: 150px;
     color: white;
+    margin-top: 1450px;
 }
 
 footer p{
     margin-bottom: 10px;
 }
 
+
+ /*ESTILOS DE MAIN */
+.banner-principal{
+    margin: auto;
+    background-color: transparent;
+    width: 100%;
+    padding: 0px;
+    position: absolute;
+    display: flex;
+}
+
+.banner-principal img{
+    width: 100vw;
+    height: 400px;
+}
+
+.banner-principal ul,li{
+    padding: 0;
+    margin: 0;
+    list-style: none inside;
+    box-sizing: border-box;
+}
+
+.banner-principal ul.slider {
+    position:relative; /*Necesitamos que el ul sea relativo*/
+    padding: 0px;
+}
+
+.banner-principal ul.slider li {
+    position: absolute; /*Posicionamos en absoluto los <li>*/
+    width: 100vw;
+    height: 50vh;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    background-color: gray;
+    opacity: 0; 
+    transition: opacity .5s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: calc( 1.5rem + 1vw );
+    text-align: center;
+}
+
+.banner-principal .slider li:first-child {
+    opacity: 1; /*Mostramos el primer <li>*/
+}
+
+.banner-principal .slider li:target {
+    opacity: 1; /*Mostramos el <li> al que apunta el enlace*/
+}
+
+#slide6{
+    background-color: #f90;
+    height: 400px;
+}
+
+
+.banner-principal nav {
+    width: 100vw;
+    position: absolute;
+    top: 60vh;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #f1f2f3;
+}
+
+.banner-principal nav ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.banner-principal nav ul li {
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+
+.banner-principal nav a{
+        font-size: calc( 1.2rem + 1vw );
+        text-decoration: none;
+        font-weight: bold;
+        color: #00324b;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.8;
+        flex-grow: 1;
+        text-align: center;
+        border: 2px solid rgb(75, 0, 0);
+        border-top: 5px solid rgb(75, 0, 0);
+        background-color: #f90;
+        flex-wrap: wrap;
+        position: relative;
+}
+
+.banner-principal nav li:last-child a {
+    border-right: 0;
+}
+
+.banner-principal nav a:hover {
+    background-color: rgb(75, 0, 0);
+    color: #fff;
+    border-top-color: #ffffff;
+}
+
+.banner-principal nav a:active {
+    border-top-color: #f90;
+    background: #f90;
+    color: #00324b;
+}
+
+
+/*Complementarios de la pagina principal*/
+.inf-principal{
+    position: absolute; 
+    top: 90vh ;
+    text-align: center;
+}
+
+
+.main-titulos{
+    background-color: #F2E205;
+    font-size: 20px;
+    border: solid 2px black;
+    padding: 20px; 
+    width: 100vw;
+    margin: 0;
+    margin-bottom: 10px;
+    text-align: center;
+
+}
+
+.inf-principal div{
+    margin-bottom: 20px;
+}
+
+.inf-principal div ul{
+    list-style: none;
+}
+
+.social-media{
+    font-size: 24px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
 
 
 @media (min-width: 760px){
@@ -155,6 +313,17 @@ footer p{
      .marca-registrada{
          font-size: 20px;
          width: 100%;
+     }
+
+     /*Complementos de la pagina principal*/
+     .inf-principal{
+         display: flex;
+     }
+     .column1{
+         width: 30%;
+     }
+     .column2{
+         width: 70%;
      }
 
 
