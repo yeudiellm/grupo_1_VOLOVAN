@@ -14,7 +14,7 @@ h1 {
     display: flex;
     padding: 5px;
     text-align: center;
-    font-size: 35px;
+    font-size: 30px;
     color: #333232;
 }
 
@@ -25,21 +25,22 @@ h3 {
 }
 
 .productSummary {
+    display: inline-block;
      margin: 5px;
      padding: 1px;
      color: #333232;
+     text-align: justify;
 }
 
 .productImage {
     display: inline-block;
     margin: auto;
-    width: 100px;
-    height: 100px;
-    padding: 5px;
+    width: 50px;
+    height: 40px;
+    padding: 4px;
     border: 1px solid #000000;
-    
-    
-}
+    align-items: center;
+        }
 
 .productContainer {
     display: inline-block;
@@ -52,7 +53,6 @@ h3 {
 }
 
 .quitButton {
-    background-color: #EEEEEE;
     color: #333232;
     padding: 5px;
     width: 80px;
@@ -62,15 +62,16 @@ h3 {
     }
 
 .detailsBoxes {
-    width: 80px;
+    width: 95px;
     padding: 5px;
     text-align: center;
     font-size: 15px;
     color: #333232;
+    border: none;
     }
 
 hr {
-    width: 90%;
+    width: 100%;
         }
 
 .cdetailsContainer {
@@ -88,6 +89,7 @@ hr {
     text-align: center;
     padding: 5px;
     font-size: 15px;
+    margin: 1px;
 }
 
 .subDetails {
@@ -123,25 +125,23 @@ hr {
     }
 
 .updateCartBt {
-    display: block;
-    border: 1px solid #333232;
-    background-color: #EEEEEE;
+    display: inline-block;
     color: #333232;
     padding: 10px;
     height: 35px;
     width: 190px;
-    text-align: center;
     font-size: 15px;
+    margin: 5px;
     }
 
-    .finishtOrderBt {
-        display: block;
-        color: #333232;
-        background-color: #F2E205;
-        padding: 10px;
-        height: 35px;
-        width: 190px;
-        text-align: center;
-        font-size: 15px;
-        font-weight: bold;
-        }
+.finishtOrderBt {
+    display: inline-block;
+    color: #333232;
+    background-color: #F2E205;
+    padding: 10px;
+    height: 35px;
+    width: 190px;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 5px;
+    }
