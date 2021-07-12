@@ -11,4 +11,8 @@ app.listen(3000, ()=>console.log("Servidor corriendo"));
 
 app.get('/', (req, res)=> { 
     res.sendFile(path.resolve(__dirname,'./views/header.html'));
-}  ); 
+}  );
+
+app.get('/login', (req, res)=> { 
+    res.sendFile(path.resolve(__dirname,'./views/login.html'));
+}  );
