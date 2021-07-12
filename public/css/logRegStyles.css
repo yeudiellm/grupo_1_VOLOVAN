@@ -6,7 +6,7 @@ body{
     font-family: 'Roboto';
 }
 
-div.login-box{
+div.login-box, div.register-box{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -18,7 +18,7 @@ div.login-box{
     padding: 70px 30px;
 }
 
-.login-box .avatar{
+.login-box .avatar, .register-box .avatar{
     width: 100px;
     height: 100px;
     position: absolute;
@@ -26,7 +26,7 @@ div.login-box{
     left: calc(50%-50px);
 }
 
-.login-box h1{
+.login-box h1, .register-box h1{
     margin: 0;
     padding: 0 0 20px;
     text-align: center;
@@ -41,27 +41,39 @@ div.login-box{
     border: none;
 }
 
-.login-box input[type="email"], .login-box input[type="password"]{
+.register-box input{
+    width: 100%;
+    margin-bottom: 10px;
+    outline: none;
+    border: none;
+}
+
+.login-box input[type="text"], .login-box input[type="email"], .login-box input[type="password"], .register-box input[type="text"], .register-box input[type="email"], .register-box input[type="password"]{
     border: 1px solid gray;
     background: transparent;
     height: 30px;
     font-size: 18px;
 }
 
-.login-box input[type="submit"]{
+.login-box input[type="submit"], .register-box input[type="submit"]{
     height: 30px;
     background: #f2e205;
     font-size: 20px;
     border-radius: 20px;
+    margin-top: 8px;
 }
 
-.login-box a{
+.login-box input[type="submit"]:hover, .register-box input[type="submit"]:hover{
+    background: #bdb107;
+}
+
+.login-box a, .register-box a{
     text-decoration: none;
     font-size: 14px;
     line-height: 20px;
     color: darkgray;
 }
 
-.login-box a:hover{
+.login-box a:hover, .register-box a:hover{
     color: gray;
 }
