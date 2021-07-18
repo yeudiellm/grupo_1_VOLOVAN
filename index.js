@@ -5,11 +5,13 @@ const app = express();
 
 const publicPath = path.resolve(__dirname, "./public" ); 
 
+app.set('view engine', 'ejs');
+
 app.use(express.static(publicPath));
 
-app.get('/', (req, res)=> { 
-    res.sendFile(path.resolve(__dirname,'./views/index.html'));
-}  );
+app.get('/', (req, res)=> {
+    res.render('index');
+});
 
 app.get('/login', (req, res)=> { 
     res.sendFile(path.resolve(__dirname,'./views/login.html'));
@@ -24,7 +26,7 @@ app.get('/productCart', (req, res)=> {
 }  );
 
 app.get('/productDetail', (req, res)=> { 
-    res.sendFile(path.resolve(__dirname,'./views/productDetail.html'));
-}  );
+    res.render('productDetail');
+} );
 
 app.listen(3000, ()=>console.log("Servidor corriendo en 3000"));
