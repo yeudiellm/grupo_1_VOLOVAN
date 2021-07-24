@@ -8,11 +8,11 @@ body{
 
 div.login-box, div.register-box{
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 50%;
     width: 320px;
     height: 420px;
-    box-shadow: 0 15px 30px rgb(0 0 0 / 10%);
+    box-shadow: 0 15px 30px rgb(0 0 0 / 30%);
     transform: translate(-50%, -50%);
     box-sizing: border-box;
     padding: 70px 30px;
