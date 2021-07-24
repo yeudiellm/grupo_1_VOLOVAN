@@ -21,6 +21,10 @@ app.get('/register', (req, res)=> {
     res.render('register');
 }  );
 
+app.get('/productDesign', (req, res)=> { 
+    res.render('productDesign');
+}  );
+
 app.get('/productCart', (req, res)=> { 
     res.sendFile(path.resolve(__dirname,'./views/productCart.html'));
 }  );
