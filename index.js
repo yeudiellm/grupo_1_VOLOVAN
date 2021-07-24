@@ -22,7 +22,7 @@ app.get('/register', (req, res)=> {
 }  );
 
 app.get('/productCart', (req, res)=> { 
-    res.sendFile(path.resolve(__dirname,'./views/productCart.html'));
+    res.render('productCart');
 }  );
 
 app.get('/productDetail', (req, res)=> { 
