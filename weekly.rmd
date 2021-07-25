@@ -1,1 +1,8 @@
 
+#Diario de trabajo 
+
+##25/07/2021
+
+###Yeudiel Lara Moreno 
+Esta semana migre el index y el menu a archivos EJS. Unifique los diseños de CSS en un solo estilo. 
+
