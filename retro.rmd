@@ -1,1 +1,38 @@
+#Retrospectiva 
 
+##Sprint 1 
+
+###En este sprint hicimos bien... 
+
+Creamos los wireframes con pespectivas tanto celular como pantallas más grandes. Mantuvimos comunicación constante y fluida. 
+
+###En el sprint anterior hicimos mal... 
+
+No organizamos bien el tiempo 
+
+###Para el proximo sprint deberíamos empezar a hacer... 
+
+Organizarnos más rapido y designar mejor los deberes de cada persona. 
+
+###Para el proximo sprint deberíamos dejar de hacer... 
+
+Dejar de posponer las reuniones. 
+
+
+##Sprint 2
+
+###En este sprint hicimos bien... 
+
+Creamos los html con un diseño responsive.  
+
+###En el sprint anterior hicimos mal... 
+
+No organizamos bien el tiempo 
+
+###Para el proximo sprint deberíamos empezar a hacer... 
+
+Organizarnos más rapido y designar mejor los deberes de cada persona. 
+
+###Para el proximo sprint deberíamos dejar de hacer... 
+
+Dejar de posponer las reuniones.
