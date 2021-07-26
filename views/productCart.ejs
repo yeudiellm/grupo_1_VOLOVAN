@@ -1,25 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito de compras</title>
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/productCart.css">
-    
-</head>
+    <!-- Navbar (sit on top) -->
+    <%- include('head'); %>
 <body>
 
 <!-- Header -->
     
-    <%- include('header'); %>
+<%- include('header'); %>
     
 <!-- Detalle del carrito de compras -->
-
-    <section class="main-title">
-        <h1 class="main-title-text">CARRITO DE COMPRAS</h1>        
+    <section class="principal-titleCC">
+        <h1 class="main-perfect-title">CARRITO DE COMPRAS</h1>        
     </section>
     
     <section class="productSummarySection">
@@ -28,7 +19,7 @@
                 <img src="\images\VolovánExample.jpg" alt="" width="100px"> 
             </div>
             <div class="productContainer">
-                <h3>Nombre del producto</h3>
+                <h3 class="subtitleH3CC">Nombre del producto</h3>
                 <p class="productDescription">Descripción del producto</p>
                 <button class="quitButton" type="button" name="btQuit">QUITAR</button>
              </div>
@@ -53,7 +44,7 @@
                 <img src="\images\VolovánExample.jpg" alt="" width="100px"> 
             </div>
             <div class="productContainer">
-                <h3>Nombre del producto</h3>
+                <h3 class="subtitleH3CC">Nombre del producto</h3>
                 <p class="productDescription">Descripción del producto</p>
                 <button class="quitButton" type="button" name="btQuit">QUITAR</button>
              </div>
@@ -78,7 +69,7 @@
                 <img src="\images\VolovánExample.jpg" alt="" width="100px"> 
             </div>
             <div class="productContainer">
-                <h3>Nombre del producto</h3>
+                <h3 class="subtitleH3CC">Nombre del producto</h3>
                 <p class="productDescription">Descripción del producto</p>
                 <button class="quitButton" type="button" name="btQuit">QUITAR</button>
              </div>

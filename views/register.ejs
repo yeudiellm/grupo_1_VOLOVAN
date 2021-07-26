@@ -2,19 +2,7 @@
 <html lang="en">
 
 <!-- head -->
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/9bae110c2f.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/logRegStyles.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    <title>Form Register</title>
-</head>
+<%- include('head'); %>
 <!-- head -->
 
 <body>
@@ -22,6 +10,7 @@
 <!-- header -->
 <%- include('headerLoginRegister'); %>
 <!-- header -->
+<main>
 
     <div class="register-box">
         <img src="/images/logoSinFondo.png" alt="" class="avatar">
@@ -35,5 +24,11 @@
             <a href="/login">¿Ya tienes cuenta? Inicia sesión</a>
         </form>
     </div>
+    <section class="bloque-compensacion-2"></section>
+    
+</main>
+ <!-- Footer -->
+ <%- include('footer'); %>
+
 </body>
 </html>

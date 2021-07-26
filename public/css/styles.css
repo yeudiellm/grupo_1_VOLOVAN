@@ -1,5 +1,4 @@
-
- /*ESTILOS GENERALES*/
+/*ESTILOS GENERALES*/
 *{
     margin: 0px; 
     padding: 0px;
@@ -15,8 +14,6 @@ body, html {
     font-size: 14px;
     background-color: #ffffff;
 }
-
-
 
  /*ESTILOS DE HEADER */
 header{
@@ -117,8 +114,8 @@ header nav a{
     font-size: 20px;
 }
  /*ESTILOS DE FOOTER */
-
  footer{
+    position: static;
     text-align: center;
     align-items: center;
     width: 100vw;
@@ -129,7 +126,7 @@ header nav a{
     z-index: 100;
     max-height: 150px;
     color: white;
-    margin-top: 1450px;
+    margin-top: 50px;
 }
 
 footer p{
@@ -252,12 +249,19 @@ footer p{
 
 
 /*Complementarios de la pagina principal*/
-.inf-principal{
-    position: absolute; 
-    top: 90vh;
+.bloque-compensacion{
+    position: static;
+    margin-top: 70vh;
     text-align: center;
 }
-
+.inf-principal{
+    position: static; 
+    top: auto;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+}
 
 .main-titulos{
     background-color: #F2E205;
@@ -268,7 +272,6 @@ footer p{
     margin: 0;
     margin-bottom: 10px;
     text-align: center;
-
 }
 
 .inf-principal div{
@@ -436,6 +439,218 @@ main section article i{
 }
 
 
+/*Carrito de Compras*/
+
+.productSummarySection{
+    /* display: flex; */
+
+}
+.productSummary {
+     display: flex;
+     margin: 5px;
+     padding: 1px;
+     color: #333232;
+     text-align: justify;
+}
+
+.productImage {
+    display: inline-block;
+    margin: auto;
+     }
+
+.productContainer {
+    display: inline-block;
+    margin: auto;
+    padding: 5px;
+}
+
+.productDescription {
+    font-size: 10px;
+    color: #333232;
+    text-align: start;
+}
+
+.quitButton {
+    color: #333232;
+    padding: 5px;
+    width: 80px;
+    text-align: center;
+    font-size: 11px;
+    font-weight: bold;
+    }
+
+.detailsBoxes {
+    width: 95px;
+    padding: 5px;
+    text-align: center;
+    font-size: 15px;
+    color: #333232;
+    border: none;
+    }
+
+hr {
+    width: 100%;
+        }
+
+.detailsContainer {
+    display: inline-block;
+    margin: auto;
+    }
+
+.othersDetails {
+    display: inline-block;
+    padding: 20px;
+
+}
+
+.details {
+    color: #333232;
+    text-align: center;
+    padding: 5px;
+    font-size: 12px;
+    margin: 1px;
+}
+
+.subDetails {
+    color: #333232;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+  
+}
+.mainSummary {
+    text-align: center;
+}
+.summary {
+    display: inline-block;
+    text-align: center;
+    padding: 20px;
+    color: #333232;
+}
+
+.sendCost {
+    text-align: center;
+    padding: 20px;
+}
+
+.sendCost_text {
+    font-size: 15px;
+    color: #333232;
+}
+
+.buttons {
+    border-color: red;
+       text-align: center;
+    }
+
+.updateCartBt {
+    display: inline-block;
+    color: #333232;
+    padding: 10px;
+    height: 35px;
+    width: 190px;
+    font-size: 15px;
+    margin: 5px;
+    }
+
+.finishtOrderBt {
+    display: inline-block;
+    color: #333232;
+    background-color: #F2E205;
+    padding: 10px;
+    height: 35px;
+    width: 190px;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 5px;
+    }
+
+.subtitleH3CC{
+    font-size: 15px;
+    padding: 1px;
+    color:#333232;
+    text-align: start;
+}
+
+/*ESTILOS DE Login y Register*/
+div.login-box, div.register-box{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    width: 320px;
+    height: 420px;
+    box-shadow: 0 15px 30px rgb(0 0 0 / 30%);
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+.login-box .avatar, .register-box .avatar{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -50px;
+    left: calc(50%-50px);
+}
+
+.login-box h1, .register-box h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 24px;
+    display: block;
+}
+
+.login-box input{
+    width: 100%;
+    margin-bottom: 20px;
+    outline: none;
+    border: none;
+}
+
+.register-box input{
+    width: 100%;
+    margin-bottom: 10px;
+    outline: none;
+    border: none;
+}
+
+.login-box input[type="text"], .login-box input[type="email"], .login-box input[type="password"], .register-box input[type="text"], .register-box input[type="email"], .register-box input[type="password"]{
+    border: 1px solid gray;
+    background: transparent;
+    height: 30px;
+    font-size: 18px;
+}
+
+.login-box input[type="submit"], .register-box input[type="submit"]{
+    height: 30px;
+    background: #f2e205;
+    font-size: 20px;
+    border-radius: 20px;
+    margin-top: 8px;
+}
+
+.login-box input[type="submit"]:hover, .register-box input[type="submit"]:hover{
+    background: #bdb107;
+}
+
+.login-box a, .register-box a{
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 20px;
+    color: darkgray;
+}
+
+.login-box a:hover, .register-box a:hover{
+    color: gray;
+}
+
+.bloque-compensacion-2{
+    position: static;
+    margin-top: 90vh;
+    text-align: center;
+}
+
 
 
 
@@ -546,6 +761,13 @@ main section article i{
         box-shadow: 0px 0px 10px rgb(100, 100, 100);
     }
 
+}
+
+
+.principal-titleCC{
+    position: static;
+    margin-top: 20px;
+    text-align: center;
 }
 
 @media (min-width: 1200px){
