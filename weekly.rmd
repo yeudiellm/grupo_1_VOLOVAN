@@ -1,8 +1,20 @@
 
-#Diario de trabajo 
+#Diario de trabajo
+
+##11/07/2021
+
+###Hassir Lastre Sierra
+Nos reunimos en línas para trabajar juntos en el Sprint 3.
+
+##23/07/2021
+
+###Hassir Lastre Sierra
+Migré el html del carrito de compras a un archivo EJS y además incluí los archivos EJS de header y footer a la vista del carrito.
 
 ##25/07/2021
 
 ###Yeudiel Lara Moreno 
-Esta semana migre el index y el menu a archivos EJS. Unifique los diseños de CSS en un solo estilo. 
+Esta semana migre el index y el menu a archivos EJS. Unifique los diseños de CSS en un solo estilo.
 
+####Hassir Lastre Sierra 
+Agregué los resultados obtenidos de retrospectiva que se realizó y empecé a agregar las actividades a este diario.
