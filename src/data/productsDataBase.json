@@ -1,0 +1,18 @@
+[
+    {
+        "id": 0,
+        "name": "Volovan de picadillo",
+        "price": 15,
+        "category": "salado",
+        "description": "Volovan de pollo con tomate y chile",
+        "image": "product00.jpg"
+    },
+    {
+        "id": 1,
+        "name": "Volovan de nutella",
+        "price": 15,
+        "category": "dulce",
+        "description": "Volovan de nutella y queso crema",
+        "image": "product01.jpg"
+    }
+]

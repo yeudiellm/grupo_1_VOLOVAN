@@ -4,8 +4,7 @@
   "description": "El objetivo del proyecto será diseñar una sitio web para una panadería local, ubicada en Coatepec, Veracruz, México. \r La panadería en cuestion se espacializa en la venta de volovanes y otros productos hechos con masa de hojaldre.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev" :"nodemon index.js",
+    "start": "nodemon ./src/bin/www.js",
     "test": "echo \"Error: no test specified\" && exit 1"
 
   },
