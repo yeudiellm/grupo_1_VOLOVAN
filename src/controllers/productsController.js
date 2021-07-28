@@ -13,6 +13,9 @@ const controller = {
 	},
 	productCart: (req,res)=>{
 		res.render('products/productCart');
+	},
+	create: (req,res)=>{
+		res.render('products/create');
 	}
 
 	// Detail - Detail from one product

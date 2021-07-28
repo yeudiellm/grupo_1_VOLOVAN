@@ -2,7 +2,7 @@
 const path = require('path'); 
 const publicPath = path.resolve(__dirname, "../public" ); 
 const express = require('express');
-
+const createError = require('http-errors');
 // ************ express() ************
 const app = express();
 
@@ -22,6 +22,7 @@ const usersRouter = require('./routes/users');
 app.use('/', mainRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter); 
+//app.use('/productDesign',  productsRouter);
 
 // ************ catch 404 and forward to error handler ************
 app.use((req, res, next) => next(createError(404)));
