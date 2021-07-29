@@ -395,12 +395,12 @@ main section article i{
 }
 
 /* PRODUCTS / CREATE */
-.create-h2{
+.create-h2, .edit-h2{
     padding: 15px;
     padding-bottom: 25px;
 }
 
-.create-container{
+.create-container, .edit-container{
     width: 80%;
     min-height: 380px;
     margin: 20px auto;
@@ -409,19 +409,19 @@ main section article i{
     box-shadow: 0 10px 10px rgb(0 0 0 / 30%);
 }
 
-.create-etiqueta {
+.create-etiqueta, .edit-etiqueta {
     float: left;
     width: 20%;
     margin-top: 6px;
 }
 
-.create-campo {
+.create-campo, .edit-campo{
     float: left;
     width: 80%;
     margin-top: 6px;
 }
 
-.create-label{
+.create-label, .edit-label{
     float: right;
     text-align: right;
     font-size: 14px;
@@ -429,7 +429,7 @@ main section article i{
     padding: 12px 12px 12px 0;
 }
 
-.create-input{
+.create-input, .edit-input{
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -437,7 +437,7 @@ main section article i{
     resize: vertical;
 }
 
-.create-textarea, .create-file{
+.create-textarea, .create-file, .edit-textarea, .edit-file{
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -445,7 +445,7 @@ main section article i{
     resize: none;
 }
 
-.create-botones{
+.create-botones, .edit-botones{
     background-color: #bf2e21;
     color: #fff;
     font-weight: bold;

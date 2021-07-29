@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Navbar (sit on top) -->
+    <%- include('../partials/head'); %>
+<body>
+    <%- include('../partials/header'); %>
+
+    <div class="edit-container">
+        <h2 class="edit-h2"><i class="fas fa-utensils"></i> Editando producto #<%= idProduct %></h2>
+        <form action="¿?" method="___">
+
+            <div class="edit-fila">
+                <div class="edit-etiqueta">
+                    <label for="name" class="edit-label">Nombre:</label>
+                </div>
+                <div class="edit-campo">
+                    <input type="text" id="name" name="name" placeholder="Ej: Tacos de spaguetti" class="edit-input">
+                </div>
+            </div>
+
+            <div class="edit-fila">
+                <div class="edit-etiqueta">
+                    <label for="price" class="edit-label">Precio:</label>
+                </div>
+                <div class="edit-campo">
+                    <input type="text" id="price" name="price" placeholder="Ej: $10k" class="edit-input">
+                </div>
+            </div>
+
+            <div class="edit-fila">
+                <div class="edit-etiqueta">
+                    <label for="description" class="edit-label">Descipción:</label>
+                </div>
+                <div class="edit-campo">
+                    <textarea name="description" id="description" placeholder="¿De qué trata tu producto? Describe a detalle tu producto en esta área" class="edit-textarea"></textarea>
+                </div>
+
+            </div>
+
+            <div class="edit-fila">
+                <div class="edit-etiqueta">
+                    <label for="category" class="edit-label">Categoría:</label>
+                </div>
+                <div class="edit-campo">
+                    <select name="category" id="category" class="edit-input">
+                        <option value="null">Elegir opción</option>
+                        <option value="tacos">Tacos</option>
+                        <option value="pizza">Pizza</option>
+                        <option value="postres">Postres</option>
+                        <option value="bebidas">Bebidas</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="edit-fila">
+                <div class="edit-etiqueta">
+                    <label for="avatar" class="edit-label">Imagen del producto:</label>
+                </div>
+                <div class="edit-campo">
+                    <input type="file" name="avatar" id="avatar" class="edit-file" accept="image/png, image/jpeg" required>
+                </div>
+            </div>
+
+            <div class="fila-botones">
+                <input class="edit-botones" type="submit" name="submit" value="Actualizar producto" />
+                <input class="edit-botones" type="reset" name="reset" value="Restablecer" />
+            </div>
+
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <%- include('../partials/footer'); %>   
+</body>
+</html>

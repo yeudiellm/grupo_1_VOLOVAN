@@ -16,6 +16,10 @@ const controller = {
 	},
 	create: (req,res)=>{
 		res.render('products/create');
+	},
+	edit: (req, res)=>{
+		let idProduct = req.params.idProduct;
+		res.render('products/edit', {idProduct: idProduct});
 	}
 
 	// Detail - Detail from one product
