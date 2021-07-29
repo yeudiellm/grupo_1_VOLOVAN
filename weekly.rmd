@@ -19,8 +19,13 @@ Esta semana migre el index y el menu a archivos EJS. Unifique los diseños de CS
 ####Hassir Lastre Sierra 
 Agregué los resultados obtenidos de retrospectiva que se realizó y empecé a agregar las actividades a este diario.
 
-##29/07/2021
+##28/07/2021
 ##LUIS ÁNGEL NÚÑEZ
 ##- Agregado paquetería http-error
 ##- Agregado products/create a los routers-controllers
 ##- Terminado el diseño de la página products/create
+
+#29/07/2021
+##LUIS ÁNGEL NÚÑEZ
+##- Agregado products/edit/ a los routers-controllers
+##- Creado página products/edit/?idProducts
