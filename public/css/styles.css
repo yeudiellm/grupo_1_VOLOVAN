@@ -394,6 +394,73 @@ main section article i{
     animation: rotar 3s linear infinite alternate;
 }
 
+/* PRODUCTS / CREATE */
+.create-h2{
+    padding: 15px;
+    padding-bottom: 25px;
+}
+
+.create-container{
+    width: 80%;
+    min-height: 380px;
+    margin: 20px auto;
+    background-color: #FAF6F6;
+    padding: 10px;
+    box-shadow: 0 10px 10px rgb(0 0 0 / 30%);
+}
+
+.create-etiqueta {
+    float: left;
+    width: 20%;
+    margin-top: 6px;
+}
+
+.create-campo {
+    float: left;
+    width: 80%;
+    margin-top: 6px;
+}
+
+.create-label{
+    float: right;
+    text-align: right;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 12px 12px 12px 0;
+}
+
+.create-input{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.create-textarea, .create-file{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+}
+
+.create-botones{
+    background-color: #bf2e21;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 12px 20px;
+    margin-top: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.fila-botones {
+    text-align: center;
+}
+
+
 
 @keyframes rotar{
     0%{
@@ -577,11 +644,11 @@ div.login-box, div.register-box{
     position: absolute;
     top: 70%;
     left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
     width: 320px;
     height: 420px;
     box-shadow: 0 15px 30px rgb(0 0 0 / 30%);
-    transform: translate(-50%, -50%);
-    box-sizing: border-box;
     padding: 70px 30px;
 }
 
