@@ -29,3 +29,7 @@ Agregué los resultados obtenidos de retrospectiva que se realizó y empecé a a
 ##LUIS ÁNGEL NÚÑEZ
 ##- Agregado products/edit/ a los routers-controllers
 ##- Creado página products/edit/?idProducts
+
+#07/08/2021
+##LUIS ÁNGEL NÚÑEZ
+##- Creado el archivo users.json
