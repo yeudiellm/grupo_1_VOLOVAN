@@ -3,12 +3,12 @@ const express = require('express');
 const router = express.Router();
 
 // ************ Controller Require ************
-const productsController = require('../controllers/usersController');
+const usersController = require('../controllers/usersController');
 
 
 /*** BUY PRODUCTS ***/ 
-router.get('/login', productsController.login); 
-router.get('/register', productsController.register); 
+router.get('/login', usersController.login); 
+router.get('/register', usersController.register); 
 
 
 module.exports = router;
