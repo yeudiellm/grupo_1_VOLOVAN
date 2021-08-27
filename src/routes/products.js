@@ -1,19 +1,38 @@
 // ************ Require's ************
 const express = require('express');
 const router = express.Router();
+const upload =require('../config/multer');
 
 // ************ Controller Require ************
 const productsController = require('../controllers/productsController');
 
-/*** GET ALL PRODUCTS ***/ 
+/*** Lista de Productos  ***/ 
 router.get('/', productsController.index); 
 
-/*** BUY PRODUCTS ***/ 
+/*** Detalle de Producto  ***/ 
+//router.get('/:id', productsController.detail); 
+
+/*** Crear un producto  ***/ 
+router.get('/create', productsController.create);
+
+/*** Carrito de Compra de Productos ***/ 
 router.get('/productCart', productsController.productCart); 
 
-/** MANAGE PRODUCTS */
-router.get('/create', productsController.create);
+/*** Crear un producto  (Acción) ***/ 
+//router.post('/', productsController.build); 
+
+/*** Edición de Productos ***/ 
 router.get('/edit/:idProduct', productsController.edit);
+
+/*** Edición de Productos (Acción) ***/ 
+//router.put('/:idProduct', productsController.update);
+
+/*** Eliminación de Producto (Acción) ***/ 
+//router.delete('/:idProduct', productsController.delete);
+
+
+
+
 
 
 

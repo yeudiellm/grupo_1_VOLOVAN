@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -9,7 +9,16 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 const controller = {
 	// Root - Show all products
 	index: (req, res) => {
-		res.render('products/products',{products:products, toThousand:toThousand});
+		const productSalados = products.filter(product => product.category==="salados");
+		const productDulces = products.filter(product => product.category==="dulces");
+		const productEspeciales = products.filter(product => product.category==="especiales");
+		const productPostres = products.filter(product => product.category==="postres");
+		res.render('products/products',
+			{productSalados:productSalados,
+			 productDulces:productDulces, 
+			 productEspeciales:productEspeciales, 
+			 productPostres: productPostres,
+			 toThousand:toThousand});
 	},
 	productCart: (req,res)=>{
 		res.render('products/productCart');
@@ -18,7 +27,8 @@ const controller = {
 		res.render('products/create');
 	},
 	edit: (req, res)=>{
-		let idProduct = req.params.idProduct;
+		let idProduct =parseInt(req.params.idProduct);
+		
 		res.render('products/edit', {idProduct: idProduct});
 	}
 

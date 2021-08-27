@@ -67,69 +67,68 @@
         <section class="seccion-compra">
             <h2 class="main-titulos"> Especialidades </h2>
 
-             <!-- Articulo -->
-            <%- include('articulo'); %>
-             <!-- Articulo -->
-             <%- include('articulo'); %>
-              <!-- Articulo -->
-            <%- include('articulo'); %>
-             <!-- Articulo -->
-             <%- include('articulo'); %>
-              <!-- Articulo -->
-            <%- include('articulo'); %>
-             <!-- Articulo -->
-             <%- include('articulo'); %>
+			      <% productEspeciales.forEach(product =>{ %>
+              <article class="product">
+                <img src="/images/products/<%=product.image%>" alt="<%=product.product_name%>" class="img_product">
+                <h2> <%=product.product_name%></h2>
+                <div class="product_specific">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p class="precio"><%=product.product_price%></p>
+                    <p class="descripcion"> <%=product.product_description%></p>
+                </div>
+              </article>
+            <% })%> 
+
         </section>
 
 
         <section class="seccion-compra">
             <h2 class="main-titulos"> Volovanes Salados </h2>
-             <!-- Articulo -->
-             <%- include('articulo'); %>
-             <!-- Articulo -->
-             <%- include('articulo'); %>
-              <!-- Articulo -->
-            <%- include('articulo'); %>
-             <!-- Articulo -->
-             <%- include('articulo'); %>
-              <!-- Articulo -->
-            <%- include('articulo'); %>
-             <!-- Articulo -->
-             <%- include('articulo'); %>
+
+            <% productSalados.forEach(product =>{ %>
+              <article class="product">
+                <img src="/images/products/<%=product.image%>" alt="<%=product.product_name%>" class="img_product">
+                <h2> <%=product.product_name%></h2>
+                <div class="product_specific">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p class="precio"><%=product.product_price%></p>
+                    <p class="descripcion"> <%=product.product_description%></p>
+                </div>
+              </article>
+              <% })%> 
         </section>
 
 
         <section class="seccion-compra">
             <h2 class="main-titulos"> Volovanes Dulces </h2>
-             <!-- Articulo -->
-             <%- include('articulo'); %>
-             <!-- Articulo -->
-             <%- include('articulo'); %>
-              <!-- Articulo -->
-            <%- include('articulo'); %>
-             <!-- Articulo -->
-             <%- include('articulo'); %>
-              <!-- Articulo -->
-            <%- include('articulo'); %>
-             <!-- Articulo -->
-             <%- include('articulo'); %>
+
+            <% productDulces.forEach(product =>{ %>
+              <article class="product">
+                <img src="/images/products/<%=product.image%>" alt="<%=product.product_name%>" class="img_product">
+                <h2> <%=product.product_name%></h2>
+                <div class="product_specific">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p class="precio"><%=product.product_price%></p>
+                    <p class="descripcion"> <%=product.product_description%></p>
+                </div>
+              </article>
+            <% })%> 
 
         </section>
 
         <section class="seccion-compra">
             <h2 class="main-titulos"> Postres </h2>
-            <!-- Articulo -->
-            <%- include('articulo'); %>
-            <!-- Articulo -->
-            <%- include('articulo'); %>
-            <!-- Articulo -->
-            <%- include('articulo'); %>
-            <!-- Articulo -->
-            <%- include('articulo'); %>
-            <!-- Articulo -->
-            <%- include('articulo'); %>
-            <!-- Articulo -->
-            <%- include('articulo'); %>
+            <% productPostres.forEach(product =>{ %>
+              <article class="product">
+                <img src="/images/products/<%=product.image%>" alt="<%=product.product_name%>" class="img_product">
+                <h2> <%=product.product_name%></h2>
+                <div class="product_specific">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p class="precio"><%=product.product_price%></p>
+                    <p class="descripcion"> <%=product.product_description%></p>
+                </div>
+              </article>
+            <% })%> 
         </section>
     </main>
  

@@ -5,7 +5,7 @@
         "product_price": 13.00,
         "product_description": "Hojaldre relleno con jamon, queso amarillo y salsa chipotle. ",
         "category": "salados",
-        "image": "volova-jamon.jpg"
+        "image": "volovan-jamon.jpg"
     },
     {
         "product_id": 2,
@@ -21,7 +21,7 @@
         "product_price": 13.00,
         "product_description": "Hojaldre relleno con piña, jamon, queso amarillo y salsa chipotle",
         "category": "salados",
-        "image": "volovan-hawaiano.jpg"
+        "image": "volovan-hawiano.jpg"
     },
     {
         "product_id": 4,
@@ -85,7 +85,7 @@
         "product_price": 13.00,
         "product_description": "Hojaldre relleno con manjar de leche",
         "category": "dulces",
-        "image": "volovan-zarzamora"
+        "image": "volovan-zarzamora.jpg"
     },
     {
         "product_id": 12,
@@ -196,7 +196,7 @@
         "product_name": "CheeseCake de Oreo",
         "product_price": 13.00,
         "product_description": "Pay de queso y galletas Oreo",
-        "category": "especiales",
+        "category": "postres",
         "image": "volovan-pay-oreo.jpg"
     },
     {
@@ -204,7 +204,7 @@
         "product_name": "Pay de Limon",
         "product_price": 13.00,
         "product_description": "Pay de queso sabor a limon",
-        "category": "especiales",
+        "category": "postres",
         "image": "volovan-pay-limon.jpg"
     }
 ]
