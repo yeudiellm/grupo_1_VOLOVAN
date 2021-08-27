@@ -6,33 +6,33 @@
     <%- include('../partials/header'); %>
 
     <div class="edit-container">
-        <h2 class="edit-h2"><i class="fas fa-utensils"></i> Editando producto #<%= idProduct %></h2>
-        <form action="¿?" method="___">
+        <h2 class="edit-h2"><i class="fas fa-utensils"></i> Editando el producto: <%=product.product_name%> </h2>
+        <form action="/products/edit/<%=product.product_id%>?_method=PUT" method="POST" enctype = "multipart/form-data">
 
             <div class="edit-fila">
                 <div class="edit-etiqueta">
-                    <label for="name" class="edit-label">Nombre:</label>
+                    <label for="product_name" class="edit-label">Nombre:</label>
                 </div>
                 <div class="edit-campo">
-                    <input type="text" id="name" name="name" placeholder="Ej: Tacos de spaguetti" class="edit-input">
+                    <input type="text" id="product_name" name="product_name" placeholder="<%=product.product_name%>" class="edit-input">
                 </div>
             </div>
 
             <div class="edit-fila">
                 <div class="edit-etiqueta">
-                    <label for="price" class="edit-label">Precio:</label>
+                    <label for="product_price" class="edit-label">Precio:</label>
                 </div>
                 <div class="edit-campo">
-                    <input type="text" id="price" name="price" placeholder="Ej: $10k" class="edit-input">
+                    <input type="number" id="product_price" name="product_price" placeholder="<%=product.product_price%>" class="edit-input">
                 </div>
             </div>
 
             <div class="edit-fila">
                 <div class="edit-etiqueta">
-                    <label for="description" class="edit-label">Descipción:</label>
+                    <label for="product_description" class="edit-label">Descipción:</label>
                 </div>
                 <div class="edit-campo">
-                    <textarea name="description" id="description" placeholder="¿De qué trata tu producto? Describe a detalle tu producto en esta área" class="edit-textarea"></textarea>
+                    <textarea name="product_description" id="product_description" placeholder="<%=product.product_description%>" class="edit-textarea"></textarea>
                 </div>
 
             </div>
@@ -44,26 +44,26 @@
                 <div class="edit-campo">
                     <select name="category" id="category" class="edit-input">
                         <option value="null">Elegir opción</option>
-                        <option value="tacos">Tacos</option>
-                        <option value="pizza">Pizza</option>
+                        <option value="salados">Salados</option>
+                        <option value="dulces">Dulces</option>
+                        <option value="especiales">Especialidades</option>
                         <option value="postres">Postres</option>
-                        <option value="bebidas">Bebidas</option>
                     </select>
                 </div>
             </div>
             
             <div class="edit-fila">
                 <div class="edit-etiqueta">
-                    <label for="avatar" class="edit-label">Imagen del producto:</label>
+                    <label for="productImage" class="edit-label">Imagen del producto:</label>
                 </div>
                 <div class="edit-campo">
-                    <input type="file" name="avatar" id="avatar" class="edit-file" accept="image/png, image/jpeg" required>
+                    <input type="file" name="productImage" id="productImage" class="edit-file"  required>
                 </div>
             </div>
 
             <div class="fila-botones">
-                <input class="edit-botones" type="submit" name="submit" value="Actualizar producto" />
-                <input class="edit-botones" type="reset" name="reset" value="Restablecer" />
+                <button class="edit-botones" type="submit">Actualizar producto</button>
+                <button class="edit-botones" type="reset">Reestablecer</button>
             </div>
 
         </form>

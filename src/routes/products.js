@@ -19,13 +19,13 @@ router.get('/create', productsController.create);
 router.get('/productCart', productsController.productCart); 
 
 /*** Crear un producto  (Acción) ***/ 
-//router.post('/', productsController.build); 
+router.post('/create', upload.single('productImage'), productsController.build); 
 
 /*** Edición de Productos ***/ 
-router.get('/edit/:idProduct', productsController.edit);
+router.get('/edit/:id', productsController.edit);
 
 /*** Edición de Productos (Acción) ***/ 
-//router.put('/:idProduct', productsController.update);
+router.put('/edit/:id', upload.single('productImage'), productsController.update);
 
 /*** Eliminación de Producto (Acción) ***/ 
 //router.delete('/:idProduct', productsController.delete);

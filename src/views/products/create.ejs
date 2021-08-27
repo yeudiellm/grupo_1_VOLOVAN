@@ -7,32 +7,32 @@
 
     <div class="create-container">
         <h2 class="create-h2"><i class="fas fa-utensils"></i> Agregar nuevo producto</h2>
-        <form action="¿?" method="___">
+        <form action="/products/create" method="POST" enctype = "multipart/form-data">
 
             <div class="create-fila">
                 <div class="create-etiqueta">
-                    <label for="name" class="create-label">Nombre:</label>
+                    <label for="product_name" class="create-label">Nombre:</label>
                 </div>
                 <div class="create-campo">
-                    <input type="text" id="name" name="name" placeholder="Ej: Tacos de spaguetti" class="create-input">
+                    <input type="text" id="product_name" name="product_name" placeholder="Ej: Volovan de ..." class="create-input">
                 </div>
             </div>
 
             <div class="create-fila">
                 <div class="create-etiqueta">
-                    <label for="price" class="create-label">Precio:</label>
+                    <label for="product_price" class="create-label">Precio:</label>
                 </div>
                 <div class="create-campo">
-                    <input type="text" id="price" name="price" placeholder="Ej: $10k" class="create-input">
+                    <input type="number" id="product_price" name="product_price" placeholder="Ej: 10.00" class="create-input">
                 </div>
             </div>
 
             <div class="create-fila">
                 <div class="create-etiqueta">
-                    <label for="description" class="create-label">Descipción:</label>
+                    <label for="product_description" class="create-label">Descipción:</label>
                 </div>
                 <div class="create-campo">
-                    <textarea name="description" id="description" placeholder="¿De qué trata tu producto? Describe a detalle tu producto en esta área" class="create-textarea"></textarea>
+                    <textarea name="product_description" id="product_description" placeholder="¿De qué trata tu producto? Describe a detalle tu producto en esta área" class="create-textarea"></textarea>
                 </div>
 
             </div>
@@ -44,35 +44,30 @@
                 <div class="create-campo">
                     <select name="category" id="category" class="create-input">
                         <option value="null">Elegir opción</option>
-                        <option value="tacos">Tacos</option>
-                        <option value="pizza">Pizza</option>
+                        <option value="salados">Salados</option>
+                        <option value="dulces">Dulces</option>
+                        <option value="especiales">Especialidades</option>
                         <option value="postres">Postres</option>
-                        <option value="bebidas">Bebidas</option>
                     </select>
                 </div>
             </div>
             
             <div class="create-fila">
                 <div class="create-etiqueta">
-                    <label for="avatar" class="create-label">Imagen del producto:</label>
+                    <label for="productImage" class="create-label">Imagen del producto:</label>
                 </div>
                 <div class="create-campo">
-                    <input type="file" name="avatar" id="avatar" class="create-file" accept="image/png, image/jpeg" required>
+                    <input type="file" name="productImage" id="productImage" class="create-file" required>
                 </div>
             </div>
 
             <div class="fila-botones">
-                <input class="create-botones" type="submit" name="submit" value="Agregar producto" />
-                <input class="create-botones" type="reset" name="reset" value="Restablecer" />
+                <button class="create-botones" type="submit">Agregar producto</button>
+                <button class="create-botones" type="reset" >Reestablecer</button>
             </div>
 
         </form>
     </div>
-
-
-
-
-
 
 
     <!-- Footer -->

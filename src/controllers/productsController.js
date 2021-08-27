@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { parse } = require('path');
 const path = require('path');
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
@@ -26,11 +27,51 @@ const controller = {
 	create: (req,res)=>{
 		res.render('products/create');
 	},
+	build: (req, res) => {
+		const newProduct = {
+			product_id : parseInt(Date.now(),10),
+			product_name: req.body.product_name,
+			product_price: 13.00,
+			product_description: req.body.product_description,
+			category: req.body.category,
+			image: req.file.filename || 'default-image.png'
+		} 
+		products.push(newProduct); 
+		const productsJSON =JSON.stringify(products,null,2); 
+		fs.writeFileSync(productsFilePath, productsJSON);
+		res.redirect('/products');
+	},
 	edit: (req, res)=>{
-		let idProduct =parseInt(req.params.idProduct);
-		
-		res.render('products/edit', {idProduct: idProduct});
-	}
+		let id =parseInt(req.params.id,10);
+		const product=products.find(p => p.product_id === id);	
+		console.log(product);
+		res.render('products/edit', {product:product,toThousand:toThousand});
+	},
+	update: (req, res) => {
+		const productId = parseInt(req.params.id,10); 
+		const product = products.find( p=> p.product_id===productId);
+		if(product){
+			const NewValues= req.body; 
+			product.product_name =NewValues.product_name || product.product_name; 
+			product.product_price= NewValues.product_price || product.product_price; 
+			product.product_discount= NewValues.product_discount ||product.product_discount;
+			product.product_description=NewValues.description ||product.product_description;
+			product.category =NewValues.category || product.category; 
+			if(req.file){
+				try {
+					fs.unlinkSync('public/images/products/'+product.image);
+					product.image = req.file.filename || 'default-image.png';
+					console.log('File removed');
+				} catch(err) {
+					console.error('Something wrong happened removing the file', err);
+				}
+			}
+		}
+		const productsJSON =JSON.stringify(products,null,2); 
+		fs.writeFileSync(productsFilePath, productsJSON);
+		res.redirect('/products');
+	},
+
 
 	// Detail - Detail from one product
     //LATER
