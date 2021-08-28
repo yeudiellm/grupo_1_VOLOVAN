@@ -1,45 +1,62 @@
-#Retrospectiva 
+# Retrospectiva 
 
-##SPRINT 1
+## SPRINT 1
 
-###En este sprint hicimos bien: 
+### En este sprint hicimos bien: 
 Creamos los wireframes con pespectivas tanto celular como pantallas más grandes. Mantuvimos comunicación constante y fluida. 
 
-###En el sprint anterior hicimos mal:
+### En el sprint anterior hicimos mal:
 No organizamos bien el tiempo.
 
-###Para el proximo sprint deberíamos empezar a hacer: 
+### Para el proximo sprint deberíamos empezar a hacer: 
 Organizarnos más rapido y designar mejor los deberes de cada persona. 
 
-###Para el proximo sprint deberíamos dejar de hacer:
+### Para el proximo sprint deberíamos dejar de hacer:
 Dejar de posponer las reuniones. 
 
 
-##SPRINT 2
+## SPRINT 2
 
-###En este sprint hicimos bien:
+### En este sprint hicimos bien:
 Creamos los html con un diseño responsive.  
 
-###En el sprint anterior hicimos mal:
+### En el sprint anterior hicimos mal:
 No organizamos bien el tiempo 
 
-###Para el proximo sprint deberíamos empezar a hacer:
+### Para el proximo sprint deberíamos empezar a hacer:
 Organizarnos más rapido y designar mejor los deberes de cada persona. 
 
-###Para el proximo sprint deberíamos dejar de hacer: 
+### Para el proximo sprint deberíamos dejar de hacer: 
 Dejar de posponer las reuniones.
 
 
-##SPRINT 3
+## SPRINT 3
 
-###En este sprint hicimos bien:
+### En este sprint hicimos bien:
 Creamos las diferentes vistas en EJS y se incluyeron las que se repiten (head, header y footer) en las otras vistas.
 
-###En el sprint anterior hicimos mal:
+### En el sprint anterior hicimos mal:
 La organización del tiempo ha sido una área de oportunidad recurrente en el equipo, debido a que los tres realizamos otras actividades tanto académicas como laborales.
 
-###Para el proximo sprint deberíamos empezar a hacer:
+### Para el proximo sprint deberíamos empezar a hacer:
 Orginzar mejor tanto el tiempo como las responsabilidades, y asignar las actividades teniendo en cuenta las capacidades y fortalezas de cada miembro.
 
-###Para el proximo sprint deberíamos dejar de hacer: 
+### Para el proximo sprint deberíamos dejar de hacer: 
 Posponer las reuniones.
+
+
+## SPRINT 4
+
+### En este sprint hicimos bien:
+Continuar haciendo los sprints, evitando generar retrasos en las entregas.
+
+### En el sprint anterior hicimos mal:
+Retrasos en el sprint 4 y 5 dejando varios dias inactivo el proyecto.
+
+### Para el proximo sprint deberíamos empezar a hacer:
+Regresar a implementar las reunión daily o weekly, últimamente por motivos universitarios hemos detenido las reuniones diarias o semanales por lo que es buena idea volver a encontrar espacio para exponer cada quien dudas o impedimentos en los puntos requeridos de los sprints.
+
+### Para el proximo sprint deberíamos dejar de hacer: 
+Ir posponiendo entregas de los puntos requeridos en cada sprint o las reuniones weekly igualmente dejar de posponerlas.
+
+
