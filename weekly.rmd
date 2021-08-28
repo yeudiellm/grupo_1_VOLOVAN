@@ -4,36 +4,46 @@
 ##11/07/2021
 
 ###Hassir Lastre Sierra
+###Yeudiel Lara Moreno
+###Luis Ángel Nuñez
 Nos reunimos en línas para trabajar juntos en el Sprint 3.
 
 ##23/07/2021
-
 ###Hassir Lastre Sierra
 Migré el html del carrito de compras a un archivo EJS y además incluí los archivos EJS de header y footer a la vista del carrito.
 
 ##25/07/2021
-
 ###Yeudiel Lara Moreno 
 Esta semana migre el index y el menu a archivos EJS. Unifique los diseños de CSS en un solo estilo.
-
-####Hassir Lastre Sierra 
+###Hassir Lastre Sierra 
 Agregué los resultados obtenidos de retrospectiva que se realizó y empecé a agregar las actividades a este diario.
 
 ##28/07/2021
 ##LUIS ÁNGEL NÚÑEZ
-##- Agregado paquetería http-error
-##- Agregado products/create a los routers-controllers
-##- Terminado el diseño de la página products/create
+ Agregado paquetería http-error
+ Agregado products/create a los routers-controllers
+ Terminado el diseño de la página products/create
 
 #29/07/2021
 ##LUIS ÁNGEL NÚÑEZ
-##- Agregado products/edit/ a los routers-controllers
-##- Creado página products/edit/?idProducts
+ Agregado products/edit/ a los routers-controllers
+ Creado página products/edit/?idProducts
 
 #07/08/2021
 ##LUIS ÁNGEL NÚÑEZ
-##- Creado el archivo users.json
+  Creado el archivo users.json
 
 ##09/08/2021
-###Hassir Lastre Sierra
+##Hassir Lastre Sierra
 ## Creé el archivo products.json
+
+##22/08/2021
+##Yeudiel Lara Moreno
+Ausencia por enfermedad 
+
+##27/08/2021 
+##Yeudiel Lara Moreno 
+Modifique el archivo de products.json para que fuera más verosimil. 
+Hice el CRUD completo de productos 
+
+
