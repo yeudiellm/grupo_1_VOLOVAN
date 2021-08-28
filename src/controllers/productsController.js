@@ -71,25 +71,27 @@ const controller = {
 		fs.writeFileSync(productsFilePath, productsJSON);
 		res.redirect('/products');
 	},
-
-
-	// Detail - Detail from one product
-    //LATER
-
-	// Create - Form to create
-    //LATER
-	
-	// Create -  Method to store
-	//LATER
-
-	// Update - Form to edit
-	//LATER 
-
-	// Update - Method to update
-	//LATER
-
-	// Delete - Delete one product from DB
-	//LATER
+	detail: (req, res) => {
+		const productId=parseInt(req.params.id,10);
+		const product=products.find(p => p.product_id === productId);
+		res.render('products/detail',{product:product, toThousand:toThousand});
+	},
+	delete: (req,res)=>{
+		const deleteId = parseInt(req.params.id,10);
+		const productDelete = products.find(p => p.product_id===deleteId); 
+		const productsF = products.filter((p)=>{
+			return p.product_id!= deleteId; 
+		});
+		const productsJSON =JSON.stringify(productsF,null,2); 
+		fs.writeFileSync(productsFilePath, productsJSON);
+		try {
+			fs.unlinkSync('public/images/products/'+productDelete.image);
+			console.log('File removed');
+		} catch(err) {
+			console.error('Something wrong happened removing the file', err);
+		}
+		res.redirect('/products');
+	}
 };
 
 module.exports = controller;

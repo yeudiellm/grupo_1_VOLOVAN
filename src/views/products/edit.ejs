@@ -43,7 +43,7 @@
                 </div>
                 <div class="edit-campo">
                     <select name="category" id="category" class="edit-input">
-                        <option value="null">Elegir opción</option>
+                        <option value="<%=product.category%>"> <%=product.category%></option>
                         <option value="salados">Salados</option>
                         <option value="dulces">Dulces</option>
                         <option value="especiales">Especialidades</option>
@@ -57,7 +57,7 @@
                     <label for="productImage" class="edit-label">Imagen del producto:</label>
                 </div>
                 <div class="edit-campo">
-                    <input type="file" name="productImage" id="productImage" class="edit-file"  required>
+                    <input type="file" name="productImage" id="productImage" class="edit-file">
                 </div>
             </div>
 

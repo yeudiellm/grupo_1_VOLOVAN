@@ -9,9 +9,6 @@ const productsController = require('../controllers/productsController');
 /*** Lista de Productos  ***/ 
 router.get('/', productsController.index); 
 
-/*** Detalle de Producto  ***/ 
-//router.get('/:id', productsController.detail); 
-
 /*** Crear un producto  ***/ 
 router.get('/create', productsController.create);
 
@@ -27,8 +24,11 @@ router.get('/edit/:id', productsController.edit);
 /*** Edición de Productos (Acción) ***/ 
 router.put('/edit/:id', upload.single('productImage'), productsController.update);
 
+/*** Detalle de Producto  ***/ 
+router.get('/detail/:id', productsController.detail); 
+
 /*** Eliminación de Producto (Acción) ***/ 
-//router.delete('/:idProduct', productsController.delete);
+router.delete('/delete/:id', productsController.delete);
 
 
 

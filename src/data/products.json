@@ -201,18 +201,18 @@
   },
   {
     "product_id": 26,
-    "product_name": "Pay de Lima Limon",
+    "product_name": "Carlotta version",
     "product_price": "20",
     "product_description": "Pay de queso sabor a limon",
     "category": "postres",
     "image": "volovan-carlota-limon.jpg"
   },
   {
-    "product_id": 1630102242154,
-    "product_name": "Volovan de Maní",
+    "product_id": 1630112969093,
+    "product_name": "Volovan de salchicha",
     "product_price": 13,
-    "product_description": "Volovan de crema de maní",
-    "category": "dulces",
-    "image": "volovan-crema-de-mani.jpg"
+    "product_description": "Volovan relleno de salchicha y salsa chipotle",
+    "category": "salados",
+    "image": "volovan-salchicha.jpg"
   }
 ]
