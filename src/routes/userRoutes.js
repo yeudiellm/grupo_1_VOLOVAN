@@ -17,9 +17,16 @@ const storage = multer.diskStorage({
 })
 
 const uploadFile = multer({storage});
+
+const validations = [
+    body('name').notEmpty().withMessage('El nombre está vacío'),
+    body('email').notEmpty().withMessage('El correo está vacío'),
+    body('password').notEmpty().withMessage('La contraseña está vacía'),
+    body('repeat-password').notEmpty().withMessage('Repite la contraseña'),
+]
+
 // ************ Controller Require ************
 const usersController = require('../controllers/usersController');
-
 
 /*** USERS CONTROL ***/ 
 // Formulario login
@@ -28,6 +35,6 @@ router.get('/login', usersController.login);
 // Formulario registro
 router.get('/register', usersController.register); 
 // Procesar el registro
-router.post('/register', uploadFile.single('avatar'), usersController.processRegister); 
+router.post('/register', uploadFile.single('avatar'), validations, usersController.processRegister); 
 
 module.exports = router;
