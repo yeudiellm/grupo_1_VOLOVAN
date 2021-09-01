@@ -20,9 +20,11 @@ const uploadFile = multer({storage});
 
 const validations = [
     body('name').notEmpty().withMessage('El nombre está vacío'),
-    body('email').notEmpty().withMessage('El correo está vacío'),
+    body('email')
+        .notEmpty().withMessage('El correo está vacío').bail()
+        .isEmail().withMessage('Debes escribir un formato de correo válido'),
     body('password').notEmpty().withMessage('La contraseña está vacía'),
-    body('repeat-password').notEmpty().withMessage('Repite la contraseña'),
+    body('repeatPassword').notEmpty().withMessage('Repite la contraseña'),
 ]
 
 // ************ Controller Require ************

@@ -24,10 +24,30 @@
 
         <form method="POST" action="/users/register" enctype="multipart/form-data">
 
-            <input type="text" name="name" placeholder="Nombre">
-            <input type="email" name="email" placeholder="Correo electrónico" >
-            <input type="password" name="password" placeholder="Contraseña" >
-            <input type="password" name="repeat-password" placeholder="Repetir contraseña" >
+            <% if (locals.oldData && oldData.name) { %>
+                <input type="text" name="name" placeholder="Nombre" value="<%= oldData.name %> ">
+            <% } else { %>
+                <input type="text" name="name" placeholder="Nombre" >
+            <% } %>
+
+            <% if (locals.oldData && oldData.email) { %>
+                <input type="email" name="email" placeholder="Correo electrónico" value="<%= oldData.email %> ">
+            <% } else { %>
+                <input type="email" name="email" placeholder="Correo electrónico" >
+            <% } %>
+
+            <% if (locals.oldData && oldData.password) { %>
+                <input type="password" name="password" placeholder="Contraseña" value="<%= oldData.password %> ">
+            <% } else { %>
+                <input type="password" name="password" placeholder="Contraseña" >
+            <% } %>
+            
+            <% if (locals.oldData && oldData.repeatPassword) { %>
+                <input type="password" name="repeatPassword" placeholder="Repetir contraseña" value="<%= oldData.repeatPassword %> ">
+            <% } else { %>
+                <input type="password" name="repeatPassword" placeholder="Repetir-Contraseña" >
+            <% } %>
+
             <label for="profile-image">Imagen de perfil</label>
             <input type="file" name="avatar" id="avatar" class="profile-image" >
             

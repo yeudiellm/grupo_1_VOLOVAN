@@ -16,8 +16,10 @@ const controller = {
 		if(resultValidation.errors.length > 0){
 			return res.render('users/register',{
 				errors: resultValidation.mapped(),
-				oldData: req.body
+				oldData: req.body,
 			});
+		}else{
+			res.send('Los campos están bien')
 		}
 
 	},
