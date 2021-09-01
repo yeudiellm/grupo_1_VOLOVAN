@@ -763,6 +763,10 @@ hr {
 }
 
 /*ESTILOS DE Login y Register*/
+p.logRegError{
+    color: red;
+}
+
 div.login-box, div.register-box{
     position: absolute;
     top: 70%;

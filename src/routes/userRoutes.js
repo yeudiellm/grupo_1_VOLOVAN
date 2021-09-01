@@ -24,7 +24,22 @@ const validations = [
         .notEmpty().withMessage('El correo está vacío').bail()
         .isEmail().withMessage('Debes escribir un formato de correo válido'),
     body('password').notEmpty().withMessage('La contraseña está vacía'),
-    body('repeatPassword').notEmpty().withMessage('Repite la contraseña'),
+    // body('repeatPassword').notEmpty().withMessage('Repite la contraseña'),
+    body('avatar').custom((value, {req})=>{
+        let file = req.file;
+        let acceptedExtensions = ['.jpg', '.png', '.gif'];
+
+        if (!file) {
+            throw new Error ('Tienes que subir una imagen');
+        } else{
+            let fileExtension = path.extname(file.originalname);
+            if (!acceptedExtensions.includes(fileExtension)) {
+                throw new Error (`Solo se admiten formatos: ${acceptedExtensions.join(', ')}`);
+            }
+        }
+        
+        return true;
+    })
 ]
 
 // ************ Controller Require ************
@@ -35,7 +50,7 @@ const usersController = require('../controllers/usersController');
 router.get('/login', usersController.login);
 
 // Formulario registro
-router.get('/register', usersController.register); 
+router.get('/register', usersController.register);
 // Procesar el registro
 router.post('/register', uploadFile.single('avatar'), validations, usersController.processRegister); 
 

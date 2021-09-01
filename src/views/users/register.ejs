@@ -17,7 +17,7 @@
         <h1>Registrarse</h1>
         <% if (locals.errors) { %>
             <% for( let oneError in errors ) { %>
-                <p><%= errors[oneError].msg  %> </p>
+                <p class="logRegError"><%= errors[oneError].msg  %> </p>
             <% } %>
         <% } %>
 
@@ -42,16 +42,23 @@
                 <input type="password" name="password" placeholder="Contraseña" >
             <% } %>
             
-            <% if (locals.oldData && oldData.repeatPassword) { %>
+            <!-- <% if (locals.oldData && oldData.repeatPassword) { %>
                 <input type="password" name="repeatPassword" placeholder="Repetir contraseña" value="<%= oldData.repeatPassword %> ">
             <% } else { %>
                 <input type="password" name="repeatPassword" placeholder="Repetir-Contraseña" >
-            <% } %>
+            <% } %> -->
+
+            <!-- <% if (locals.oldData && oldData.avatar) { %>
+                <label for="profile-image">Imagen de perfil</label>
+                <input type="file" name="avatar" id="avatar" class="profile-image" >
+            <% } else { %>
+                <input type="password" name="repeatPassword" placeholder="Repetir-Contraseña" >
+            <% } %> -->
 
             <label for="profile-image">Imagen de perfil</label>
             <input type="file" name="avatar" id="avatar" class="profile-image" >
             
-            <input type="submit" value="Ingresar">
+            <input type="submit" value="Registrarse">
             <a href="/users/login">¿Ya tienes cuenta? Inicia sesión</a>
         </form>
     </div>
