@@ -45,6 +45,42 @@ const controller = {
 	login: (req, res) => {
 		res.render('users/login');
 	},
+	processLogin: (req, res)=>{
+		const resultValidation2 = validationResult(req);
+
+		if(resultValidation2.errors.length > 0){
+			return res.render('users/login',{
+				errors: resultValidation2.mapped(),
+				oldData: req.body,
+			});
+		}else{
+			let userToLogin = User.findByField('email', req.body.email);
+		
+			if (userToLogin) {
+				let isPasswordOk = bcryptjs.compareSync(req.body.password, userToLogin.password)
+				if (isPasswordOk) {
+					return res.send('Logueado correctamente');
+				}else{
+					return res.render('users/login', {
+						errors: {
+							email: {
+								msg: 'El correo o contraseña es incorrecto'
+							}
+						}
+					});
+				}
+			}
+			return res.render('users/login', {
+				errors: {
+					email: {
+						msg: 'Este email no está en nuestra base de datos'
+					}
+				}
+			});
+		}
+
+		
+	}
 
 };
 

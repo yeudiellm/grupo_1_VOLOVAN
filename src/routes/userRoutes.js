@@ -42,16 +42,25 @@ const validations = [
     })
 ]
 
+const validationsLogin = [
+    body('email')
+        .notEmpty().withMessage('El correo está vacío').bail()
+        .isEmail().withMessage('Debes escribir un formato de correo válido'),
+    body('password').notEmpty().withMessage('La contraseña está vacía'),
+]
+
 // ************ Controller Require ************
 const usersController = require('../controllers/usersController');
 
 /*** USERS CONTROL ***/ 
-// Formulario login
-router.get('/login', usersController.login);
-
 // Formulario registro
 router.get('/register', usersController.register);
 // Procesar el registro
 router.post('/register', uploadFile.single('avatar'), validations, usersController.processRegister); 
+
+// Formulario login
+router.get('/login', usersController.login);
+// Procesar el login
+router.post('/login', validationsLogin, usersController.processLogin);
 
 module.exports = router;

@@ -14,7 +14,10 @@
     <div class="login-box">
         <img src="/images/logoSinFondo.png" alt="" class="avatar">
         <h1>Inicia sesión</h1>
-        <form action="#">
+        <% if (locals.errors && errors.email) { %>
+                <p class="logRegError"><%= errors.email.msg  %> </p>
+        <% } %>
+        <form method="POST" action="/users/login">
             <input type="email" name="email" placeholder="Correo electrónico" required>
             <input type="password" name="password" placeholder="Contraseña" required>
             <input type="submit" value="Ingresar">
