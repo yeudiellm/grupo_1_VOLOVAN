@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- head -->
+       <%- include('../partials/head'); %>
+<!-- head -->
+
+<body>
+
+<!-- header -->
+<%- include('../partials/headerLoginRegister'); %>
+<!-- header -->
+<main>
+    <div>
+        <h1>Hola <%= user.name %> </h1>
+        <h2><%= user.email %> </h2>
+        <img src="/images/avatars/<%= user.avatar %> " alt="profile-image" height="300px">
+    </div>
+    <section class="bloque-compensacion-2"></section>
+</main>
+ <!-- Footer -->
+ <%- include('../partials/footer'); %>
+</body>
+</html>

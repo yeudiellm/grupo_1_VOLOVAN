@@ -6,7 +6,7 @@ const User = require ('../../models/User');
 
 const controller = {
 	register: (req, res) => {
-		res.render('users/register');
+		return res.render('users/register');
 	},
 	processRegister: (req, res) => {
 		const resultValidation = validationResult(req);
@@ -43,7 +43,7 @@ const controller = {
 
 	},
 	login: (req, res) => {
-		res.render('users/login');
+		return res.render('users/login');
 	},
 	processLogin: (req, res)=>{
 		const resultValidation2 = validationResult(req);
@@ -59,14 +59,17 @@ const controller = {
 			if (userToLogin) {
 				let isPasswordOk = bcryptjs.compareSync(req.body.password, userToLogin.password)
 				if (isPasswordOk) {
-					return res.send('Logueado correctamente');
+					delete userToLogin.password;
+					req.session.userLogged = userToLogin;
+					return res.redirect('/users/profile');
 				}else{
 					return res.render('users/login', {
 						errors: {
 							email: {
 								msg: 'El correo o contraseña es incorrecto'
 							}
-						}
+						},
+						oldData: req.body,
 					});
 				}
 			}
@@ -75,12 +78,19 @@ const controller = {
 					email: {
 						msg: 'Este email no está en nuestra base de datos'
 					}
-				}
+				},
+				oldData: req.body,
 			});
 		}
 
 		
-	}
+	},
+	profile: (req, res) => {
+		console.log(req.session);
+		return res.render('users/profile', {
+			user: req.session.userLogged
+		});
+	}, 
 
 };
 

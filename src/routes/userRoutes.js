@@ -63,4 +63,8 @@ router.get('/login', usersController.login);
 // Procesar el login
 router.post('/login', validationsLogin, usersController.processLogin);
 
+// Perfil de usuario
+router.get('/profile', usersController.profile);
+
+
 module.exports = router;
