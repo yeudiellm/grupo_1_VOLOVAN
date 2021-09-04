@@ -5,6 +5,7 @@ const express = require('express');
 const session = require('express-session');
 const createError = require('http-errors');
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
+const userLoggedMiddleware = require('../middlewares/userLoggedMiddleware');
 // ************ express() ************
 const app = express();
 app.use(express.urlencoded({extended: false}));
@@ -12,10 +13,11 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.static(publicPath));// Necesario para los archivos estáticos en el folder /public
 app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 app.use(session({
-    secret: "Shh, It's a secret",
+    secret: "Shh, just to session work",
     resave: false,
     saveUninitialized: false,
 }));
+app.use(userLoggedMiddleware);
 // ************ Template Engine  ************
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));// Define la ubicación de la carpeta de las Vistas
