@@ -5,6 +5,7 @@ const path = require('path')
 const multer = require('multer');
 
 const { body } = require('express-validator');
+const usersController = require('../controllers/usersController');
 
 // Middlewares
 const guestMiddleware = require('../../middlewares/guestMiddleware');
@@ -53,11 +54,9 @@ const validationsLogin = [
     body('password').notEmpty().withMessage('La contraseña está vacía'),
 ]
 
-// ************ Controller Require ************
-const usersController = require('../controllers/usersController');
-const { request } = require('express');
-const { createRequire } = require('module');
-const { routes } = require('..');
+// ************ Controller Require ************  // DEPRECATED
+//const { request } = require('express');
+//const { createRequire } = require('module');
 
 /*** USERS CONTROL ***/ 
 // Formulario registro
