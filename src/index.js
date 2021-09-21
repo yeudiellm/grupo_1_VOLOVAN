@@ -37,5 +37,3 @@ app.use((req, res, next) => next(createError(404)));
 
 // ************ exports app ************
 module.exports = app;
-
-

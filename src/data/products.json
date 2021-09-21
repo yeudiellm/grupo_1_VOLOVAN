@@ -136,14 +136,6 @@
     "image": "volovan-guayaba.jpg"
   },
   {
-    "product_id": 18,
-    "product_name": "Princesas",
-    "product_price": 18,
-    "product_description": "Hojaldre relleno con salchicha, queso de hebra, queso amarillo, piña y salsa chipotle",
-    "category": "especiales",
-    "image": "volovan-princesa.jpg"
-  },
-  {
     "product_id": 19,
     "product_name": "Megavolo",
     "product_price": 18,

@@ -41,11 +41,12 @@
 
 						<a href="#" class="buy-now-button">COMPRAR AHORA</a>
 						<hr>
-
-						<a href="/products/edit/<%=product.product_id%>" class="action-button edit">EDITAR PRODUCTO</a>
-						<form action="/products/delete/<%=product.product_id%>?_method=DELETE" method="POST" style="display: inline-flex">
-							<button type="submit" class="action-button delete">ELIMINAR</button>
-						</form>
+						<% if (locals.userLogged) { %>
+							<a href="/products/edit/<%=product.product_id%>" class="action-button edit">EDITAR PRODUCTO</a>
+							<form action="/products/delete/<%=product.product_id%>?_method=DELETE" method="POST" style="display: inline-flex">
+								<button type="submit" class="action-button delete">ELIMINAR</button>
+							</form>
+						<% } %>
 					</article>
 				</div>
 			</div>

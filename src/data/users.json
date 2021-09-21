@@ -158,5 +158,21 @@
   "email": "luis@correo.com",
   "password": "$2a$10$qrB1wqk0edVF0LEeL0v37OPeDk67qDDm3IqUcXyOcXnL9HuE6Gzbq",
   "avatar": "img_avatar.png"
+ },
+ {
+  "id": 21,
+  "type": "user",
+  "name": "yeudiel",
+  "email": "yeudiel@correo.com",
+  "password": "$2a$10$WSLlElbtyzDt5JfAKMJljuNs1iCMFn/gi2jXg/6qwIFKib/Temj.a",
+  "avatar": "1632096692340_img.png"
+ },
+ {
+  "id": 22,
+  "type": "user",
+  "name": "YEUDIEL2   ",
+  "email": "yeudiel2@correo.com",
+  "password": "$2a$10$vgVa83j95ZbHMuvEKwVoh.F/ZsU7Q7wxZm7Cy2NFBLzOdpgfT/uSi",
+  "avatar": "1632096764973_img.png"
  }
 ]
