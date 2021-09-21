@@ -60,3 +60,16 @@ Regresar a implementar las reunión daily o weekly, últimamente por motivos uni
 Ir posponiendo entregas de los puntos requeridos en cada sprint o las reuniones weekly igualmente dejar de posponerlas.
 
 
+## SPRINT 5
+
+### En este sprint hicimos bien:
+El formulario de resgisto con los campos mínimos, la opción para cargar una imagen de perfil y el guarado encriptado de las contraseñas en formato JSON. Además, se realizó el formulario de login y se incluyó el campo de email y password. Por último, se establecieron las rutas de huéspedes y usuarios.
+
+### En el sprint anterior hicimos mal:
+Retrasos con la entrega de este sprint y dejar por varios dias inactivo el proyecto.
+
+### Para el proximo sprint deberíamos empezar a hacer:
+Implementar las reunión daily o weekly.
+
+### Para el proximo sprint deberíamos dejar de hacer: 
+No posponer tanto las entregas de los sprint como las reuniones weekly.
