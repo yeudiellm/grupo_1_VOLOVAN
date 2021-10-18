@@ -61,6 +61,10 @@ const controller = {
 				if (isPasswordOk) {
 					delete userToLogin.password;
 					req.session.userLogged = userToLogin;
+					//Seteo de cookie en caso de activar casilla (1día duración)
+					if (req.body.remember_me) {
+						res.cookie('userEmail', req.body.email, {maxAge: ((1000 * 60) * 1440)})
+					}
 					return res.redirect('/users/profile');
 				}else{
 					return res.render('users/login', {
@@ -91,6 +95,8 @@ const controller = {
 		});
 	},
 	logout: (req, res)=>{
+		//Destrucción de logueo y de cookie guardada
+		res.clearCookie('userEmail')
 		req.session.destroy();
 		return res.redirect('/')
 	},
