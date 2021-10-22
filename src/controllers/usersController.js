@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
-const User = require ('../../models/User');
+const User = require ('../config/User');
 
 const controller = {
 	register: (req, res) => {

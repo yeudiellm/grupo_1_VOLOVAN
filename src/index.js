@@ -6,7 +6,7 @@ const session = require('express-session');
 const cookies = require('cookie-parser');
 const createError = require('http-errors');
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
-const userLoggedMiddleware = require('../middlewares/userLoggedMiddleware');
+const userLoggedMiddleware = require('.//config/userLoggedMiddleware');
 // ************ express() ************
 const app = express();
 app.use(express.urlencoded({extended: false}));

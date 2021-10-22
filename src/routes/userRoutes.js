@@ -8,8 +8,8 @@ const { body } = require('express-validator');
 const usersController = require('../controllers/usersController');
 
 // Middlewares
-const guestMiddleware = require('../../middlewares/guestMiddleware');
-const authMiddleware = require('../../middlewares/authMiddleware');
+const guestMiddleware = require('../config/guestMiddleware');
+const authMiddleware = require('../config/authMiddleware');
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
