@@ -24,7 +24,7 @@ const controller = {
 				return res.render('users/register',{
 					errors: {
 						email: {
-							msg: 'Este correo ya está registrado'
+							msg: 'Este correo ya está registrado.'
 						}
 					},
 					oldData: req.body,
@@ -70,7 +70,7 @@ const controller = {
 					return res.render('users/login', {
 						errors: {
 							email: {
-								msg: 'El correo o contraseña es incorrecto'
+								msg: 'El correo o contraseña son incorrectos.'
 							}
 						},
 						oldData: req.body,
@@ -80,7 +80,7 @@ const controller = {
 			return res.render('users/login', {
 				errors: {
 					email: {
-						msg: 'Este email no está en nuestra base de datos'
+						msg: 'Este email no está en nuestra base de datos.'
 					}
 				},
 				oldData: req.body,
