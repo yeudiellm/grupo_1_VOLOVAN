@@ -78,7 +78,7 @@ const controller = {
 			})
 		}
 
-		// continua con el flujo si no hay errores en la validacion
+		// continua con el flujo si no hay errores en validacion
 		const productId = parseInt(req.params.id,10); 
 		const product = products.find( p=> p.product_id===productId);
 		if(product){
