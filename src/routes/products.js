@@ -7,7 +7,7 @@ const path = require('path')
 const { body } = require('express-validator')
 
 //**** Validaciones express-validator
-const validationsCreate = [
+const validations = [
     body('product_name')
         .notEmpty().withMessage('Ingresa un nombre.').bail()
         .isLength({min:5,max:undefined}).withMessage('El nombre debe tener minimo 5 caracteres.'),
@@ -46,13 +46,13 @@ router.get('/create', productsController.create);
 router.get('/productCart', productsController.productCart); 
 
 /*** Crear un producto  (Acción) ***/ 
-router.post('/create', upload.single('productImage'), validationsCreate, productsController.build); 
+router.post('/create', upload.single('productImage'), validations, productsController.build); 
 
 /*** Edición de Productos ***/ 
 router.get('/edit/:id', productsController.edit);
 
 /*** Edición de Productos (Acción) ***/ 
-router.put('/edit/:id', upload.single('productImage'), productsController.update);
+router.put('/edit/:id', upload.single('productImage'), validations, productsController.update);
 
 /*** Detalle de Producto  ***/ 
 router.get('/detail/:id', productsController.detail); 

@@ -64,6 +64,21 @@ const controller = {
 		res.render('products/edit', {product:product,toThousand:toThousand});
 	},
 	update: (req, res) => {
+
+		const resultValidation2 = validationResult(req);
+		
+		// proceso de validación
+		if (resultValidation2.errors.length > 0) {
+			let id =parseInt(req.params.id,10);
+			const product=products.find(p => p.product_id === id);	
+			return res.render('products/edit', {
+				product: product, toThousand:toThousand,
+				errors: resultValidation2.mapped(),
+				oldData: req.body
+			})
+		}
+
+		// continua con el flujo si no hay errores en la validacion
 		const productId = parseInt(req.params.id,10); 
 		const product = products.find( p=> p.product_id===productId);
 		if(product){
@@ -86,6 +101,8 @@ const controller = {
 		const productsJSON =JSON.stringify(products,null,2); 
 		fs.writeFileSync(productsFilePath, productsJSON);
 		res.redirect('/products');
+
+
 	},
 	detail: (req, res) => {
 		const productId=parseInt(req.params.id,10);

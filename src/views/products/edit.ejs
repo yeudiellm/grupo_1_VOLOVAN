@@ -7,6 +7,14 @@
 
     <div class="edit-container">
         <h2 class="edit-h2"><i class="fas fa-utensils"></i> Editando el producto: <%=product.product_name%> </h2>
+
+        <!-- recibe errors -->
+        <% if (locals.errors) { %>
+            <% for( let oneError in errors ) { %>
+                <p style="color: red;"><%= errors[oneError].msg %> </p>
+            <% } %>
+        <% } %>
+
         <form action="/products/edit/<%=product.product_id%>?_method=PUT" method="POST" enctype = "multipart/form-data">
 
             <div class="edit-fila">
@@ -14,7 +22,11 @@
                     <label for="product_name" class="edit-label">Nombre:</label>
                 </div>
                 <div class="edit-campo">
-                    <input type="text" id="product_name" name="product_name" placeholder="<%=product.product_name%>" class="edit-input">
+                    <% if (locals.oldData && oldData.product_name) { %>
+                        <input type="text" id="product_name" name="product_name" value="<%= oldData.product_name %>" class="create-input">
+                    <% } else { %>
+                        <input type="text" id="product_name" name="product_name" placeholder="<%=product.product_name%>" class="edit-input">
+                    <% } %>
                 </div>
             </div>
 
@@ -23,7 +35,13 @@
                     <label for="product_price" class="edit-label">Precio:</label>
                 </div>
                 <div class="edit-campo">
-                    <input type="number" id="product_price" name="product_price" placeholder="<%=product.product_price%>" class="edit-input">
+                    
+                    <% if (locals.oldData && oldData.product_price) { %>
+                        <input type="number" id="product_price" name="product_price" value="<%= oldData.product_price %>"  class="create-input">
+                    <% } else { %>
+                        <input type="number" id="product_price" name="product_price" placeholder="<%=product.product_price%>" class="edit-input">
+                    <% } %>
+
                 </div>
             </div>
 
@@ -32,7 +50,13 @@
                     <label for="product_description" class="edit-label">Descipción:</label>
                 </div>
                 <div class="edit-campo">
-                    <textarea name="product_description" id="product_description" placeholder="<%=product.product_description%>" class="edit-textarea"></textarea>
+
+                    <% if (locals.oldData && oldData.product_description) { %>
+                        <textarea name="product_description" id="product_description"  class="create-textarea"><%= oldData.product_description %></textarea>
+                    <% } else { %>
+                        <textarea name="product_description" id="product_description" placeholder="<%=product.product_description%>" class="edit-textarea"></textarea>
+                    <% } %>
+
                 </div>
 
             </div>
