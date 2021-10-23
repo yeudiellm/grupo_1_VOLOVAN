@@ -7,10 +7,10 @@ module.exports = (sequelize, dataTypes) =>{
             autoIncrement: true,
             allowNull: false,
         },  
-        //fecha: {
-        //    type: dataTypes.DATETIME,
-        //    allowNull: false,
-        //}, 
+        fecha: {
+            type: dataTypes.DATE,
+            allowNull: false,
+        }, 
         cantidad:{
             type: dataTypes.INTEGER.UNSIGNED.ZEROFILL,
             allowNull: false,

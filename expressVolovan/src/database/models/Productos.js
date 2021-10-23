@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) =>{
         precio: {
             type: DataTypes.DECIMAL(4,2), 
             allowNull: false,
-            defaultValue: 13.00,
+            //defaultValue: 13.00,
         }, 
         imagen_nombre: {
             type: DataTypes.STRING(100), 
