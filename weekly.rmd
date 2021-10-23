@@ -35,7 +35,7 @@ Agregué los resultados obtenidos de retrospectiva que se realizó y empecé a a
 
 ##09/08/2021
 ##Hassir Lastre Sierra
-Creé el archivo products.json
+Se creó el archivo products.json
 
 ##22/08/2021
 ##Yeudiel Lara Moreno
@@ -46,4 +46,10 @@ Ausencia por enfermedad
 Modifique el archivo de products.json para que fuera más verosimil. 
 Hice el CRUD completo de productos 
 
+##20/10/2021
+##Hassir Lastre Sierra
+Se creó aplicación de React
 
+##22/10/2021
+##Hassir Lastre Sierra
+Se actualizó retro.rmd y weekly.rmd

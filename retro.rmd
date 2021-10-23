@@ -73,3 +73,45 @@ Implementar las reunión daily o weekly.
 
 ### Para el proximo sprint deberíamos dejar de hacer: 
 No posponer tanto las entregas de los sprint como las reuniones weekly.
+
+## SPRINT 6
+
+### En este sprint hicimos bien:
+El diagrama de base de datos, el scrpit de creación de estructura de base de datos, la creación de carpeta Sequeliza y el CRUD.
+
+### En el sprint anterior hicimos mal:
+Retrasos con la entrega de este sprint.
+
+### Para el proximo sprint deberíamos empezar a hacer:
+Implementar las reunión daily o weekly.
+
+### Para el proximo sprint deberíamos dejar de hacer: 
+No posponer tanto las entregas de los sprint como las reuniones weekly.
+
+## SPRINT 7
+
+### En este sprint hicimos bien:
+Validaciones del back-end con Express Validator, validaciones del front-end con JavaScript.
+
+### En el sprint anterior hicimos mal:
+Retrasos con la entrega de este sprint.
+
+### Para el proximo sprint deberíamos empezar a hacer:
+Implementar las reunión daily o weekly.
+
+### Para el proximo sprint deberíamos dejar de hacer: 
+No posponer tanto las entregas de los sprint como las reuniones weekly.
+
+## SPRINT 8
+
+### En este sprint hicimos bien:
+Quizás por la promura, pero en este Sprint se trabajó más en equipo y hubo buena comunicación. Lo cual, llevó a concluir con el proyecto integrador de la mejor manera y cumplir con los objetivos.
+
+### En el sprint anterior hicimos mal:
+Los retrasos con la entrega de este sprint y de los anteriores, fue un problema que se arrastró durante todo el curso, pero entendemos que también los otros proyectos personales de cada uno demandaban de nuestra atención.
+
+### Para el proximo sprint deberíamos empezar a hacer:
+Aunque no habrá un próximo Sprint, porque este es el último, sabemos que parte del trabajo en equipo son las reunión daily o weekly.
+
+### Para el proximo sprint deberíamos dejar de hacer: 
+Para los próximos Sprints de otros proyectos, superaremos las areas de mejora que aquí se presentaron.
