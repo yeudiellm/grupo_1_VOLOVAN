@@ -8,6 +8,8 @@ const { send } = require('process');
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+const db= require("../database/models");
+
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 const controller = {
@@ -28,6 +30,10 @@ const controller = {
 		res.render('products/productCart');
 	},
 	create: (req,res)=>{
+		db.CategoriasProductos.findAll()
+		.then(function(categorias){
+			return res.render('products/products', {categorias});
+		});
 		res.render('products/create');
 	},
 	build: (req, res) => {
