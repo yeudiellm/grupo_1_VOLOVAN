@@ -174,5 +174,13 @@
   "email": "yeudiel2@correo.com",
   "password": "$2a$10$vgVa83j95ZbHMuvEKwVoh.F/ZsU7Q7wxZm7Cy2NFBLzOdpgfT/uSi",
   "avatar": "1632096764973_img.png"
+ },
+ {
+  "id": 23,
+  "type": "user",
+  "name": "luis2",
+  "email": "luis2@correo.com",
+  "password": "$2a$10$37r/Iv02./Tc27ITI4CQ5O5qrgZuv01AotPS1ErjukskbRHgt6uu.",
+  "avatar": "1634952634759_img.png"
  }
 ]
