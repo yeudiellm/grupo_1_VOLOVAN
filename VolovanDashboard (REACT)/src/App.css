@@ -1,0 +1,145 @@
+/*ESTILOS GENERALES*/
+
+*{
+  margin: 0px; 
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/*ESTILOS DE HEADER */
+header{
+  background-color: rgb(153, 35, 24);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+.logo{
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+}
+
+/* ESTILOS DE HEADER: App.js */
+
+.mainTittle{
+  color: #ffffff;
+  text-align: center;
+  padding: 30px;
+  font-size: 50px;
+}
+.tittle{
+  text-align: center;
+  color:rgb(153, 35, 24)
+
+}
+
+.buttonCointainer{
+  display: flex;
+  padding: 20px;
+  background-color: rgb(153, 35, 24);
+  justify-content: center;
+  align-content: space-around;
+  row-gap: 30px;
+}
+
+.buttonLinks{
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 15px 32px;
+  font: 16px;
+  transition-duration: 0.4s;
+  }
+
+  .buttonLinks:hover{
+    background-color:#ffffff;
+    color:black;
+  }
+
+  /* ESTILOS DE MAINSUMMARY */
+
+  .mainSummarySubtittle{
+    text-align: center;
+    padding: 30px;
+  }
+
+  .summaryContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+    row-gap: 10px;
+    column-gap: 10px;
+    
+  }
+
+  .summaryContainerItem:hover{
+    background-color: rgb(236, 236, 236);
+  }
+
+  .summaryContainerItem{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    
+    width: 300px;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 10px;
+
+    background-color: #e3e3ee;
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+  .containerItemContent{
+    padding: 10px;
+  }
+  .textItemContent{
+    color:rgb(153, 35, 24);
+    font-size: 20px;
+    text-align: center;
+    
+  }
+
+  .textItemContentDescription{
+    color: gray;
+    text-align: center;
+  }
+
+  .icon{
+    width: 100px;
+    color: green;
+  }
+
+   /*ESTILOS DE FOOTER */
+   
+   footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    justify-content: space-around;
+    background-color: rgb(153, 35, 24);
+    padding: 20px;
+    border: 10px;
+    
+}
+.footerText{
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: bold;
+}
+.marca-registrada{
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(153, 35, 24);
+    color: #ffffff;
+    padding: 5px;
+    border: 5px;
+}
