@@ -8,7 +8,7 @@ import cupcakeImage from "../assets/images/cupcake.png"
 function ProductsList(){
     return (
         <div>
-            <div className="productLisTitle"><h1>LISTA DE PRODUCTOS</h1></div>
+            <div className="productLisTitle"><h2>LISTA DE PRODUCTOS</h2></div>
             
             <div className="productContainer">
                 <div className="productItem">

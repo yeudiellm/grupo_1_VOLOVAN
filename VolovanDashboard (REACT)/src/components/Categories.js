@@ -31,6 +31,7 @@ function Categories(){
                     <div className="categoriesItem"><h4 className="categoriesTextDescription">2 productos</h4></div>                    
                 </div>
             </div>
+            <div><hr className="line2"/></div>
         </div>
 
     );

@@ -25,6 +25,8 @@ function MainSummary(){
                     <div className="summaryItem"><h4 className="summaryTextDescription">4 categorías</h4></div>                    
                 </div>
             </div>
+            <div><hr className="line"/></div>
+    
             </div>
 
     );

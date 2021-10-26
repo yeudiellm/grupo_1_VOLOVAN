@@ -67,7 +67,7 @@ header{
     text-align: initial;
     padding: 10px;
     font-size: 10px;
-    color: gray;
+    color: rgb(85, 85, 85);
   }
 
   .summaryContainer{
@@ -78,7 +78,7 @@ header{
 
   .chartSummaryContainer{
     display: inline-block;
-    width: 150px;
+    width: 201px;
     height: 100px;
     margin: 3px;
     border-radius: 3px;
@@ -91,7 +91,7 @@ header{
   }
 
   .summaryItem{
-    padding: 5px;
+    padding: 2px;
   }
   
   .summaryItemImage{
@@ -104,7 +104,7 @@ header{
 
   .summaryText{
     color:rgb(153, 35, 24);
-    font-size: 12px;
+    font-size: 15px;
     text-align: center;
     
   }
@@ -112,7 +112,7 @@ header{
   .summaryTextDescription{
     color: gray;
     text-align: center;
-    font-size: 10px;
+    font-size: 12px;
   }
 
 
@@ -122,7 +122,7 @@ header{
     text-align: initial;
     padding: 10px;
     font-size: 10px;
-    color: gray;
+    color: rgb(85, 85, 85);
   }
 
   .CategoriesContainer{
@@ -231,7 +231,7 @@ header{
     text-align: center;
     padding: 10px;
     font-size: 10px;
-    color: gray;
+    color: rgb(85, 85, 85);
   }
 
   .productContainer{  
@@ -241,7 +241,7 @@ header{
 
   .productItem{
     display: inline-block;  
-    width: 105px;
+    width: 110px;
     height: 70px;
     margin: 3px;
     border-radius: 3px;
@@ -254,20 +254,21 @@ header{
   }
 
   .productItemImage{
-    width: 30px;
+    width: 35px;
+    margin: 5px;
   }
 
   .productContainerItem{
     text-align: center;
-    padding: 0px;
-    width: 100px;
-    height: 50px;
+    width: 108px;
+    margin: 5px;
+    height: 40px;
 
   }
 
   .itemName{
     color:rgb(153, 35, 24);
-    font-size: 8px;
+    font-size: 9px;
     text-align:center;
   }
 
@@ -329,16 +330,66 @@ header{
     top: 637px;
 }
 
+/* ESTILOS DE RECENT ACTIVITY */
+
+.recentActivity{
+  display: inline-block;
+  width: 305px;
+  margin: 3px;
+  height: 120px;
+  border-radius: 3px;
+  background-color: #e3e3ee;
+  box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.mainRecenteActivityTitle{
+  text-align: justify;
+  padding: 10px;
+  font-size: 10px;
+  color: rgb(85, 85, 85);
+}
+
+.titleRecent{
+  font-size: 15px;
+  text-align: center;
+  font-weight: bold;
+  color: rgb(153, 35, 24);
+  padding: 10px;
+}
+
+.recentActivityItem{
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
+}
+
+.recentActivityText{
+  color: gray;
+  font-size: 15px;
+}
+
+.recentActivityItemImage{
+  display: inline-block;
+  margin: 5px;
+  padding:5px;
+}
+
+.recentActivityImage{
+  width: 50px;
+}
+
+/* POSICIONES ABSOLUTAS */
+
 .mainSummaryPosition{
   position: absolute;
   left: 10px;
-  top: 150px;
+  top: 140px;
 }
 
 .productListPosition{
   position: absolute;
   left: 649px;
-  top: 135px;
+  top: 140px;
 }
 
 .categoriesPosition{
@@ -349,5 +400,23 @@ header{
 
 .lastProductUserPosition{
   position: absolute;
-  top: 450px;
+  top: 465px;
+  left: 10px;
+}
+
+
+.line{
+  width: 619px;
+  height: 3px;
+  background-color: gray;
+  position: absolute;
+  top: 155px;
+}
+
+.line2{
+  width: 619px;
+  height: 3px;
+  background-color: gray;
+  position: absolute;
+  top: 165px;
 }
