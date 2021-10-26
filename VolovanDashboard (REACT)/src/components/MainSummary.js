@@ -7,25 +7,25 @@ import categoriesImage from "../assets/images/menu.png"
 function MainSummary(){
     return (
         <div>
-            <div className="mainSummarySubtittle"><h2>PRINCIPALES MÉTRICAS</h2></div>
+            <div className="mainSummaryTitle"><h2>PRINCIPALES MÉTRICAS</h2></div>
             <div className="summaryContainer">
-                <div className="summaryContainerItem">
-                    <div className="containerItemContent"><img className="icon" src={userImage}/></div>
-                    <div className="containerItemContent"><h2 className="textItemContent">USUARIOS</h2></div>
-                    <div className="containerItemContent"><h4 className="textItemContentDescription">146 usuarios en total</h4></div>                    
+                <div className="chartSummaryContainer">
+                    <div className="summaryItemImage"><img className="summaryImage" src={userImage}/></div>
+                    <div className="summaryItem"><h2 className="summaryText">USUARIOS</h2></div>
+                    <div className="summaryItem"><h4 className="summaryTextDescription">146 usuarios</h4></div>                    
                 </div>
-                <div className="summaryContainerItem">
-                    <div className="containerItemContent"><img className="icon" src={productImage}/></div>
-                    <div className="containerItemContent"><h2 className="textItemContent">PRODUCTOS</h2></div>
-                    <div className="containerItemContent"><h4 className="textItemContentDescription">20 productos</h4></div>                    
+                <div className="chartSummaryContainer">
+                    <div className="summaryItemImage"><img className="summaryImage" src={productImage}/></div>
+                    <div className="summaryItem"><h2 className="summaryText">PRODUCTOS</h2></div>
+                    <div className="summaryItem"><h4 className="summaryTextDescription">26 productos</h4></div>                    
                 </div>
-                <div className="summaryContainerItem">
-                    <div className="containerItemContent"><img className="icon" src={categoriesImage}/></div>
-                    <div className="containerItemContent"><h2 className="textItemContent">CATEGORÍAS</h2></div>
-                    <div className="containerItemContent"><h4 className="textItemContentDescription">4 categorías</h4></div>                    
+                <div className="chartSummaryContainer">
+                    <div className="summaryItemImage"><img className="summaryImage" src={categoriesImage}/></div>
+                    <div className="summaryItem"><h2 className="summaryText">CATEGORÍAS</h2></div>
+                    <div className="summaryItem"><h4 className="summaryTextDescription">4 categorías</h4></div>                    
                 </div>
             </div>
-        </div>
+            </div>
 
     );
 }

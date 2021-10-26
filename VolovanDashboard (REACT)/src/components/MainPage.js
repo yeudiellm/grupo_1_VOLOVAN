@@ -7,10 +7,10 @@ import LastProductUser from "./LastProductUser";
 function MainPage(){
     return (
         <div>
-            <MainSummary />
-            <ProductsList />
-            <Categories />
-            <LastProductUser />
+            <div className="mainSummaryPosition"><MainSummary /></div>
+            <div className="productListPosition"><ProductsList /></div>
+            <div className="categoriesPosition"><Categories /></div>
+            <div className="lastProductUserPosition"><LastProductUser /></div>
         </div>
 
     );

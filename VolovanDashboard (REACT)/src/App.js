@@ -2,8 +2,8 @@ import React from "react";
 
 import MainPage from "./components/MainPage";
 import LastProductUser from "./components/LastProductUser";
-import Categories from "./components/Categories";
-import ProductsList from "./components/ProductsList";
+import CategoriesPage from "./components/CategoriesPage";
+import ProductListPage from "./components/ProductListPage";
 
 import {Link, Route} from "react-router-dom";
 
@@ -19,8 +19,8 @@ function App() {
       
       <Route exact path="/" component={MainPage}/>
       <Route exact path="/lastproduct-user" component={LastProductUser}/>
-      <Route excat path="/categories" component={Categories}/>
-      <Route exact path="/productslist" component={ProductsList}/>
+      <Route excat path="/categories" component={CategoriesPage}/>
+      <Route exact path="/productslist" component={ProductListPage}/>
     </div>
   );
 }

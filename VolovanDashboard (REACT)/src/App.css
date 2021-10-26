@@ -18,9 +18,9 @@ header{
 }
 
 .logo{
-  width: 150px;
-  height: 150px;
-  padding: 10px;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
 }
 
 /* ESTILOS DE HEADER: App.js */
@@ -28,8 +28,8 @@ header{
 .mainTittle{
   color: #ffffff;
   text-align: center;
-  padding: 30px;
-  font-size: 50px;
+  padding: 20px;
+  font-size: 30px;
 }
 .tittle{
   text-align: center;
@@ -39,7 +39,8 @@ header{
 
 .buttonCointainer{
   display: flex;
-  padding: 20px;
+  padding: 5px;
+  border: 5px;
   background-color: rgb(153, 35, 24);
   justify-content: center;
   align-content: space-around;
@@ -62,84 +63,291 @@ header{
 
   /* ESTILOS DE MAINSUMMARY */
 
-  .mainSummarySubtittle{
-    text-align: center;
-    padding: 30px;
+  .mainSummaryTitle{
+    text-align: initial;
+    padding: 10px;
+    font-size: 10px;
+    color: gray;
   }
 
   .summaryContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    row-gap: 30px;
-    row-gap: 10px;
-    column-gap: 10px;
+    text-align: initial;
+    width: 650px;
     
   }
 
-  .summaryContainerItem:hover{
-    background-color: rgb(236, 236, 236);
-  }
-
-  .summaryContainerItem{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-    
-    width: 300px;
-    padding: 20px;
-    border-radius: 5px;
-    margin: 10px;
-
+  .chartSummaryContainer{
+    display: inline-block;
+    width: 150px;
+    height: 100px;
+    margin: 3px;
+    border-radius: 3px;
     background-color: #e3e3ee;
     box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   }
 
-  .containerItemContent{
-    padding: 10px;
+  .chartSummaryContainer:hover{
+    background-color: rgb(236, 236, 236);
   }
-  .textItemContent{
+
+  .summaryItem{
+    padding: 5px;
+  }
+  
+  .summaryItemImage{
+    text-align: center;
+    margin: 5px;
+  }
+  .summaryImage{
+    width: 35px;
+  }
+
+  .summaryText{
     color:rgb(153, 35, 24);
-    font-size: 20px;
+    font-size: 12px;
     text-align: center;
     
   }
 
-  .textItemContentDescription{
+  .summaryTextDescription{
+    color: gray;
+    text-align: center;
+    font-size: 10px;
+  }
+
+
+  /* ESTILOS DE CATEGORIES */
+
+  .mainCategoriesSubtittle{
+    text-align: initial;
+    padding: 10px;
+    font-size: 10px;
+    color: gray;
+  }
+
+  .CategoriesContainer{
+    text-align: initial;
+    width: 650px;
+    
+  }
+
+  .chartCategories{
+    display: inline-block;
+    width: 150px;
+    height: 100px;
+    margin: 3px;
+    border-radius: 3px;
+    background-color: #e3e3ee;
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+  .chartCategories:hover{
+    background-color: rgb(236, 236, 236);
+  }
+
+  .categoriesItem{
+    padding: 5px;
+  }
+
+  .categoriesItemImage{
+    text-align: center;
+    margin: 5px; 
+  }
+
+  .categoriesImage{
+    width: 35px;
+    }
+
+  .categoriesText{
+    color:rgb(153, 35, 24);
+    font-size: 12px;
+    text-align:center;
+    
+  }
+
+  .categoriesTextDescription{
+    font-size: 10px;
     color: gray;
     text-align: center;
   }
 
-  .icon{
+  /* ESTILOS DE CATEGORIES-PAGE*/
+
+  .mainCategoriesSubtittle2{
+    text-align: center;
+    padding: 25px;
+    font-size: 15px;
+    color: gray;
+  }
+
+  .CategoriesContainer2{
+    text-align: center;
+    
+  }
+
+  .chartCategories2{
+    display: inline-block;
+    width: 250px;
+    height: 200px;
+    margin: 5px;
+    border-radius: 3px;
+    background-color: #e3e3ee;
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+  .chartCategories2:hover{
+    background-color: rgb(236, 236, 236);
+  }
+
+  .categoriesItem2{
+    padding: 10px;
+  }
+
+  .categoriesItemImage2{
+    text-align: center;
+    margin: 5px; 
+  }
+
+  .categoriesImage2{
+    width: 70px;
+    }
+
+  .categoriesText2{
+    color:rgb(153, 35, 24);
+    font-size: 20px;
+    text-align:center;
+    
+  }
+
+  .categoriesTextDescription2{
+    font-size: 15px;
+    color: gray;
+    text-align: center;
+  }
+
+  /* ESTILOS DE PRODUCTLIST */
+
+  .productLisTitle{
+    text-align: center;
+    padding: 10px;
+    font-size: 10px;
+    color: gray;
+  }
+
+  .productContainer{  
+    text-align: initial;
+    width: 700px;
+  }
+
+  .productItem{
+    display: inline-block;  
+    width: 105px;
+    height: 70px;
+    margin: 3px;
+    border-radius: 3px;
+    background-color: #e3e3ee;
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+  
+  .productItem:hover{
+    background-color: rgb(236, 236, 236);
+  }
+
+  .productItemImage{
+    width: 30px;
+  }
+
+  .productContainerItem{
+    text-align: center;
+    padding: 0px;
     width: 100px;
-    color: green;
+    height: 50px;
+
+  }
+
+  .itemName{
+    color:rgb(153, 35, 24);
+    font-size: 8px;
+    text-align:center;
+  }
+
+  /* ESTILOS DE PRODUCTLIST-PAGE */
+
+  .productLisTitle2{
+    text-align: center;
+    padding: 25px;
+    font-size: 15px;
+    color: gray;
+  }
+
+  .productContainer2{  
+    text-align: initial;
+    position: absolute;
+    left: 50px;
+  }
+
+  .productItem2{
+    display: inline-block;  
+    width: 200px;
+    height: 70px;
+    margin: 3px;
+    border-radius: 3px;
+    background-color: #e3e3ee;
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+  
+  .productItem2:hover{
+    background-color: rgb(236, 236, 236);
+  }
+
+  .productItemImage2{
+    width: 30px;
+  }
+
+  .productContainerItem2{
+    text-align: center;
+    padding: 4px;
+
+  }
+
+  .itemName2{
+    color:rgb(153, 35, 24);
+    font-size: 15px;
+    text-align:center;
   }
 
    /*ESTILOS DE FOOTER */
-   
-   footer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    justify-content: space-around;
-    background-color: rgb(153, 35, 24);
-    padding: 20px;
-    border: 10px;
-    
-}
-.footerText{
-    font-size: 15px;
-    color: #ffffff;
-    font-weight: bold;
-}
-.marca-registrada{
-    font-size: 20px;
+
+   .marca-registrada{
+    font-size: 12px;
     width: 100%;
+    height: 30px;
     text-align: center;
     background-color: rgb(153, 35, 24);
     color: #ffffff;
-    padding: 5px;
-    border: 5px;
+    position: absolute;
+    top: 637px;
+}
+
+.mainSummaryPosition{
+  position: absolute;
+  left: 10px;
+  top: 150px;
+}
+
+.productListPosition{
+  position: absolute;
+  left: 649px;
+  top: 135px;
+}
+
+.categoriesPosition{
+  position: absolute;
+  top: 300px;
+  left: 10px;
+}
+
+.lastProductUserPosition{
+  position: absolute;
+  top: 450px;
 }
