@@ -3,7 +3,7 @@ import "../App.css";
 import addUserImage from "../assets/images/add-user.png"
 import addProductImage from "../assets/images/add-to-basket.png"
 
-function LastProductUser(){
+function RecentActivity(){
     return (
         <div>
             <div className="mainRecenteActivityTitle"><h2>ACTIVIDAD RECIENTE</h2></div>
@@ -31,4 +31,4 @@ function LastProductUser(){
     );
 }
 
-export default LastProductUser; 
+export default RecentActivity; 
