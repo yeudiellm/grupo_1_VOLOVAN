@@ -68,11 +68,16 @@
                 </div>
                 <div class="create-campo">
                     <select name="category" id="category" class="create-input">
-                        <option value="">Elegir opción</option>
-                        <option value="salados" <%= locals.oldData && ('salados' === oldData.category) ? 'selected' : null %> >Salados</option>
-                        <option value="dulces" <%= locals.oldData && ('dulces' === oldData.category) ? 'selected' : null %>>Dulces</option>
-                        <option value="especiales" <%= locals.oldData && ('especiales' === oldData.category) ? 'selected' : null %>>Especialidades</option>
-                        <option value="postres" <%= locals.oldData && ('postres' === oldData.category) ? 'selected' : null %>>Postres</option>
+                        <option value="" disabled selected> -Seleccione la categoría- </option>
+                        <% categorias.forEach(categoria => { %>
+                        <option value="<%=categoria.id%>"><%=categoria.nombre %></option>
+                        <% }); %>
+                        <!-- 
+                        <option value="salados"  locals.oldData && ('salados' === oldData.category) ? 'selected' : null  >Salados</option>
+                        <option value="dulces"  locals.oldData && ('dulces' === oldData.category) ? 'selected' : null >Dulces</option>
+                        <option value="especiales" locals.oldData && ('especiales' === oldData.category) ? 'selected' : null >Especialidades</option>
+                        <option value="postres"  locals.oldData && ('postres' === oldData.category) ? 'selected' : null %>>Postres</option>
+                        -->
                     </select>
                 </div>
             </div>

@@ -15,31 +15,38 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 const controller = {
 	// Root - Show all products
 	index: (req, res) => {
-		const productSalados = products.filter(product => product.category==="salados");
-		const productDulces = products.filter(product => product.category==="dulces");
-		const productEspeciales = products.filter(product => product.category==="especiales");
-		const productPostres = products.filter(product => product.category==="postres");
-		res.render('products/products',
-			{productSalados:productSalados,
-			 productDulces:productDulces, 
-			 productEspeciales:productEspeciales, 
-			 productPostres: productPostres,
-			 toThousand:toThousand});
+		db.CategoriasProductos.findAll()
+		.then(function(categorias){
+			db.Productos.findAll()
+			.then(function(productos){
+				return res.render('products/products', {
+					productos:productos, 
+					categorias:categorias,
+					toThousand:toThousand,
+				});
+			});
+		});
+	},
+	detail: (req, res) => {
+		const productID=parseInt(req.params.id,10);
+		db.Productos.findByPk(productID)
+		.then(product => {
+			res.render('products/detail',{product:product, toThousand:toThousand});
+		});		
 	},
 	productCart: (req,res)=>{
 		res.render('products/productCart');
 	},
 	create: (req,res)=>{
 		db.CategoriasProductos.findAll()
-		.then(function(categorias){
-			return res.render('products/products', {categorias});
+		.then(categorias =>{
+			return res.render('products/create',{
+				categorias:categorias,
+			});
 		});
-		res.render('products/create');
 	},
 	build: (req, res) => {
-
 		const resultValidation = validationResult(req);
-		
 		// proceso de validación
 		if (resultValidation.errors.length > 0) {
 			return res.render('products/create', {
@@ -47,7 +54,6 @@ const controller = {
 				oldData: req.body
 			})
 		}
-
 		// continua el flujo si no hay errores de validacion
 		const newProduct = {
 			product_id : parseInt(Date.now(),10),
@@ -70,9 +76,7 @@ const controller = {
 		res.render('products/edit', {product:product,toThousand:toThousand});
 	},
 	update: (req, res) => {
-
 		const resultValidation2 = validationResult(req);
-		
 		// proceso de validación
 		if (resultValidation2.errors.length > 0) {
 			let id =parseInt(req.params.id,10);
@@ -83,7 +87,6 @@ const controller = {
 				oldData: req.body
 			})
 		}
-
 		// continua con el flujo si no hay errores en validacion
 		const productId = parseInt(req.params.id,10); 
 		const product = products.find( p=> p.product_id===productId);
@@ -109,11 +112,6 @@ const controller = {
 		res.redirect('/products');
 
 
-	},
-	detail: (req, res) => {
-		const productId=parseInt(req.params.id,10);
-		const product=products.find(p => p.product_id === productId);
-		res.render('products/detail',{product:product, toThousand:toThousand});
 	},
 	delete: (req,res)=>{
 		const deleteId = parseInt(req.params.id,10);

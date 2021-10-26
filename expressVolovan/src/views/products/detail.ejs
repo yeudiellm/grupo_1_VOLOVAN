@@ -10,22 +10,22 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Detalle del producto: <%=product.product_name%></h2>
+				<h2 class="products-title">Detalle del producto: <%=product.nombre%></h2>
 			</div>
 		</div>
 		<div class="product-detail">
 			<div class="row">
 				<div class="col-12 col-lg-8">
-					<img src="/images/products/<%=product.image%>" alt="<%=product.product_name%>" class="product-detail-img">
+					<img src="/images/products/<%=product.imagen_nombre%>" alt="<%=product.nombre%>" class="product-detail-img">
 					<p class="product-detail-description">
-						<%=product.product_description%>
+						<%=product.descripcion%>
 					</p>
 				</div>
 				<div class="col-12 col-lg-4">
 					<article class="product-detail-info">
-						<h2 class="product-detail-title"><%=product.product_name%></h2>
+						<h2 class="product-detail-title"><%=product.nombre%></h2>
 							<p class="product-detail-price">
-								$<%=toThousand(product.product_price)%>
+								$<%=toThousand(product.precio)%>
 							</p>
 		
 						<ul class="actions-list">
@@ -42,8 +42,8 @@
 						<a href="#" class="buy-now-button">COMPRAR AHORA</a>
 						<hr>
 						<% if (locals.userLogged) { %>
-							<a href="/products/edit/<%=product.product_id%>" class="action-button edit">EDITAR PRODUCTO</a>
-							<form id="deleteProduct" action="/products/delete/<%=product.product_id%>?_method=DELETE" method="POST" style="display: inline-flex">
+							<a href="/products/edit/<%=product.id%>" class="action-button edit">EDITAR PRODUCTO</a>
+							<form id="deleteProduct" action="/products/delete/<%=product.id%>?_method=DELETE" method="POST" style="display: inline-flex">
 								<button type="submit" class="action-button delete">ELIMINAR</button>
 							</form>
 						<% } %>

@@ -39,11 +39,14 @@ const productsController = require('../controllers/productsController');
 /*** Lista de Productos  ***/ 
 router.get('/', productsController.index); 
 
-/*** Crear un producto  ***/ 
-router.get('/create', productsController.create);
+/*** Detalle de Producto  ***/ 
+router.get('/detail/:id', productsController.detail);
 
 /*** Carrito de Compra de Productos ***/ 
 router.get('/productCart', productsController.productCart); 
+
+/*** Crear un producto  ***/ 
+router.get('/create', productsController.create);
 
 /*** Crear un producto  (Acción) ***/ 
 router.post('/create', upload.single('productImage'), validations, productsController.build); 
@@ -54,8 +57,6 @@ router.get('/edit/:id', productsController.edit);
 /*** Edición de Productos (Acción) ***/ 
 router.put('/edit/:id', upload.single('productImage'), validations, productsController.update);
 
-/*** Detalle de Producto  ***/ 
-router.get('/detail/:id', productsController.detail); 
 
 /*** Eliminación de Producto (Acción) ***/ 
 router.delete('/delete/:id', productsController.delete);

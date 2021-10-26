@@ -79,7 +79,7 @@ INSERT INTO `CategoriasProductos` VALUES
 (1, "salados"),
 (2, "dulces"),
 (3, "especiales"), 
-(4, "especiales"); 
+(4, "postres"); 
 
  
 INSERT INTO `Productos` VALUES

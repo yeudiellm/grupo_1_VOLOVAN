@@ -1,144 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- Head -->
-    <%- include('../partials/head'); %>
-<body>
+<!-- Head -->
+<%- include('../partials/head'); %>
+
+  <body>
 
     <!-- Header -->
     <%- include('../partials/header'); %>
 
-    <!-----------------------------------------------------------------------   BANNER PRINCIPAL ----------------------->
-    <main>
+      <!-----------------------------------------------------------------------   BANNER PRINCIPAL ----------------------->
+      <main>
         <section class="banner-principal">
-            <ul class="slider">
-                <li id="slide1">
-                  <img src="/images/volovanConcept00.jpg"/>
-                </li>
-                <li id="slide2">
-                    <img src="/images/volovanConcept01.jpg"/>
-                </li>
-                <li id="slide3">
-                    <img src="/images/volovanConcept02.jpg"/>
-                </li>
-                <li id="slide4">
-                    <img src="/images/volovanConcept03.jpg"/>
-                </li>
-                <li id="slide5">
-                    <img src="/images/volovanConcept04.jpg"/>
-                </li>
-                <li id="slide6">
-                  <h1>Gracias por su visita</h1>
-                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                      </p>
-                </li>
-              </ul>
+          <ul class="slider">
+            <li id="slide1">
+              <img src="/images/volovanConcept00.jpg" />
+            </li>
+            <li id="slide2">
+              <img src="/images/volovanConcept01.jpg" />
+            </li>
+            <li id="slide3">
+              <img src="/images/volovanConcept02.jpg" />
+            </li>
+            <li id="slide4">
+              <img src="/images/volovanConcept03.jpg" />
+            </li>
+            <li id="slide5">
+              <img src="/images/volovanConcept04.jpg" />
+            </li>
+            <li id="slide6">
+              <h1>Gracias por su visita</h1>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              </p>
+            </li>
+          </ul>
 
-            <nav>
-              <ul class="menu">
-                <li>
-                  <a href="#slide1"><i class="fas fa-dot-circle"></i></a>
-                </li>
-                <li>
-                  <a href="#slide2"><i class="fas fa-dot-circle"></i></a>
-                </li>
-                 <li>
-                  <a href="#slide3"><i class="fas fa-dot-circle"></i></a>
-                </li>
-                <li>
-                    <a href="#slide4"><i class="fas fa-dot-circle"></i></a>
-                  </li>
-                  <li>
-                    <a href="#slide5"><i class="fas fa-dot-circle"></i></a>
-                  </li>
-                  <li>
-                    <a href="#slide6"><i class="fas fa-dot-circle"></i></a>
-                  </li>
-              </ul>
-            </nav>
+          <nav>
+            <ul class="menu">
+              <li>
+                <a href="#slide1"><i class="fas fa-dot-circle"></i></a>
+              </li>
+              <li>
+                <a href="#slide2"><i class="fas fa-dot-circle"></i></a>
+              </li>
+              <li>
+                <a href="#slide3"><i class="fas fa-dot-circle"></i></a>
+              </li>
+              <li>
+                <a href="#slide4"><i class="fas fa-dot-circle"></i></a>
+              </li>
+              <li>
+                <a href="#slide5"><i class="fas fa-dot-circle"></i></a>
+              </li>
+              <li>
+                <a href="#slide6"><i class="fas fa-dot-circle"></i></a>
+              </li>
+            </ul>
+          </nav>
         </section>
-    </main>
+      </main>
 
-    <!-----------------------------------------------------------------------   PRODUCTOS  ----------------------->
-    <main>
-        <section  class="principal-title">
-            <h1 class="main-perfect-title">MENÚ</h1>
+      <!-----------------------------------------------------------------------   PRODUCTOS  ----------------------->
+      <main>
+        <section class="principal-title">
+          <h1 class="main-perfect-title">MENÚ</h1>
         </section>
 
-        <section class="seccion-compra">
-            <h2 class="main-titulos"> Especialidades </h2>
 
-			      <% productEspeciales.forEach(product =>{ %>
+        <% categorias.forEach(categoria=> { %>
+          <section class="seccion-compra">
+            <h2 class="main-titulos">
+              <%=categoria.nombre.toUpperCase()%>
+            </h2>
+            <%productos.filter(producto=>{return producto.id_categoria===categoria.id}).forEach(producto=>{%>
               <article class="product">
-                <a href="/products/detail/<%=product.product_id%>">
-                <img src="/images/products/<%=product.image%>" alt="<%=product.product_name%>" class="img_product"></a>
-                <h2> <%=product.product_name%></h2>
+                <a href="/products/detail/<%=producto.id%>">
+                  <img src="/images/products/<%=producto.imagen_nombre%>" alt="<%=producto.nombre%>"
+                    class="img_product"></a>
+                <h2>
+                  <%=producto.nombre%>
+                </h2>
                 <div class="product_specific">
-                    <i class="fas fa-shopping-cart"></i>
-                    <p class="precio">$<%=toThousand(product.product_price)%></p>
-                    <p class="descripcion"> <%=product.product_description%></p>
+                  <i class="fas fa-shopping-cart"></i>
+                  <p class="precio">$<%=toThousand(producto.precio)%>
+                  </p>
+                  <p class="descripcion">
+                    <%=producto.descripcion%>
+                  </p>
                 </div>
               </article>
-            <% })%> 
+              <%})%>
+          </section>
+          <%})%>
 
-        </section>
-
-
-        <section class="seccion-compra">
-            <h2 class="main-titulos"> Volovanes Salados </h2>
-
-            <% productSalados.forEach(product =>{ %>
-              <article class="product">
-                <a href="/products/detail/<%=product.product_id%>">
-                <img src="/images/products/<%=product.image%>" alt="<%=product.product_name%>" class="img_product"></a>
-                <h2> <%=product.product_name%></h2>
-                <div class="product_specific">
-                    <i class="fas fa-shopping-cart"></i>
-                    <p class="precio">$<%=toThousand(product.product_price)%></p>
-                    <p class="descripcion"> <%=product.product_description%></p>
-                </div>
-              </article>
-              <% })%> 
-        </section>
+            <!-- Navbar (sit on top) -->
+            <%- include('../partials/footer'); %>
 
 
-        <section class="seccion-compra">
-            <h2 class="main-titulos"> Volovanes Dulces </h2>
+  </body>
 
-            <% productDulces.forEach(product =>{ %>
-              <article class="product">
-                <a href="/products/detail/<%=product.product_id%>">
-                <img src="/images/products/<%=product.image%>" alt="<%=product.product_name%>" class="img_product"></a>
-                <h2> <%=product.product_name%></h2>
-                <div class="product_specific">
-                    <i class="fas fa-shopping-cart"></i>
-                    <p class="precio">$<%=toThousand(product.product_price)%></p>
-                    <p class="descripcion"> <%=product.product_description%></p>
-                </div>
-              </article>
-            <% })%> 
-
-        </section>
-
-        <section class="seccion-compra">
-            <h2 class="main-titulos"> Postres </h2>
-            <% productPostres.forEach(product =>{ %>
-              <article class="product">
-                <a href="/products/detail/<%=product.product_id%>">
-                <img src="/images/products/<%=product.image%>" alt="<%=product.product_name%>" class="img_product"></a>
-                <h2> <%=product.product_name%></h2>
-                <div class="product_specific">
-                    <i class="fas fa-shopping-cart"></i>
-                    <p class="precio">$<%=toThousand(product.product_price)%></p>
-                    <p class="descripcion"> <%=product.product_description%></p>
-                </div>
-              </article>
-            <% })%> 
-        </section>
-    </main>
- 
-    <!-- Navbar (sit on top) -->
-    <%- include('../partials/footer'); %>
-
-    
-</body>
 </html>
