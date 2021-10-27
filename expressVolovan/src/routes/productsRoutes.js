@@ -31,7 +31,11 @@ const validations = [
         }
         return true;
     })
-]
+];
+
+const SearchValidation=[body('product_name')
+.notEmpty().withMessage('Ingresa un nombre.').bail()
+.isLength({min:5,max:undefined}).withMessage('El nombre debe tener minimo 5 caracteres.')];
 
 // ************ Controller Require ************
 const productsController = require('../controllers/productsController');
@@ -61,10 +65,8 @@ router.put('/edit/:id', upload.single('productImage'), validations, productsCont
 /*** Eliminación de Producto (Acción) ***/ 
 router.delete('/delete/:id', productsController.delete);
 
-
-
-
-
+/*** Búsqueda de Producto (Acción) ***/ 
+router.post('/search', SearchValidation ,productsController.search);
 
 
 module.exports = router;

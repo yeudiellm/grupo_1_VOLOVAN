@@ -56,18 +56,16 @@ const controller = {
 		}
 		// continua el flujo si no hay errores de validacion
 		const newProduct = {
-			product_id : parseInt(Date.now(),10),
-			product_name: req.body.product_name,
-			product_price: 13.00, //   <----- !! Precio fijo, cambiar a dato de formulario 
-			product_description: req.body.product_description,
-			category: req.body.category,
-			image: req.file.filename || 'default-image.png'
+			nombre: req.body.product_name,
+			precio: req.body.product_price,  
+			descripcion: req.body.product_description,
+			id_categoria: req.body.category,
+			imagen_nombre: req.file.filename || 'default-image.png'
 		} 
-		products.push(newProduct); 
-		const productsJSON =JSON.stringify(products,null,2); 
-		fs.writeFileSync(productsFilePath, productsJSON);
-		res.redirect('/products');
-
+		db.Productos.create(
+			newProduct
+		).then(()=> {return res.render('products/products')})
+		.catch(error => res.send(error));
 	},
 	edit: (req, res)=>{
 		let id =parseInt(req.params.id,10);
@@ -128,6 +126,19 @@ const controller = {
 			console.error('Something wrong happened removing the file', err);
 		}
 		res.redirect('/products');
+	},
+	search: (req,res) => {
+		const resultValidation = validationResult(req);
+		// proceso de validación
+		if (resultValidation.errors.length > 0) {
+			return res.render('products/products', {
+				errors: resultValidation.mapped(),
+				oldData: req.body
+			})
+		}
+
+		
+
 	}
 };
 
