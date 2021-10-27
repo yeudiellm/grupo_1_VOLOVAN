@@ -28,11 +28,13 @@ app.set('views', path.join(__dirname, '/views'));// Define la ubicación de la c
 const mainRoutes = require('./routes/main'); // Rutas main
 const productsRouter = require('./routes/productsRoutes'); // Rutas /products
 const userRoutes = require('./routes/userRoutes');
+const apiRoutes = require('./routes/apiRoutes');
 const { createRequire } = require('module');
 
 app.use('/', mainRoutes);
 app.use('/products', productsRouter);
 app.use('/users', userRoutes); 
+app.use('/api', apiRoutes); 
 //app.use('/productDesign',  productsRouter);
 
 // ************ catch 404 and forward to error handler ************
