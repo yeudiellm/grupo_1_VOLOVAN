@@ -15,10 +15,10 @@ const controller = {
     },
     userDetail: (req, res) => {
         return res.json({
-            id: '',
-            name: '',
-            email: '',
-            avatar: ''
+            id: 1,
+            name: 'Luis',
+            email: 'luis@correo.com',
+            avatar: 'img_avatar.png'
         })
     },
     products: (req, res) => {
