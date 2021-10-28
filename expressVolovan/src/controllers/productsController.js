@@ -67,7 +67,7 @@ const controller = {
 		} 
 		db.Productos.create(
 			newProduct
-		).then(()=> {return res.render('products/products')})
+		).then(()=> {return res.redirect('/products');})
 		.catch(error => res.send(error));
 	},
 	edit: (req, res)=>{
@@ -97,16 +97,6 @@ const controller = {
 				oldData: req.body,
 				toThousand:toThousand})})
 			.catch(error => res.send(error));
-
-
-
-			let id =parseInt(req.params.id,10);
-			const product=products.find(p => p.product_id === id);	
-			return res.render('products/edit', {
-				product: product, toThousand:toThousand,
-				errors: resultValidation2.mapped(),
-				oldData: req.body
-			})
 		}
 		// continua con el flujo si no hay errores en validacion
 		const productoId = parseInt(req.params.id,10);
@@ -114,24 +104,29 @@ const controller = {
 		Promise
         .all([promProductos])
         .then(([product]) => {
-			const NewValues= req.body; 
-			product.nombre =NewValues.product_name || product.nombre; 
-			product.precio = NewValues.product_price || product.precio; 
-			product.descripcion=NewValues.product_description || product.descripcion;
-			product.id_categoria =NewValues.category || product.id_categoria;
+			let editProduct = {
+				nombre: req.body.product_name || product.nombre,
+				precio: req.body.product_price || product.precio, 
+				descripcion: req.body.product_description || product.descripcion,
+				id_categoria: req.body.category || product.id_categoria,
+			} 
 			if(req.file){
 				try {
-					fs.unlinkSync('public/images/products/'+product.image);
-					product.image = req.file.filename || 'default-image.png';
+					fs.unlinkSync('public/images/products/'+product.imagen_nombre);
+					editProduct.imagen_nombre = req.file.filename || 'default-image.png';
 					console.log('File removed');
 				} catch(err) {
 					console.error('Something wrong happened removing the file', err);
 				}
 			}
-			console.log(product)
-            return res.redirect('/products');})
+			
+			db.Productos
+			.update(editProduct,
+				{where: {id: product.id}})
+			.then(()=> {
+				return res.redirect('/products');})            
+			.catch(error => res.send(error))	})
         .catch(error => res.send(error));
-
 
 	},
 	delete: (req,res)=>{
