@@ -5,8 +5,8 @@ import addProductImage from "../assets/images/add-to-basket.png"
 
 function RecentActivity(){
 
-    const [lastUser, setLastUser] = useState([]);
-    const [lastProduct, setLastProduct] = useState([]);
+    const [lastUser, setLastUser] = useState(['']);
+    const [lastProduct, setLastProduct] = useState(['']);
 
     /* API último usuario registrado */
     useEffect(()=> {

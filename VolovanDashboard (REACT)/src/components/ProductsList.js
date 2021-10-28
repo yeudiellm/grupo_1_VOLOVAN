@@ -7,19 +7,18 @@ import cupcakeImage from "../assets/images/cupcake.png"
 
 function ProductsList(){
 
-    const [products, setProducts] = ([]);
+    const [products, setProducts] = useState([]);
 
 
-    // useEffect(()=> {
-    //     console.log('Se montó el componente');
-    //     fetch('http://localhost:3000/api/products/')
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             console.log(data);
-    //             setProducts(data.products)
-    //         })
-    //         .catch(error => console.error(error));
-    // }, [])
+    useEffect(()=> {
+        fetch('http://localhost:3000/api/products/')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.products);
+                setProducts(data.products)
+            })
+            .catch(error => console.error(error));
+    }, [])
 
 
     return (
@@ -27,11 +26,22 @@ function ProductsList(){
             <div className="productLisTitle"><h2>LISTA DE PRODUCTOS</h2></div>
             
             <div className="productContainer">
-
+            { 
+                products.length === 0 && <p>Loading...</p>
+            }
+            { 
+                products.map((product, i) =>{
+                    return (
+                        <>
                         <div className="productItem">
                         <div className="productContainerItem"><img className="productItemImage" src={clocheImage}></img></div>
-                        <div className="productContainerItem"><h2 className="itemName">Megavolo</h2></div>
+                        <div className="productContainerItem"><h2 className="itemName">{product.name}</h2></div>
                         </div>
+                        </>
+                    )
+                })
+                        
+            }
             </div>
             </div>
 

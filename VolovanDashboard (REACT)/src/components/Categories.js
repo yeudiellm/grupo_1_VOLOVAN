@@ -14,7 +14,6 @@ function Categories(){
         fetch('http://localhost:3000/api/products/')
             .then(response => response.json())
             .then(data => {
-                console.log(data.countByCategory);
                 setCountByCategory(data.countByCategory)
             })
             .catch(error => console.error(error));

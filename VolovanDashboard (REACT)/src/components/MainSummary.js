@@ -6,9 +6,9 @@ import categoriesImage from "../assets/images/menu.png"
 
 function MainSummary(){
 
-    const [users, setUsers] = useState([])
-    const [products, setProducts] = useState([])
-    const [categories, setCategories] = useState([])
+    const [users, setUsers] = useState(['cargando'])
+    const [products, setProducts] = useState(['cargando'])
+    const [categories, setCategories] = useState(['cargando'])
 
     /* API de USUARIOS */
     useEffect(()=> {
@@ -37,6 +37,7 @@ function MainSummary(){
         fetch('http://localhost:3000/api/products/')
             .then(response => response.json())
             .then(data => {
+                // console.log(categories);
                 setCategories(Object.keys(data.countByCategory).length);
             })
             .catch(error => console.error(error));
@@ -46,7 +47,10 @@ function MainSummary(){
 
 
     return (
+
+
         <div>
+
             <div className="mainSummaryTitle"><h2>PRINCIPALES MÉTRICAS</h2></div>
             <div className="summaryContainer">
                 <div className="chartSummaryContainer">
@@ -67,7 +71,8 @@ function MainSummary(){
             </div>
             <div><hr className="line"/></div>
     
-            </div>
+        
+        </div>
 
     );
 }
