@@ -85,6 +85,21 @@ const controller = {
 		const resultValidation2 = validationResult(req);
 		// proceso de validación
 		if (resultValidation2.errors.length > 0) {
+			let productoId = req.params.id;
+			let promProductos = db.Productos.findByPk(productoId);
+			let promCategoria = db.CategoriasProductos.findAll();
+			Promise
+			.all([promProductos, promCategoria])
+			.then(([product, categorias]) => {
+				return res.render('products/edit', 
+				{product:product,categorias:categorias,
+					errors: resultValidation2.mapped(),
+				oldData: req.body,
+				toThousand:toThousand})})
+			.catch(error => res.send(error));
+
+
+
 			let id =parseInt(req.params.id,10);
 			const product=products.find(p => p.product_id === id);	
 			return res.render('products/edit', {
@@ -99,18 +114,11 @@ const controller = {
 		Promise
         .all([promProductos])
         .then(([product]) => {
-			console.log(product)
-            return res.redirect('/products');})
-        .catch(error => res.send(error));
-		
-		const product = 0;
-		if(product){
 			const NewValues= req.body; 
-			product.product_name =NewValues.product_name || product.product_name; 
-			product.product_price= NewValues.product_price || product.product_price; 
-			product.product_discount= NewValues.product_discount ||product.product_discount;
-			product.product_description=NewValues.description ||product.product_description;
-			product.category =NewValues.category || product.category; 
+			product.nombre =NewValues.product_name || product.nombre; 
+			product.precio = NewValues.product_price || product.precio; 
+			product.descripcion=NewValues.product_description || product.descripcion;
+			product.id_categoria =NewValues.category || product.id_categoria;
 			if(req.file){
 				try {
 					fs.unlinkSync('public/images/products/'+product.image);
@@ -120,7 +128,11 @@ const controller = {
 					console.error('Something wrong happened removing the file', err);
 				}
 			}
-		}
+			console.log(product)
+            return res.redirect('/products');})
+        .catch(error => res.send(error));
+
+
 	},
 	delete: (req,res)=>{
 		const deleteId = parseInt(req.params.id,10);
