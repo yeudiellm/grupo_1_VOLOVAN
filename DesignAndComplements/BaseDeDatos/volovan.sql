@@ -67,13 +67,13 @@ INSERT INTO `Usuarios` VALUES
 (1,True,'Hassir','hassir@gmail.com','$2a$10$qrB1wqk0edVF0LEeL0v37OPeDk67qDDm3IqUcXyOcXnL9HuE6Gzbq', 'img_avatar.png'),
 (2,True,'Luis','luis@gmail.com','$2a$10$qrB1wqk0edVF0LEeL0v37OPeDk67qDDm3IqUcXyOcXnL9HuE6Gzbq', 'img_avatar.png'),
 (3,True,'Yeudiel','yeudiel@gmail.com','$2a$10$qrB1wqk0edVF0LEeL0v37OPeDk67qDDm3IqUcXyOcXnL9HuE6Gzbq', 'img_avatar.png'),
-(4,True,'Julian','yeudiel@gmail.com','$2a$10$qrB1wqk0edVF0LEeL0v37OPeDk67qDDm3IqUcXyOcXnL9HuE6Gzbq', 'img_avatar.png'),
-(5,True,'Alicia','alicia10@gmail.com','$2a$10$qrB1wqk0edVF0LEeL0v37OPeDk67qDDm3IqUcXyOcXnL9HuE6Gzbq', 'img_avatar.png'),
-(6,True,'Elena','elen01@gmail.com','$2a$10$qrB1wqk0edVF0LEeL0v37OPeDk67qDDm3IqUcXyOcXnL9HuE6Gzbq', 'img_avatar.png'),
-(7,True,'Oscar','osctor@gmail.com','$2a$10$qrB1wqk0edVF0LEeL0v37OPeDk67qDDm3IqUcXyOcXnL9HuE6Gzbq', 'img_avatar.png'),
-(8,True,'Juliette','juls@gmail.com','$2a$10$qrB1wqk0edVF0LEeL0v37OPeDk67qDDm3IqUcXyOcXnL9HuE6Gzbq', 'img_avatar.png'),
-(9,True,'Aceneth','acemonni@gmail.com','$2a$10$qrB1wqk0edVF0LEeL0v37OPeDk67qDDm3IqUcXyOcXnL9HuE6Gzbq', 'img_avatar.png'),
-(10,True,'Kirsten','kirs012@gmail.com','$2a$10$qrB1wqk0edVF0LEeL0v37OPeDk67qDDm3IqUcXyOcXnL9HuE6Gzbq', 'img_avatar.png');
+(4,False,'Julian','kils@gmail.com','$2a$10$qrB1wqk0edVF0LEeL0v37OPeDk67qDDm3IqUcXyOcXnL9HuE6Gzbq', 'img_avatar.png'),
+(5,False,'Alicia','alicia10@gmail.com','$2a$10$qrB1wqk0edVF0LEeL0v37OPeDk67qDDm3IqUcXyOcXnL9HuE6Gzbq', 'img_avatar.png'),
+(6,False,'Elena','elen01@gmail.com','$2a$10$qrB1wqk0edVF0LEeL0v37OPeDk67qDDm3IqUcXyOcXnL9HuE6Gzbq', 'img_avatar.png'),
+(7,False,'Oscar','osctor@gmail.com','$2a$10$qrB1wqk0edVF0LEeL0v37OPeDk67qDDm3IqUcXyOcXnL9HuE6Gzbq', 'img_avatar.png'),
+(8,False,'Juliette','juls@gmail.com','$2a$10$qrB1wqk0edVF0LEeL0v37OPeDk67qDDm3IqUcXyOcXnL9HuE6Gzbq', 'img_avatar.png'),
+(9,False,'Aceneth','acemonni@gmail.com','$2a$10$qrB1wqk0edVF0LEeL0v37OPeDk67qDDm3IqUcXyOcXnL9HuE6Gzbq', 'img_avatar.png'),
+(10,False,'Kirsten','kirs012@gmail.com','$2a$10$qrB1wqk0edVF0LEeL0v37OPeDk67qDDm3IqUcXyOcXnL9HuE6Gzbq', 'img_avatar.png');
 
 INSERT INTO `CategoriasProductos` VALUES
 (1, "salados"),

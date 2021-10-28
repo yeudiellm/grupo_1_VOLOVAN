@@ -1,8 +1,8 @@
-// ************ Require's ************
+// ************ Require's ************--
 const express = require('express');
 const router = express.Router();
-const path = require('path')
-const multer = require('multer');
+const path = require('path');
+const upload =require('../config/multerUser');
 
 const { body } = require('express-validator');
 const usersController = require('../controllers/usersController');
@@ -11,17 +11,6 @@ const usersController = require('../controllers/usersController');
 const guestMiddleware = require('../config/guestMiddleware');
 const authMiddleware = require('../config/authMiddleware');
 
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, './public/images/avatars')
-    },
-    filename: (req, file, cb) => {
-        let fileName = `${Date.now()}_img${path.extname(file.originalname)}`;
-        cb(null, fileName);
-    }
-})
-
-const uploadFile = multer({storage});
 
 const validations = [
     body('name')
@@ -62,10 +51,10 @@ const validationsLogin = [
 //const { createRequire } = require('module');
 
 /*** USERS CONTROL ***/ 
-// Formulario registro
+// Formulario registro Equivalente a crear usuario
 router.get('/register', guestMiddleware, usersController.register);
 // Procesar el registro
-router.post('/register', uploadFile.single('avatar'), validations, usersController.processRegister); 
+router.post('/register', upload.single('avatar'), validations, usersController.processRegister); 
 
 // Formulario login
 router.get('/login', guestMiddleware,  usersController.login);

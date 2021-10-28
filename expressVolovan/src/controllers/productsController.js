@@ -154,7 +154,7 @@ const controller = {
 				else {
 					res.redirect('/products');
 				}
-			});
+			}).catch(error => res.send(error));
 	},
 	delete: (req, res) => {
 		const deleteId = parseInt(req.params.id, 10);
@@ -167,7 +167,7 @@ const controller = {
 					console.error('Something wrong happened removing the file', err);
 				}
 				db.Productos
-					.destroy({ where: { id: deleteId },force: true }) // , force: true force: true es para asegurar que se ejecute la acción
+					.destroy({ where: { id: deleteId }, force: true }) // , force: true force: true es para asegurar que se ejecute la acción
 					.then(() => {
 						return res.redirect('/products');
 					})

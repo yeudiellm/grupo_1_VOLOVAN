@@ -1,9 +1,8 @@
 // ************ Require's ************
 const express = require('express');
 const router = express.Router();
-const upload =require('../config/multer');
-
-const path = require('path')
+const path = require('path');
+const upload =require('../config/multerProduct');
 const { body } = require('express-validator')
 
 //**** Validaciones express-validator
