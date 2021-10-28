@@ -8,6 +8,7 @@ import cupcakeImage from "../assets/images/cupcake.png"
 function ProductsList(){
 
     const [products, setProducts] = useState([]);
+    let myHref;
 
 
     useEffect(()=> {
@@ -33,10 +34,12 @@ function ProductsList(){
                 products.map((product, i) =>{
                     return (
                         <>
+                        <a href={"http://localhost:3000/"+product.details} target="_blank">
                         <div className="productItem">
                         <div className="productContainerItem"><img className="productItemImage" src={clocheImage}></img></div>
                         <div className="productContainerItem"><h2 className="itemName">{product.name}</h2></div>
                         </div>
+                        </a>
                         </>
                     )
                 })
