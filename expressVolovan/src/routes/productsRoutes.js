@@ -61,12 +61,12 @@ router.get('/edit/:id', productsController.edit);
 /*** Edición de Productos (Acción) ***/ 
 router.put('/edit/:id', upload.single('productImage'), validations, productsController.update);
 
+/*** Búsqueda de Producto (Acción) ***/ 
+router.post('/search', SearchValidation ,productsController.search);
 
 /*** Eliminación de Producto (Acción) ***/ 
 router.delete('/delete/:id', productsController.delete);
 
-/*** Búsqueda de Producto (Acción) ***/ 
-router.post('/search', SearchValidation ,productsController.search);
 
 
 module.exports = router;
