@@ -22,8 +22,15 @@ function Categories(){
 
 
     return (
+
+        
         <div>
-            <div className="mainCategoriesSubtittle"><h2>CATEGORÍAS DE PRODUCTOS</h2></div>
+
+            { 
+                countByCategory.length === 0 && <p>Loading...</p>
+            }
+            { 
+                Object.keys(countByCategory).length > 0 && <><div className="mainCategoriesSubtittle"><h2>CATEGORÍAS DE PRODUCTOS</h2></div>
             <div className="CategoriesContainer">
                 <div className="chartCategories">
                     <div className="categoriesItemImage"><img className="categoriesImage" src={wholeWheatBreadImage}/></div>
@@ -46,7 +53,15 @@ function Categories(){
                     <div className="categoriesItem"><h4 className="categoriesTextDescription">{countByCategory.postres.totalProducts} productos</h4></div>                    
                 </div>
             </div>
-            <div><hr className="line2"/></div>
+            <div><hr className="line2"/></div></>
+                
+            }
+
+            
+
+
+
+
         </div>
 
     );
