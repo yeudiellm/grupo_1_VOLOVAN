@@ -66,34 +66,26 @@
         </section>
 
         <section class="seccion-compra">
-          <!-- recibe errors -->
-          <% if (locals.errors) { %>
-            <% for( let oneError in errors ) { %>
-              <p style="color: red;">
-                <%= errors[oneError].msg %>
-              </p>
-              <% } %>
-                <% } %>
-                  <form action="/products/search" method="POST">
-                    <!-- nombre de producto -->
-                    <div class="create-fila">
-                      <div class="create-etiqueta">
-                        <label for="product_name" class="create-label">Nombre:</label>
-                      </div>
-                      <div class="create-campo">
-                        <% if (locals.oldData && oldData.product_name) { %>
-                          <input type="text" id="product_name" name="product_name" value="<%= oldData.product_name %>"
-                            class="create-input">
-                          <% } else { %>
-                            <input type="text" id="product_name" name="product_name" placeholder="Ej: Volovan de ..."
-                              class="create-input">
-                            <% } %>
-                      </div>
-                    </div>
-                    <div class="fila-botones">
-                      <button class="create-botones" type="submit">Buscar producto</button>
-                    </div>
-                  </form>
+          <form action="/products/search" method="POST">
+            <!-- nombre de producto -->
+            <div class="create-fila">
+              <div class="create-etiqueta">
+                <label for="product_name" class="create-label">Nombre:</label>
+              </div>
+              <div class="create-campo">
+                <% if (locals.oldData && oldData.product_name) { %>
+                  <input type="text" id="product_name" name="product_name" value="<%= oldData.product_name %>"
+                    class="create-input">
+                  <% } else { %>
+                    <input type="text" id="product_name" name="product_name" placeholder="Ej: Volovan de ..."
+                      class="create-input">
+                    <% } %>
+              </div>
+            </div>
+            <div class="fila-botones">
+              <button class="create-botones" type="submit">Buscar producto</button>
+            </div>
+          </form>
         </section>
 
 
