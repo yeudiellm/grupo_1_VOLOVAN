@@ -10,6 +10,9 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const db= require("../database/models");
 
+const { Op } = require("sequelize");
+
+
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 const controller = {
@@ -68,10 +71,15 @@ const controller = {
 		.catch(error => res.send(error));
 	},
 	edit: (req, res)=>{
-		let id =parseInt(req.params.id,10);
-		const product=products.find(p => p.product_id === id);	
-		console.log(product);
-		res.render('products/edit', {product:product,toThousand:toThousand});
+		let productoId = req.params.id;
+        let promProductos = db.Productos.findByPk(productoId);
+        let promCategoria = db.CategoriasProductos.findAll();
+        Promise
+        .all([promProductos, promCategoria])
+        .then(([product, categorias]) => {
+            return res.render('products/edit', 
+			{product:product,categorias:categorias,toThousand:toThousand})})
+        .catch(error => res.send(error));
 	},
 	update: (req, res) => {
 		const resultValidation2 = validationResult(req);
@@ -86,8 +94,16 @@ const controller = {
 			})
 		}
 		// continua con el flujo si no hay errores en validacion
-		const productId = parseInt(req.params.id,10); 
-		const product = products.find( p=> p.product_id===productId);
+		const productoId = parseInt(req.params.id,10);
+		let promProductos = db.Productos.findByPk(productoId);
+		Promise
+        .all([promProductos])
+        .then(([product]) => {
+			console.log(product)
+            return res.redirect('/products');})
+        .catch(error => res.send(error));
+		
+		const product = 0;
 		if(product){
 			const NewValues= req.body; 
 			product.product_name =NewValues.product_name || product.product_name; 
@@ -105,11 +121,6 @@ const controller = {
 				}
 			}
 		}
-		const productsJSON =JSON.stringify(products,null,2); 
-		fs.writeFileSync(productsFilePath, productsJSON);
-		res.redirect('/products');
-
-
 	},
 	delete: (req,res)=>{
 		const deleteId = parseInt(req.params.id,10);
@@ -128,17 +139,28 @@ const controller = {
 		res.redirect('/products');
 	},
 	search: (req,res) => {
-		const resultValidation = validationResult(req);
+		const resultValidation3 = validationResult(req);
 		// proceso de validación
-		if (resultValidation.errors.length > 0) {
-			return res.render('products/products', {
-				errors: resultValidation.mapped(),
-				oldData: req.body
-			})
+		if (resultValidation3.errors.length > 0) {
+			res.redirect('/products');
 		}
 
-		
-
+		const nombre="%"+req.body.product_name.toString()+"%";
+        db.Productos.findOne({
+            where: {
+                nombre:{
+                    [Op.like]: nombre,
+                }
+            }
+        })
+        .then(product =>{
+            if(product){
+                res.render('products/detail',{product:product, toThousand:toThousand});
+            }
+            else{
+				res.redirect('/products');
+            }
+        });
 	}
 };
 

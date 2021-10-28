@@ -15,7 +15,7 @@
             <% } %>
         <% } %>
 
-        <form action="/products/edit/<%=product.product_id%>?_method=PUT" method="POST" enctype = "multipart/form-data">
+        <form action="/products/edit/<%=product.id%>?_method=PUT" method="POST" enctype = "multipart/form-data">
 
             <div class="edit-fila">
                 <div class="edit-etiqueta">
@@ -25,7 +25,7 @@
                     <% if (locals.oldData && oldData.product_name) { %>
                         <input type="text" id="product_name" name="product_name" value="<%= oldData.product_name %>" class="create-input">
                     <% } else { %>
-                        <input type="text" id="product_name" name="product_name" placeholder="<%=product.product_name%>" class="edit-input">
+                        <input type="text" id="product_name" name="product_name" value="<%=product.nombre%>" class="edit-input">
                     <% } %>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                     <% if (locals.oldData && oldData.product_price) { %>
                         <input type="number" id="product_price" name="product_price" value="<%= oldData.product_price %>"  class="create-input">
                     <% } else { %>
-                        <input type="number" id="product_price" name="product_price" placeholder="<%=product.product_price%>" class="edit-input">
+                        <input type="number" id="product_price" name="product_price" value="<%=product.precio%>" class="edit-input">
                     <% } %>
 
                 </div>
@@ -54,7 +54,7 @@
                     <% if (locals.oldData && oldData.product_description) { %>
                         <textarea name="product_description" id="product_description"  class="create-textarea"><%= oldData.product_description %></textarea>
                     <% } else { %>
-                        <textarea name="product_description" id="product_description" placeholder="<%=product.product_description%>" class="edit-textarea"></textarea>
+                        <textarea name="product_description" id="product_description" class="edit-textarea"><%=product.descripcion%></textarea>
                     <% } %>
 
                 </div>
@@ -67,11 +67,9 @@
                 </div>
                 <div class="edit-campo">
                     <select name="category" id="category" class="edit-input">
-                        <option value="<%=product.category%>"> <%=product.category%></option>
-                        <option value="salados">Salados</option>
-                        <option value="dulces">Dulces</option>
-                        <option value="especiales">Especialidades</option>
-                        <option value="postres">Postres</option>
+                        <% categorias.forEach(categoria => { %>
+                        <option value="<%= categoria.id %>" <% if (product.id_categoria == categoria.id) { %><%= 'selected' %><% }; %>><%= categoria.nombre %></option>
+                        <% }); %>
                     </select>
                 </div>
             </div>
