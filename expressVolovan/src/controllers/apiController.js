@@ -31,13 +31,19 @@ const controller = {
     },
     products: (req, res) => {
         return res.json({
-            count: '2',
+            count: '5',
             countByCategory: {
                 salados: {
-                    totalProducts: '6'
+                    totalProducts: '5'
                 },
                 dulces: {
                     totalProducts: '6'
+                },
+                postres: {
+                    totalProducts: '3'
+                },
+                especialidades: {
+                    totalProducts: '1'
                 },
             },
             products: [
@@ -46,6 +52,7 @@ const controller = {
                     name: 'volovan de jamon',
                     description: 'un volovan que tiene jamon',
                     category: 'salados',
+                    price: '10',
                     details: 'products/detail/1',
                 },
                 {
@@ -53,7 +60,32 @@ const controller = {
                     name: 'volovan de piña',
                     description: 'un volovan que tiene piña',
                     category: 'dulce',
+                    price: '10',
                     details: 'products/detail/2',
+                },
+                {
+                    id: '3',
+                    name: 'volovan de manzana',
+                    description: 'un volovan que tiene manzana',
+                    category: 'dulce',
+                    price: '10',
+                    details: 'products/detail/3',
+                },
+                {
+                    id: '4',
+                    name: 'volovan de aguacate',
+                    description: 'un volovan que tiene aguacate',
+                    category: 'dulce',
+                    price: '10',
+                    details: 'products/detail/4',
+                },
+                {
+                    id: '5',
+                    name: 'volovan de pizza',
+                    description: 'un volovan que tiene pizza',
+                    category: 'dulce',
+                    price: '10',
+                    details: 'products/detail/5',
                 },
             ]
         })

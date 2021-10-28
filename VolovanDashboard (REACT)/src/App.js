@@ -4,6 +4,7 @@ import MainPage from "./components/MainPage";
 import RecentActivity from "./components/RecentActivity";
 import CategoriesPage from "./components/CategoriesPage";
 import ProductListPage from "./components/ProductListPage";
+import Testing from "./components/Testing";
 
 import {Link, Route} from "react-router-dom";
 
@@ -21,6 +22,7 @@ function App() {
       <Route exact path="/lastproduct-user" component={RecentActivity}/>
       <Route excat path="/categories" component={CategoriesPage}/>
       <Route exact path="/productslist" component={ProductListPage}/>
+      <Route exact path="/testing" component={Testing}/>
     </div>
   );
 }
