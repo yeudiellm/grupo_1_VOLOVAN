@@ -6,11 +6,12 @@ function userLoggedMiddleware(req, res, next) {
     if (req.session.userLogged) {
         res.locals.isLogged = true;
         res.locals.userLogged = req.session.userLogged;
-        // console.log(res.locals.userLogged);
-        return next();
+        console.log(res.locals.userLogged);
+        // return next();
     }
 
     let emailInCookie = req.cookies.userEmail;
+    console.log(emailInCookie);
     if(emailInCookie){
     db.Usuarios.findOne({
         where: {
@@ -29,7 +30,14 @@ function userLoggedMiddleware(req, res, next) {
     })
     .catch(error => res.send(error));
     }
-    console.log(res.locals.userLogged);
+
+    if (req.session.userLogged) {
+        res.locals.isLogged = true;
+        res.locals.userLogged = req.session.userLogged;
+        // console.log(res.locals.userLogged);
+        // return next();
+    }
+
     return next();
 }
 
