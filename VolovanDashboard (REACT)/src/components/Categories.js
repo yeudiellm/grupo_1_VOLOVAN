@@ -14,6 +14,7 @@ function Categories(){
         fetch('http://localhost:3000/api/products/')
             .then(response => response.json())
             .then(data => {
+                console.log(data.countByCategory);
                 setCountByCategory(data.countByCategory)
             })
             .catch(error => console.error(error));
@@ -29,27 +30,27 @@ function Categories(){
                 countByCategory.length === 0 && <p>Loading...</p>
             }
             { 
-                Object.keys(countByCategory).length > 0 && <><div className="mainCategoriesSubtittle"><h2>CATEGORÍAS DE PRODUCTOS</h2></div>
+                countByCategory.length > 0 && <><div className="mainCategoriesSubtittle"><h2>CATEGORÍAS DE PRODUCTOS</h2></div>
             <div className="CategoriesContainer">
                 <div className="chartCategories">
                     <div className="categoriesItemImage"><img className="categoriesImage" src={wholeWheatBreadImage}/></div>
                     <div className="categoriesItem"><h2 className="categoriesText">VOLOVANES SALADOS</h2></div>
-                    <div className="categoriesItem"><h4 className="categoriesTextDescription">{countByCategory.salados.totalProducts} productos</h4></div>                    
+                    <div className="categoriesItem"><h4 className="categoriesTextDescription">{countByCategory[0].countPerCategory} productos</h4></div>                    
                 </div>
                 <div className="chartCategories">
                     <div className="categoriesItemImage"><img className="categoriesImage" src={wholeWheatBread2Image}/></div>
                     <div className="categoriesItem"><h2 className="categoriesText">VOLOVANES DULCES</h2></div>
-                    <div className="categoriesItem"><h4 className="categoriesTextDescription">{countByCategory.dulces.totalProducts} productos</h4></div>                    
+                    <div className="categoriesItem"><h4 className="categoriesTextDescription">{countByCategory[1].countPerCategory} productos</h4></div>                    
                 </div>
                 <div className="chartCategories">
                     <div className="categoriesItemImage"><img className="categoriesImage" src={clocheImage}/></div>
                     <div className="categoriesItem"><h2 className="categoriesText">ESPECIALIDADES</h2></div>
-                    <div className="categoriesItem"><h4 className="categoriesTextDescription">{countByCategory.especialidades.totalProducts} productos</h4></div>                    
+                    <div className="categoriesItem"><h4 className="categoriesTextDescription">{countByCategory[2].countPerCategory} productos</h4></div>                    
                 </div>
                 <div className="chartCategories">
                     <div className="categoriesItemImage"><img className="categoriesImage" src={cupcakeImage}/></div>
                     <div className="categoriesItem"><h2 className="categoriesText">POSTRES</h2></div>
-                    <div className="categoriesItem"><h4 className="categoriesTextDescription">{countByCategory.postres.totalProducts} productos</h4></div>                    
+                    <div className="categoriesItem"><h4 className="categoriesTextDescription">{countByCategory[3].countPerCategory} productos</h4></div>                    
                 </div>
             </div>
             <div><hr className="line2"/></div></>

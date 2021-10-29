@@ -15,7 +15,7 @@ function ProductsList(){
         fetch('http://localhost:3000/api/products/')
             .then(response => response.json())
             .then(data => {
-                console.log(data.products);
+                // console.log(data.products);
                 setProducts(data.products)
             })
             .catch(error => console.error(error));
