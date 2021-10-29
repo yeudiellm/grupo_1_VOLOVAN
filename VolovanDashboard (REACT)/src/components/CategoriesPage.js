@@ -34,22 +34,22 @@ function Categories(){
                 <div className="chartCategories2">
                     <div className="categoriesItemImage2"><img className="categoriesImage2" src={wholeWheatBreadImage}/></div>
                     <div className="categoriesItem2"><h2 className="categoriesText2">VOLOVANES SALADOS</h2></div>
-                    <div className="categoriesItem2"><h4 className="categoriesTextDescription2">{countByCategory.salados.totalProducts} productos</h4></div>                    
+                    <div className="categoriesItem2"><h4 className="categoriesTextDescription2">{countByCategory[0].countPerCategory} productos</h4></div>                    
                 </div>
                 <div className="chartCategories2">
                     <div className="categoriesItemImage2"><img className="categoriesImage2" src={wholeWheatBread2Image}/></div>
                     <div className="categoriesItem2"><h2 className="categoriesText2">VOLOVANES DULCES</h2></div>
-                    <div className="categoriesItem2"><h4 className="categoriesTextDescription2">{countByCategory.dulces.totalProducts} productos</h4></div>                    
+                    <div className="categoriesItem2"><h4 className="categoriesTextDescription2">{countByCategory[1].countPerCategory} productos</h4></div>                    
                 </div>
                 <div className="chartCategories2">
                     <div className="categoriesItemImage2"><img className="categoriesImage2" src={clocheImage}/></div>
                     <div className="categoriesItem2"><h2 className="categoriesText2">ESPECIALIDADES</h2></div>
-                    <div className="categoriesItem2"><h4 className="categoriesTextDescription2">{countByCategory.especialidades.totalProducts} productos</h4></div>                    
+                    <div className="categoriesItem2"><h4 className="categoriesTextDescription2">{countByCategory[2].countPerCategory} productos</h4></div>                    
                 </div>
                 <div className="chartCategories2">
                     <div className="categoriesItemImage2"><img className="categoriesImage2" src={cupcakeImage}/></div>
                     <div className="categoriesItem2"><h2 className="categoriesText2">POSTRES</h2></div>
-                    <div className="categoriesItem2"><h4 className="categoriesTextDescription2">{countByCategory.postres.totalProducts} productos</h4></div>                    
+                    <div className="categoriesItem2"><h4 className="categoriesTextDescription2">{countByCategory[3].countPerCategory} productos</h4></div>                    
                 </div>
             </div>
             <div></div></>

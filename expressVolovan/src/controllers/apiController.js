@@ -10,7 +10,7 @@ const controller = {
     users: (req, res) => {
         db.Usuarios.findAll()
         .then(usuarios => {
-            console.log(usuarios);
+            // console.log(usuarios);
             let respuesta = {
                 count: usuarios.length,
                 users: [],

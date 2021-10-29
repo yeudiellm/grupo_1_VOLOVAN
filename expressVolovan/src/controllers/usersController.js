@@ -95,7 +95,7 @@ const controller = {
 	},
 	edit: (req,res)=>{
 		userLog =req.session.userLogged;
-		console.log(userLog);
+		// console.log(userLog);
 		return res.render('users/edit',  {
 			user: req.session.userLogged
 		})

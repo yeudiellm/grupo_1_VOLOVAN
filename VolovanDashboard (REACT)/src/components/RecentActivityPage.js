@@ -30,8 +30,8 @@ function RecentActivityPage(){
     
 
     return (
-        <div>
-            <div><h2 className="mainRecenteActivityTitle2"> ACTIVIDAD RECIENTE</h2></div>
+        <>
+            <div className="mainRecenteActivityTitle2"><h2>ACTIVIDAD RECIENTE</h2></div>
             <div className="recentActivity2">
                     <div className="recentActivityTitle2"><h2 className="titleRecent2">ÚLTIMO USUARIO REGISTRADO</h2></div>
                     <div className="recentActivityItemImage2"><img className="recentActivityImage2" src={addUserImage}/></div>
@@ -49,7 +49,7 @@ function RecentActivityPage(){
                     </div>
             </div>
             
-        </div>
+        </>
 
     );
 }

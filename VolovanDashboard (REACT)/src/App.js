@@ -19,7 +19,7 @@ function App() {
       </nav>
       
       <Route exact path="/" component={MainPage}/>
-      <Route exact path="/recentActivity" component={RecentActivityPage}/>
+      <Route exact path="/recentactivity" component={RecentActivityPage}/>
       <Route excat path="/categories" component={CategoriesPage}/>
       <Route exact path="/productslist" component={ProductListPage}/>
       <Route exact path="/testing" component={Testing}/>
