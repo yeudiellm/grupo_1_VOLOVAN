@@ -7,6 +7,7 @@ const { body } = require('express-validator');
 
 const adminMiddleware = require('../config/adminMiddleware');
 
+const SearchValidation= require('../validations/searchValidation');
 //**** Validaciones express-validator
 const validations = [
     body('product_name')
@@ -34,9 +35,6 @@ const validations = [
     })
 ];
 
-const SearchValidation=[body('product_name')
-.notEmpty().withMessage('Ingresa un nombre.').bail()
-.isLength({min:5,max:undefined}).withMessage('El nombre debe tener minimo 5 caracteres.')];
 
 // ************ Controller Require ************
 const productsController = require('../controllers/productsController');

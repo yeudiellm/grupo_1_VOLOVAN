@@ -167,7 +167,7 @@ const controller = {
 					console.error('Something wrong happened removing the file', err);
 				}
 				db.Productos
-					.destroy({ where: { id: deleteId }, force: true }) // , force: true force: true es para asegurar que se ejecute la acción
+					.destroy({ where: { id: deleteId }, force: true }) 
 					.then(() => {
 						return res.redirect('/products');
 					})

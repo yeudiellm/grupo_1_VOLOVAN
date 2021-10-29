@@ -10,11 +10,11 @@ const controller = {
 		return res.render('users/register');
 	},
 	processRegister: (req, res) => {
-		const resultValidation = validationResult(req);
+		const resultValidationRegister = validationResult(req);
 
-		if (resultValidation.errors.length > 0) {
+		if (resultValidationRegister.errors.length > 0) {
 			return res.render('users/register', {
-				errors: resultValidation.mapped(),
+				errors: resultValidationRegister.mapped(),
 				oldData: req.body,
 			});
 		} else {

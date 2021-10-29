@@ -10,6 +10,7 @@ const controller = {
     users: (req, res) => {
         db.Usuarios.findAll()
         .then(usuarios => {
+            console.log(usuarios);
             let respuesta = {
                 count: usuarios.length,
                 users: [],
@@ -18,7 +19,7 @@ const controller = {
             usuarios.forEach(usuario => {
                 respuesta.users.push({
                     id: usuario.id,
-                    name: usuario.email,
+                    name: usuario.nombre,
                     email: usuario.email,
                     detail: 'url para obtener el detalle',
                 });
