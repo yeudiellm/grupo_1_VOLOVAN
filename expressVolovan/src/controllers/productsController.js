@@ -157,6 +157,7 @@ const controller = {
 			}).catch(error => res.send(error));
 	},
 	delete: (req, res) => {
+
 		const deleteId = parseInt(req.params.id, 10);
 		db.Productos.findByPk(deleteId)
 			.then(product => {
@@ -173,6 +174,7 @@ const controller = {
 					})
 					.catch(error => res.send(error));
 			}).catch(error => res.send(error));
+
 	},
 };
 

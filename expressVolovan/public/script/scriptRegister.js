@@ -1,9 +1,6 @@
 window.addEventListener('load', function() {
-    alert("Probando");
     //const validator = require('validator');
-    const formulario= document.querySelector("form");
-    formulario.addEventListener('submit',function(event){
-        event.preventDefault();
+    document.querySelector("form").addEventListener('submit',function(e){
         const name = document.querySelector("#name");
         const email = document.querySelector("#email");
         let errors=[]
@@ -15,7 +12,7 @@ window.addEventListener('load', function() {
         //    errors.push("Debe poner un email valido");
         //}
         if(errors.length>0){
-            event.preventDefault();
+            e.preventDefault();
             let divErrores = document.querySelector("#errores");
             errors.forEach(error => {
                 divErrores.innerText += "ERRORES"

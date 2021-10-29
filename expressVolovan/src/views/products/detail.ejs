@@ -44,8 +44,7 @@
 						<hr>
 						<% if (locals.isLogged  && locals.userLogged.esAdmin) { %>
 							<a href="/products/edit/<%=product.id%>" class="action-button edit">EDITAR PRODUCTO</a>
-							<form id="deleteProduct"  method="POST" style="display: inline-flex">
-							<!--	<form id="deleteProduct" action="/products/delete/<%=product.id%>?_method=DELETE" method="POST" style="display: inline-flex"></form>-->
+							<form id="deleteProduct" action="/products/delete/<%=product.id%>?_method=DELETE" method="POST" style="display: inline-flex">
 								<button type="submit" class="action-button delete">ELIMINAR</button>
 							</form>
 						<% } %>
@@ -59,6 +58,6 @@
 	<!-- footer -->
 	<%- include('../partials/footer'); %>   
 	<!-- /footer -->
-	<script src="/public/script/scriptDetail.js"></script>
+	<script src="/script/scriptDetail.js"></script>
 </body>	
 </html>
