@@ -3,7 +3,9 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const upload =require('../config/multerProduct');
-const { body } = require('express-validator')
+const { body } = require('express-validator');
+
+const adminMiddleware = require('../config/adminMiddleware');
 
 //**** Validaciones express-validator
 const validations = [
@@ -49,13 +51,13 @@ router.get('/detail/:id', productsController.detail);
 router.get('/productCart', productsController.productCart); 
 
 /*** Crear un producto  ***/ 
-router.get('/create', productsController.create);
+router.get('/create',adminMiddleware, productsController.create);
 
 /*** Crear un producto  (Acción) ***/ 
 router.post('/create', upload.single('productImage'), validations, productsController.build); 
 
 /*** Edición de Productos ***/ 
-router.get('/edit/:id', productsController.edit);
+router.get('/edit/:id',adminMiddleware, productsController.edit);
 
 /*** Edición de Productos (Acción) ***/ 
 router.put('/edit/:id', upload.single('productImage'), validations, productsController.update);
@@ -64,7 +66,7 @@ router.put('/edit/:id', upload.single('productImage'), validations, productsCont
 router.post('/search', SearchValidation ,productsController.search);
 
 /*** Eliminación de Producto (Acción) ***/ 
-router.delete('/delete/:id', productsController.delete);
+router.delete('/delete/:id',adminMiddleware, productsController.delete);
 
 
 

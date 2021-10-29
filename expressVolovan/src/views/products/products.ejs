@@ -73,16 +73,15 @@
                 <label for="product_name" class="create-label">Nombre:</label>
               </div>
               <div class="create-campo">
-                <% if (locals.oldData && oldData.product_name) { %>
-                  <input type="text" id="product_name" name="product_name" class="create-input">
-                  <% } else { %>
                     <input type="text" id="product_name" name="product_name" placeholder="Ej: Volovan de ..."
                       class="create-input">
-                    <% } %>
               </div>
             </div>
             <div class="fila-botones">
               <button class="create-botones" type="submit">Buscar producto</button>
+              <% if (locals.isLogged  && locals.userLogged.esAdmin) { %>
+                <a href="/products/create" class="action-button edit">CREAR PRODUCTO</a>
+              <% } %>
             </div>
           </form>
         </section>
