@@ -55,7 +55,7 @@ const controller = {
                 categorias.forEach(categoria => {
                     respuesta.countByCategory.push({
                         nameCategory : categoria.nombre,
-                        countPerCategoryp: productos.filter(producto=>{return producto.id_categoria===categoria.id}).length,
+                        countPerCategory: productos.filter(producto=>{return producto.id_categoria===categoria.id}).length,
                     });
                     
                 });
