@@ -307,7 +307,7 @@ header{
 
   .productContainerItem2{
     text-align: center;
-    padding: 4px;
+    padding: 2px;
 
   }
 
@@ -342,6 +342,10 @@ header{
   box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
+.recentActivity:hover{
+  background-color: rgb(236, 236, 236);
+}
+
 .mainRecenteActivityTitle{
   text-align: justify;
   padding: 10px;
@@ -363,6 +367,7 @@ header{
   padding: 5px;
 }
 
+
 .recentActivityText{
   color: gray;
   font-size: 15px;
@@ -375,6 +380,60 @@ header{
 }
 
 .recentActivityImage{
+  width: 50px;
+}
+
+
+/* ESTILOS DE RECENT ACTIVITY-PAGE */
+
+.recentActivity2{
+  display: inline-block;
+  width: 305px;
+  margin: 3px;
+  height: 120px;
+  border-radius: 3px;
+  background-color: #e3e3ee;
+  box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.recentActivity2:hover{
+  background-color: rgb(236, 236, 236);
+}
+
+.mainRecenteActivityTitle2{
+  text-align: center;
+    padding: 25px;
+    font-size: 15px;
+    color: gray;
+}
+
+.titleRecent2{
+  font-size: 15px;
+  text-align: center;
+  font-weight: bold;
+  color: rgb(153, 35, 24);
+  padding: 10px;
+}
+
+.recentActivityItem2{
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
+}
+
+
+.recentActivityText2{
+  color: gray;
+  font-size: 15px;
+}
+
+.recentActivityItemImage2{
+  display: inline-block;
+  margin: 5px;
+  padding:5px;
+}
+
+.recentActivityImage2{
   width: 50px;
 }
 
