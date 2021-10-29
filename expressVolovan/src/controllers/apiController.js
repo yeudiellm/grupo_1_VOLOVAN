@@ -1,104 +1,95 @@
-const DB = require('../../src/database/models/Productos')
-
+const path = require('path');
+const db = require('../database/models');
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
+const moment = require('moment');
+const { REPL_MODE_SLOPPY } = require('repl');
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 const controller = {
     users: (req, res) => {
-        return res.json({
-            count: 2,
-            users: [
-                {
-                    id: 1,
-                    name: 'Luis',
-                    email: 'luis@correo.com',
-                    detail: 'url para obtener el detalle'
-                },
-                {
-                    id: 2,
-                    name: 'Pedro',
-                    email: 'pedro@correo.com',
-                    detail: 'url para obtener el detalle'
-                },
-            ],
-        });
+        db.Usuarios.findAll()
+        .then(usuarios => {
+            let respuesta = {
+                count: usuarios.length,
+                users: [],
+            }
+
+            usuarios.forEach(usuario => {
+                respuesta.users.push({
+                    id: usuario.id,
+                    name: usuario.email,
+                    email: usuario.email,
+                    detail: 'url para obtener el detalle',
+                });
+            });
+
+            return  res.json(respuesta);
+            }).catch(error => res.send(error));
     },
     userDetail: (req, res) => {
-        return res.json({
-            id: 1,
-            name: 'Luis',
-            email: 'luis@correo.com',
-            avatar: 'img_avatar.png'
-        })
+        db.Usuarios.findByPk(req.params.id)
+        .then(usuario => {
+            let respuesta = {
+                id: usuario.id,
+                name: usuario.nombre,
+                email: usuario.email,
+                avatar: usuario.avatar_nombre
+            }
+            return res.json(respuesta);
+        }).catch(error => res.send(error));
     },
     products: (req, res) => {
-        return res.json({
-            count: '5',
-            countByCategory: {
-                salados: {
-                    totalProducts: '5'
-                },
-                dulces: {
-                    totalProducts: '6'
-                },
-                postres: {
-                    totalProducts: '3'
-                },
-                especialidades: {
-                    totalProducts: '1'
-                },
-            },
-            products: [
-                {
-                    id: '1',
-                    name: 'volovan de jamon',
-                    description: 'un volovan que tiene jamon',
-                    category: 'salados',
-                    price: '10',
-                    details: 'products/detail/1',
-                },
-                {
-                    id: '2',
-                    name: 'volovan de piña',
-                    description: 'un volovan que tiene piña',
-                    category: 'dulce',
-                    price: '10',
-                    details: 'products/detail/2',
-                },
-                {
-                    id: '3',
-                    name: 'volovan de manzana',
-                    description: 'un volovan que tiene manzana',
-                    category: 'dulce',
-                    price: '10',
-                    details: 'products/detail/3',
-                },
-                {
-                    id: '4',
-                    name: 'volovan de aguacate',
-                    description: 'un volovan que tiene aguacate',
-                    category: 'dulce',
-                    price: '10',
-                    details: 'products/detail/4',
-                },
-                {
-                    id: '5',
-                    name: 'volovan de pizza',
-                    description: 'un volovan que tiene pizza',
-                    category: 'dulce',
-                    price: '10',
-                    details: 'products/detail/5',
-                },
-            ]
-        })
+        db.CategoriasProductos.findAll()
+        .then(categorias => {
+            db.Productos.findAll({
+                include: ["categoria"],
+            })
+            .then(productos=>{
+                let respuesta = {
+                   count: productos.length,
+                   countByCategory: [],
+                   products: [],
+                }
+                categorias.forEach(categoria => {
+                    respuesta.countByCategory.push({
+                        nameCategory : categoria.nombre,
+                        countPerCategoryp: productos.filter(producto=>{return producto.id_categoria===categoria.id}).length,
+                    });
+                    
+                });
+                productos.forEach(producto => {
+                    respuesta.products.push({
+                        id: producto.id,
+                        name:  producto.nombre,
+                        description: producto.descripcion,
+                        category: producto.categoria.nombre,
+                        price: toThousand(producto.precio),
+                        details: 'products/detail/'+producto.id,
+                    });
+                });
+
+                return res.json(respuesta);
+            }).catch(error => res.send(error));       
+            }).catch(error => res.send(error));
     },
     productDetail: (req, res) => {
-        return res.json({
-            product_id: '1',
-            product_name: 'Volovan de Jamon',
-            product_price: '13',
-            product_description: 'Hojaldre relleno con jamon, queso amarillo y salsa chipotle. ',
-            category: 'salados',
-            image: 'images/products/volovan-jamon.jpg',
-        })
+        db.Productos.findByPk(req.params.id,{
+            include: ["categoria"],
+        }
+            )
+            .then(producto => {
+                let respuesta = {
+                    product_id: producto.id,
+                    product_name: producto.nombre,
+                    product_price: toThousand(producto.precio),
+                    product_description: producto.descripcion,
+                    category: producto.categoria.nombre,
+                    image: 'images/products/'+producto.imagen_nombre,
+                    
+                }
+                return res.json(respuesta);
+            }).catch(error => res.send(error));
     }
 }
 

@@ -18,9 +18,9 @@ module.exports = (sequelize, dataTypes) =>{
 
     }; 
     const CategoriasProductos= sequelize.define(alias, cols, config); 
-    CategoriasProductos.asociate = function(models){
+    CategoriasProductos.associate = function(models){
         CategoriasProductos.hasMany(models.Productos,{
-            as:"productos",
+            as: "productos",
             foreignKey:"id_categoria", 
         }); 
 
