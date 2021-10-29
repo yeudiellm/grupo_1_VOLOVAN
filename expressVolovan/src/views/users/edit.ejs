@@ -14,26 +14,19 @@
 
     <div class="register-box">
         <img src="/images/logoSinFondo.png" alt="" class="avatar">
-        <h1>Registrarse</h1>
+        <h1>Editar Información</h1>
         <% if (locals.errors) { %>
             <% for( let oneError in errors ) { %>
                 <p class="logRegError"><%= errors[oneError].msg  %> </p>
             <% } %>
         <% } %>
 
-
-        <form method="POST" action="/users/register" enctype="multipart/form-data">
+        <form action="/users/edit?_method=PUT" method="POST" enctype = "multipart/form-data">
 
             <% if (locals.oldData && oldData.name) { %>
                 <input type="text" name="name" placeholder="Nombre" value="<%= oldData.name %> ">
             <% } else { %>
-                <input type="text" name="name" placeholder="Nombre" >
-            <% } %>
-
-            <% if (locals.oldData && oldData.email) { %>
-                <input type="email" name="email" placeholder="Correo electrónico" value="<%= oldData.email %> ">
-            <% } else { %>
-                <input type="email" name="email" placeholder="Correo electrónico" >
+                <input type="text" name="name" value="<%=user.nombre%>" >
             <% } %>
 
             <% if (locals.oldData && oldData.password) { %>
@@ -41,25 +34,11 @@
             <% } else { %>
                 <input type="password" name="password" placeholder="Contraseña" >
             <% } %>
-            
-            <!-- <% if (locals.oldData && oldData.repeatPassword) { %>
-                <input type="password" name="repeatPassword" placeholder="Repetir contraseña" value="<%= oldData.repeatPassword %> ">
-            <% } else { %>
-                <input type="password" name="repeatPassword" placeholder="Repetir-Contraseña" >
-            <% } %> -->
-
-            <!-- <% if (locals.oldData && oldData.avatar) { %>
-                <label for="profile-image">Imagen de perfil</label>
-                <input type="file" name="avatar" id="avatar" class="profile-image" >
-            <% } else { %>
-                <input type="password" name="repeatPassword" placeholder="Repetir-Contraseña" >
-            <% } %> -->
 
             <label for="profile-image">Imagen de perfil</label>
             <input type="file" name="avatar" id="avatar" class="profile-image" >
             
-            <input type="submit" value="Registrarse">
-            <a href="/users/login">¿Ya tienes cuenta? Inicia sesión</a>
+            <input type="submit" value="Editar">
         </form>
     </div>
     <section class="bloque-compensacion-2"></section>

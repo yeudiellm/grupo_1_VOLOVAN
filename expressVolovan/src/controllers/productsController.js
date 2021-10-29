@@ -24,8 +24,8 @@ const controller = {
 							categorias: categorias,
 							toThousand: toThousand,
 						});
-					});
-			});
+					})//.catch(error => res.send(error));
+			}).catch(error => res.send(error));
 	},
 	detail: (req, res) => {
 		const productID = parseInt(req.params.id, 10);

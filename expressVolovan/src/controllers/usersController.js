@@ -63,7 +63,6 @@ const controller = {
 				if(userToLogin){
 					let isPasswordOk = bcryptjs.compareSync(req.body.password, userToLogin.password)
 					if (isPasswordOk) {
-						delete userToLogin.password;
 						req.session.userLogged = userToLogin;
 						//Seteo de cookie en caso de activar casilla (1día duración)
 						if (req.body.remember_me) {
@@ -92,6 +91,47 @@ const controller = {
 					});
 				}
 			}).catch(error => res.send(error));
+		}
+	},
+	edit: (req,res)=>{
+		userLog =req.session.userLogged;
+		console.log(userLog);
+		return res.render('users/edit',  {
+			user: req.session.userLogged
+		})
+	},
+	processEdit: (req, res) => {
+		userLog =req.session.userLogged;
+
+		const resultValidation3 = validationResult(req);
+
+		if (resultValidation3.errors.length > 0) {
+			return res.render('users/register', {
+				errors: resultValidation3.mapped(),
+				oldData: req.body,
+			});
+		} else {
+			let userToEdit= {
+				nombre: req.body.name || userLog.nombre,
+				password: bcryptjs.hashSync(req.body.password, 10) || userLog.password,
+			}
+			if (req.file) {
+				try {
+					//fs.unlinkSync('public/images/avatars/' + userLog.avatar_nombre);
+					userToEdit.avatar_nombre = req.file.filename || 'img_avatar.png';
+					//console.log('File removed');
+				} catch (err) {
+					console.error('Something wrong happened removing the file', err);
+				}
+			}
+
+			db.Usuarios
+				.update(userToEdit,
+					{ where: { id: userLog.id } })
+				.then(() => {
+					return res.redirect('/users/profile');
+				})
+				.catch(error => res.send(error));
 		}
 	},
 	profile: (req, res) => {
