@@ -12,21 +12,28 @@
 <!-- header -->
 <main class="profileContainer">
 
-    <div>
-        <h1>Hola <%= user.nombre %> </h1>
-        <h2><%= user.email %> </h2>
+    <div class="profilePart1">
+        <h1>Perfil de usuario</h1>
         <img src="/images/avatars/<%= user.avatar_nombre%> " alt="profile-image" height="300px">
     </div>
 
+    <div class="profilePart2">
 
-    <div>
-        <a href="/users/logout">Logout</a>
+        <div>
+            <h2>EMAIL:</h2>
+            <h3><%= user.email %> </h3>
+            <br>
+            <h2>Usuario</h2>
+            <h3><%= user.nombre %></h3>
+        </div>
+
+        <div>
+            <a href="/users/logout">Logout</a>
+            <a href="/users/edit">Editar</a>
+        </div>
+
     </div>
-
-    <div>
-        <a href="/users/edit">Editar</a>
-    </div>
-
+    
     <section class="bloque-compensacion-2"></section>
     
 </main>

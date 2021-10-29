@@ -40,7 +40,17 @@ header{
 }
 
 .profileContainer{
-    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.profilePart1 img{
+    border-radius: 50%;
+}
+
+.profilePart2{
+    justify-content: space-around;
 }
 
 .logo{
