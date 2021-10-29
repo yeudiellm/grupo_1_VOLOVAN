@@ -6,7 +6,7 @@ function userLoggedMiddleware(req, res, next) {
     if (req.session.userLogged) {
         res.locals.isLogged = true;
         res.locals.userLogged = req.session.userLogged;
-        console.log(res.locals.userLogged);
+        // console.log(res.locals.userLogged);
         return next();
     }
 
@@ -24,7 +24,7 @@ function userLoggedMiddleware(req, res, next) {
             res.locals.isLogged = true;
             res.locals.userLogged = req.session.userLogged;
         }
-        console.log(res.locals.userLogged);
+        // console.log(res.locals.userLogged);
         return next();
     })
     .catch(error => res.send(error));

@@ -39,6 +39,9 @@ header{
     max-height: 150px;
 }
 
+.profileContainer{
+    text-align: center;
+}
 
 .logo{
     width: 8.5rem;
