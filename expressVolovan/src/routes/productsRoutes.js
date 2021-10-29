@@ -7,34 +7,9 @@ const { body } = require('express-validator');
 
 const adminMiddleware = require('../config/adminMiddleware');
 
-const SearchValidation= require('../validations/searchValidation');
 //**** Validaciones express-validator
-const validations = [
-    body('product_name')
-        .notEmpty().withMessage('Ingresa un nombre.').bail()
-        .isLength({min:5,max:undefined}).withMessage('El nombre debe tener minimo 5 caracteres.'),
-    body('product_price')
-        .notEmpty().withMessage('Ingresa un precio.').bail()
-        .isNumeric('El precio debe ser numérico.'),
-    body('product_description')
-        .notEmpty().withMessage('Ingresa una descripción.').bail()
-        .isLength({min:20,max:undefined}).withMessage('Añade una descripción de minimo 20 caracteres.'),
-    body('category').notEmpty().withMessage('Selecciona una categoria.'),
-    body('productImage').custom((value, { req }) => {
-        let file = req.file;
-        let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
-        if(!file){
-            throw new Error('Tienes que subir una imagen.');
-        }else{
-            let fileExtension = path.extname(file.originalname);
-            if (!acceptedExtensions.includes(fileExtension)) {
-                throw new Error(`Los tipos de imagen permitidos son: ${acceptedExtensions.join(', ')}.`);
-            }
-        }
-        return true;
-    })
-];
-
+const SearchValidation= require('../validations/searchValidation');
+const CreateValidation= require('../validations/createValidation');
 
 // ************ Controller Require ************
 const productsController = require('../controllers/productsController');
@@ -52,13 +27,13 @@ router.get('/productCart', productsController.productCart);
 router.get('/create',adminMiddleware, productsController.create);
 
 /*** Crear un producto  (Acción) ***/ 
-router.post('/create', upload.single('productImage'), validations, productsController.build); 
+router.post('/create', upload.single('productImage'), CreateValidation, productsController.build); 
 
 /*** Edición de Productos ***/ 
 router.get('/edit/:id',adminMiddleware, productsController.edit);
 
 /*** Edición de Productos (Acción) ***/ 
-router.put('/edit/:id', upload.single('productImage'), validations, productsController.update);
+router.put('/edit/:id', upload.single('productImage'), CreateValidation, productsController.update);
 
 /*** Búsqueda de Producto (Acción) ***/ 
 router.post('/search', SearchValidation ,productsController.search);

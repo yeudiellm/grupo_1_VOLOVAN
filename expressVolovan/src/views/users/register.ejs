@@ -11,12 +11,14 @@
 <%- include('../partials/headerLoginRegister'); %>
 <!-- header -->
 <main>
-    <script src="../../script/scriptRegister.js"></script>
+
     <div class="register-box">
         <img src="/images/logoSinFondo.png" alt="" class="avatar">
         <h1>Registrarse</h1>
 
-        <ul class="errores"></ul>
+        <div id="errores">
+
+        </div>
 
         <% if (locals.errors) { %>
             <% for( let oneError in errors ) { %>
@@ -25,7 +27,7 @@
         <% } %>
 
 
-        <form  id="formRegister" method="POST" action="/users/register" enctype="multipart/form-data">
+        <form  method="POST" action="/users/register" enctype="multipart/form-data">
 
             <% if (locals.oldData && oldData.name) { %>
                 <input type="text" name="name" id="name" placeholder="Nombre" value="<%= oldData.name %> ">
@@ -48,8 +50,8 @@
             <label for="profile-image">Imagen de perfil</label>
             <input type="file" name="avatar" id="avatar" class="profile-image" >
             
-            <input  type="submit" value="Registrarse">
-            <a id="btnRegister" href="/users/login">¿Ya tienes cuenta? Inicia sesión</a>
+            <input   type="submit" value="Registrarse">
+            <a href="/users/login">¿Ya tienes cuenta? Inicia sesión</a>
         </form>
     </div>
     <section class="bloque-compensacion-2"></section>
@@ -57,6 +59,6 @@
 </main>
  <!-- Footer -->
  <%- include('../partials/footer'); %>
-
+ <script src="/public/script/scriptRegister.js"></script>
 </body>
 </html>
