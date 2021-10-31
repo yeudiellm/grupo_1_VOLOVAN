@@ -23,10 +23,11 @@
                 </div>
                 <div class="edit-campo">
                     <% if (locals.oldData && oldData.product_name) { %>
-                        <input type="text" id="product_name" name="product_name" value="<%= oldData.product_name %>" class="create-input">
+                        <input type="text" id="product_name" name="product_name" value="<%= oldData.product_name %>" class="create-input" required>
                     <% } else { %>
-                        <input type="text" id="product_name" name="product_name" value="<%=product.nombre%>" class="edit-input">
+                        <input type="text" id="product_name" name="product_name" value="<%=product.nombre%>" class="edit-input" required>
                     <% } %>
+                    <p id="product_name_error" class="error"> </p>
                 </div>
             </div>
 
@@ -37,11 +38,11 @@
                 <div class="edit-campo">
                     
                     <% if (locals.oldData && oldData.product_price) { %>
-                        <input type="number" id="product_price" name="product_price" value="<%= oldData.product_price %>"  class="create-input">
+                        <input type="number" id="product_price" name="product_price" value="<%= oldData.product_price %>"  class="create-input" required>
                     <% } else { %>
-                        <input type="number" id="product_price" name="product_price" value="<%=product.precio%>" class="edit-input">
+                        <input type="number" id="product_price" name="product_price" value="<%=product.precio%>" class="edit-input" required>
                     <% } %>
-
+                    <p id="product_price_error" class="error"> </p>
                 </div>
             </div>
 
@@ -52,11 +53,11 @@
                 <div class="edit-campo">
 
                     <% if (locals.oldData && oldData.product_description) { %>
-                        <textarea name="product_description" id="product_description"  class="create-textarea"><%= oldData.product_description %></textarea>
+                        <textarea name="product_description" id="product_description"  class="create-textarea" required><%= oldData.product_description %></textarea>
                     <% } else { %>
-                        <textarea name="product_description" id="product_description" class="edit-textarea"><%=product.descripcion%></textarea>
+                        <textarea name="product_description" id="product_description" class="edit-textarea" required><%=product.descripcion%></textarea>
                     <% } %>
-
+                    <p id="product_description_error" class="error"> </p>
                 </div>
 
             </div>
@@ -66,11 +67,12 @@
                     <label for="category" class="edit-label">Categoría:</label>
                 </div>
                 <div class="edit-campo">
-                    <select name="category" id="category" class="edit-input">
+                    <select name="category" id="category" class="edit-input" required>
                         <% categorias.forEach(categoria => { %>
                         <option value="<%= categoria.id %>" <% if (product.id_categoria == categoria.id) { %><%= 'selected' %><% }; %>><%= categoria.nombre %></option>
                         <% }); %>
                     </select>
+                    <p id="category_error" class="error"> </p>
                 </div>
             </div>
             
@@ -79,7 +81,8 @@
                     <label for="productImage" class="edit-label">Imagen del producto:</label>
                 </div>
                 <div class="edit-campo">
-                    <input type="file" name="productImage" id="productImage" class="edit-file">
+                    <input type="file" name="productImage" id="productImage" class="edit-file" accept="image/png, image/jpeg, image/jpg, image/gif" required>
+                    <p id="avatarError" class="error"> </p>
                 </div>
             </div>
 
@@ -93,5 +96,6 @@
 
     <!-- Footer -->
     <%- include('../partials/footer'); %>   
+    <script src="/script/productCreateEdit.js"></script> 
 </body>
 </html>

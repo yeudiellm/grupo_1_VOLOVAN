@@ -43,16 +43,20 @@ const controller = {
 				return res.render('products/create', {
 					categorias: categorias,
 				});
-			});
+			}).catch(error => res.send(error));
 	},
 	build: (req, res) => {
 		const resultValidation = validationResult(req);
 		// proceso de validación
 		if (resultValidation.errors.length > 0) {
-			return res.render('products/create', {
-				errors: resultValidation.mapped(),
-				oldData: req.body
-			})
+			db.CategoriasProductos.findAll()
+			.then(categorias => {
+				return res.render('products/create', {
+					categorias: categorias,
+					errors: resultValidation.mapped(),
+					oldData: req.body,
+				}).catch(error => res.send(error));
+			});
 		}
 		// continua el flujo si no hay errores de validacion
 		const newProduct = {

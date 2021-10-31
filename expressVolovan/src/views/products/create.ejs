@@ -24,10 +24,11 @@
                 </div>
                 <div class="create-campo">
                     <% if (locals.oldData && oldData.product_name) { %>
-                        <input type="text" id="product_name" name="product_name" value="<%= oldData.product_name %>" class="create-input">
+                        <input type="text" id="product_name" name="product_name" value="<%= oldData.product_name %>" class="create-input" required>
                     <% } else { %>
-                        <input type="text" id="product_name" name="product_name" placeholder="Ej: Volovan de ..." class="create-input">
-                    <% } %>
+                        <input type="text" id="product_name" name="product_name" placeholder="Ej: Volovan de ..." class="create-input" required>
+                        <% } %>
+                        <p id="product_name_error" class="error"> </p>
                 </div>
             </div>
 
@@ -38,11 +39,12 @@
                 </div>
                 <div class="create-campo">
                     <% if (locals.oldData && oldData.product_price) { %>
-                        <input type="number" id="product_price" name="product_price" value="<%= oldData.product_price %>"  class="create-input">
+                        <input type="number" id="product_price" name="product_price" value="<%= oldData.product_price %>"  class="create-input" required>
                     <% } else { %>
-                        <input type="number" id="product_price" name="product_price" placeholder="Ej: 10.00" class="create-input">
+                        <input type="number" id="product_price" name="product_price" placeholder="Ej: 10.00" class="create-input" required>
+                        
                     <% } %>
-                  
+                    <p id="product_price_error" class="error"> </p>
                 </div>
             </div>
 
@@ -53,10 +55,12 @@
                 </div>
                 <div class="create-campo">
                     <% if (locals.oldData && oldData.product_description) { %>
-                        <textarea name="product_description" id="product_description"  class="create-textarea"><%= oldData.product_description %></textarea>
+                        <textarea name="product_description" id="product_description"  class="create-textarea" required><%= oldData.product_description %></textarea>
                     <% } else { %>
-                        <textarea name="product_description" id="product_description" placeholder="¿De qué trata tu producto? Describe a detalle tu producto en esta área" class="create-textarea"></textarea>
+                        <textarea name="product_description" id="product_description" placeholder="¿De qué trata tu producto? Describe a detalle tu producto en esta área" class="create-textarea" required></textarea>
+                        <p id="product_description_error" class="error"> </p>
                     <% } %>
+                    <p id="product_description_error" class="error"> </p>
                 </div>
 
             </div>
@@ -67,12 +71,13 @@
                     <label for="category" class="create-label">Categoría:</label>
                 </div>
                 <div class="create-campo">
-                    <select name="category" id="category" class="create-input">
+                    <select name="category" id="category" class="create-input" required>
                         <option value="" disabled selected> -Seleccione la categoría- </option>
                         <% categorias.forEach(categoria => { %>
                         <option value="<%=categoria.id%>"><%=categoria.nombre %></option>
                         <% }); %>
                     </select>
+                    <p id="category_error" class="error"> </p>
                 </div>
             </div>
             
@@ -82,8 +87,8 @@
                     <label for="productImage" class="create-label">Imagen del producto:</label>
                 </div>
                 <div class="create-campo">
-                    <input type="file" name="productImage" id="productImage" class="create-file">
-
+                    <input type="file" name="productImage" id="productImage" class="create-file" accept="image/png, image/jpeg, image/jpg, image/gif" required>
+                    <p id="avatarError" class="error"> </p>
                 </div>
             </div>
 
@@ -97,6 +102,7 @@
 
 
     <!-- Footer -->
-    <%- include('../partials/footer'); %>   
+    <%- include('../partials/footer'); %> 
+    <script src="/script/productCreateEdit.js"></script>   
 </body>
 </html>

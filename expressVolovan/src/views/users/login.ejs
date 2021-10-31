@@ -21,11 +21,13 @@
         <% } %>
         <form method="POST" action="/users/login">
             <% if (locals.oldData && oldData.email) { %>
-                <input type="email" name="email" placeholder="Correo electrónico" value="<%= oldData.email %> ">
+                <input type="email" name="email"  id="email" placeholder="Correo electrónico" value="<%= oldData.email %>" required>
             <% } else { %>
-                <input type="email" name="email" placeholder="Correo electrónico" >
+                <input type="email" name="email" id="email" placeholder="Correo electrónico" required>
+                <p id="emailError" class="error"> </p>
             <% } %>
-            <input type="password" name="password" placeholder="Contraseña" ><br>
+            <input type="password" name="password" id="password"  placeholder="Contraseña" required><br>
+            <p id="passwordError" class="error"> </p>
             <div style="display: flex;">
                 <input type="checkbox" id="saveLogin" name="remember_me" style="width: auto; margin-right: 10px;"><label for="saveLogin">Recordarme</label>
             </div>
@@ -38,5 +40,6 @@
 </main>
  <!-- Footer -->
  <%- include('../partials/footer'); %>
+ <script src="/script/scriptLogin.js"></script> 
 </body>
 </html>

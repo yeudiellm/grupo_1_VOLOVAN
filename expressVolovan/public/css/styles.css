@@ -597,6 +597,14 @@ main section article i{
 }
 
 
+.error  {
+    color: red;
+}
+
+
+
+
+
 
 @keyframes rotar{
     0%{
@@ -895,7 +903,6 @@ div.login-box, div.register-box{
     margin-top: 90vh;
     text-align: center;
 }
-
 
 
 

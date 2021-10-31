@@ -16,10 +16,6 @@
         <img src="/images/logoSinFondo.png" alt="" class="avatar">
         <h1>Registrarse</h1>
 
-        <div id="errores">
-
-        </div>
-
         <% if (locals.errors) { %>
             <% for( let oneError in errors ) { %>
                 <p class="logRegError"><%= errors[oneError].msg  %> </p>
@@ -30,27 +26,31 @@
         <form  method="POST" action="/users/register" enctype="multipart/form-data">
 
             <% if (locals.oldData && oldData.name) { %>
-                <input type="text" name="name" id="name" placeholder="Nombre" value="<%= oldData.name %> ">
+                <input type="text" name="name" id="name" placeholder="Nombre" value="<%= oldData.name %>" required>
             <% } else { %>
-                <input type="text" name="name" id="name" placeholder="Nombre" >
+                <input type="text" name="name" id="name" placeholder="Nombre" required>
             <% } %>
+            <p id="nameError" class="error"> </p>
 
             <% if (locals.oldData && oldData.email) { %>
-                <input type="email" name="email" id="email" placeholder="Correo electrónico" value="<%= oldData.email %> ">
+                <input type="email" name="email" id="email" placeholder="Correo electrónico" value="<%= oldData.email %>" required>
             <% } else { %>
-                <input type="email" name="email" id="email" placeholder="Correo electrónico" >
+                <input type="email" name="email" id="email" placeholder="Correo electrónico" required >
             <% } %>
+            <p id="emailError" class="error"> </p>
 
             <% if (locals.oldData && oldData.password) { %>
-                <input type="password" name="password" id="password" placeholder="Contraseña" value="<%= oldData.password %> ">
+                <input type="password" name="password" id="password" placeholder="Contraseña" required>
             <% } else { %>
-                <input type="password" name="password" id="password" placeholder="Contraseña" >
+                <input type="password" name="password" id="password" placeholder="Contraseña" required>
             <% } %>
+            <p id="passwordError" class="error"> </p>
 
             <label for="profile-image">Imagen de perfil</label>
-            <input type="file" name="avatar" id="avatar" class="profile-image" >
+            <input type="file" name="avatar" id="avatar" class="profile-image" accept="image/png, image/jpeg, image/jpg, image/gif" required>
+            <p id="avatarError" class="error"> </p>
             
-            <input type="submit" value="Registrarse">
+            <input type="submit" value="Registrarse" >
             <a href="/users/login">¿Ya tienes cuenta? Inicia sesión</a>
         </form>
     </div>
@@ -59,6 +59,6 @@
 </main>
  <!-- Footer -->
  <%- include('../partials/footer'); %>
- <!-- <script src="/script/scriptRegister.js"></script> -->
+ <script src="/script/scriptRegister.js"></script> 
 </body>
 </html>
